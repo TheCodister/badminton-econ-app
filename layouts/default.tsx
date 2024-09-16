@@ -1,32 +1,30 @@
-import { Link } from "@nextui-org/link";
-
-import { Head } from "./head";
-
-import { Navbar } from "@/components/navbar";
-
+import Header from '@/components/header/header'
+import Sidebar from '@/components/sidebar/siderbar'
+import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
 export default function DefaultLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <div className="relative flex flex-col h-screen">
-      <Head />
-      <Navbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
-        {children}
+      <Header />
+      <main className="flex justify-center py-2 overflow-y-auto h-full">
+        <Sidebar />
+        <section className="flex flex-col items-start">
+          <div className="p-4">
+            <Breadcrumbs>
+              <BreadcrumbItem>Home</BreadcrumbItem>
+              <BreadcrumbItem>Racket</BreadcrumbItem>
+              <BreadcrumbItem>Lining</BreadcrumbItem>
+            </Breadcrumbs>
+          </div>
+          {children}
+        </section>
       </main>
-      <footer className="w-full flex items-center justify-center py-3">
-        <Link
-          isExternal
-          className="flex items-center gap-1 text-current"
-          href="https://nextui-docs-v2.vercel.app?utm_source=next-pages-template"
-          title="nextui.org homepage"
-        >
-          <span className="text-default-600">Powered by</span>
-          <p className="text-primary">NextUI</p>
-        </Link>
+      <footer className="p-4 bg-gray-800 text-white">
+        <p>&copy; {new Date().getFullYear()} My Site</p>
       </footer>
     </div>
-  );
+  )
 }

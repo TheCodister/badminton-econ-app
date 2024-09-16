@@ -25,11 +25,10 @@ and NextUI (v2).
 
 ## How to Use
 
-To create a new project based on this template using `create-next-app`, run the
-following command:
+### Clone this repositories:
 
 ```bash
-npx create-next-app -e https://github.com/nextui-org/next-pages-template
+git clone https://github.com/TheCodister/badminton-econ-app.git
 ```
 
 ### Install dependencies
