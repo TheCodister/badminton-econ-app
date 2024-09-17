@@ -22,7 +22,7 @@ const Sidebar = () => {
         <h3>Weight</h3>
         <Checkbox>3U: 85 - 89g</Checkbox>
         <Checkbox>4U: 80 - 84g</Checkbox>
-        <Checkbox>5U: 75 = 79g</Checkbox>
+        <Checkbox>5U: 75 - 79g</Checkbox>
       </section>
       <Divider />
       <section className="w-[80%] flex flex-col items-start pb-3">

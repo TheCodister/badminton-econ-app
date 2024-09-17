@@ -22,7 +22,7 @@ export default function DefaultLayout({
           {children}
         </section>
       </main>
-      <footer className="p-4 bg-gray-800 text-white">
+      <footer className="p-2 bg-gray-800 text-white">
         <p>&copy; {new Date().getFullYear()} My Site</p>
       </footer>
     </div>

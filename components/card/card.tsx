@@ -8,7 +8,11 @@ import {
 } from '@nextui-org/react'
 const ProductCard = () => {
   return (
-    <Card className="w-[250px] h-[500px] flex flex-col items-center justify-center">
+    <Card
+      isHoverable
+      isPressable
+      className="w-[250px] h-[500px] flex flex-col items-center justify-center cursor-pointer"
+    >
       <CardHeader>
         <h6>Lining Halbertec 8000</h6>
       </CardHeader>
@@ -20,21 +24,21 @@ const ProductCard = () => {
           height="300"
         />
         <Progress
-          label="Balance:"
+          label="Balance: Balanced"
           color="default"
           size="sm"
           aria-label="Loading..."
           value={70}
         />
         <Progress
-          label="Stiffness:"
+          label="Stiffness: Hard"
           color="primary"
           size="sm"
           aria-label="Loading..."
           value={50}
         />
         <Progress
-          label="Weight:"
+          label="Weight: 4U - 3U"
           color="secondary"
           size="sm"
           aria-label="Loading..."
