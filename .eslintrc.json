@@ -1,8 +1,5 @@
 {
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["react-hooks"],
-  "extends": ["next", "next/core-web-vitals", "@dwarvesf/react-eslint-config"],
+  "extends": ["./node_modules/@dwarvesf/react-eslint-config"],
   "globals": {
     "tw": true,
     "chrome": true
@@ -15,42 +12,18 @@
     "project": ["./tsconfig.json"],
     "createDefaultProgram": true
   },
-  // "ignorePatterns": [
-  //   "temp.js",
-  //   "config/*",
-  //   "node_modules/*",
-  //   "public/*",
-  //   "out/*",
-  //   "!.eslintrc.json",
-  //   ".next/*",
-  //   "next.config.mjs"
-  // ],
-  "rules": {
-    // React Hooks rules
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    //comma dangle rules
-    // "comma-dangle": ["error", "never"],
-    // Next.js specific rules
-    "@next/next/no-img-element": "off", // Enable if you prefer using <img> instead of <Image>
-    "no-restricted-globals": "error", // Disallow specific global variables
-    // Additional rules
-    "no-undef": 1, //prevent global declaration
-    "no-console": "off", // Warn on console.log usage, since I use a lot of console.log for debugging
-    "no-debugger": "error", // Error on debugger usage
-    "no-unused-vars": "warn", // Disabled as it's handled by @typescript-eslint/no-unused-vars
-    "prefer-const": "error", // Enforce the use of const over let where possible
-    "eqeqeq": ["error", "always"], // Enforce the use of === and !==
-    "arrow-body-style": ["error", "as-needed"], // Enforce consistent arrow function body style
-    "no-duplicate-imports": "error" // Disallow duplicate imports
-  },
+  "rules": {},
   "overrides": [
     {
       "files": ["**/*.ts?(x)", "**/*.js?(x)"],
       "rules": {
         "react/react-in-jsx-scope": "off",
         "react/function-component-definition": "off",
-        "no-shadow": "off"
+        "no-shadow": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_" }
+        ]
       }
     }
   ]
