@@ -8,6 +8,8 @@ import {
   NavbarItem,
   Badge,
   NavbarBrand,
+  NavbarMenu,
+  NavbarMenuItem,
 } from '@nextui-org/react'
 import {
   AllSidesIcon,
@@ -21,9 +23,11 @@ import {
 } from '@radix-ui/react-icons'
 import { Flex } from '@radix-ui/themes'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const Header = () => {
   const router = useRouter()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
     { label: 'Home', href: ROUTES.HOME, icon: HomeIcon },
@@ -34,19 +38,36 @@ const Header = () => {
   ]
 
   return (
-    <Navbar className="justify-center p-2 bg-primary text-white">
-      <NavbarMenuToggle className="xl:hidden sm:block" />
-      <NavbarBrand>
-        {/* <Image
+    <Navbar
+      className="justify-center p-2 bg-primary text-white"
+      onMenuOpenChange={setIsMenuOpen}
+    >
+      <NavbarContent>
+        <NavbarMenuToggle
+          className="xl:hidden lg:hidden sm:block"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        />
+        {/* <NavbarBrand>
+          <Image
               isBlurred
               width={20}
               src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
               alt="NextUI Album Cover"
               className="rounded-lg"
-            /> */}
-        <h3 className="text-stone-50 font-extrabold">BMB</h3>
-      </NavbarBrand>
-      <NavbarContent className="xl:flex gap-2 md:hidden sm:hidden">
+            />
+        </NavbarBrand> */}
+        <h3 className="text-stone-50 font-extrabold self-center">BMB</h3>
+        <NavbarItem className="xl:hidden lg:hidden md:block sm:block">
+          <Input
+            className="w-full"
+            startContent={
+              <MagnifyingGlassIcon width={20} height={20} color="black" />
+            }
+            placeholder="Search"
+          />
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
         {navItems.map((item) => (
           <NavbarItem>
             <Button
@@ -62,6 +83,7 @@ const Header = () => {
         ))}
         <NavbarItem>
           <Input
+            className="w-[20vw]"
             startContent={
               <MagnifyingGlassIcon width={20} height={20} color="black" />
             }
@@ -81,6 +103,22 @@ const Header = () => {
           </Button>
         </NavbarItem>
       </NavbarContent>
+      <NavbarMenu className="mt-4">
+        {navItems.map((item) => (
+          <NavbarMenuItem>
+            <Button
+              className="w-full"
+              startContent={item.icon && <item.icon />}
+              key={item.href}
+              variant={router.pathname === item.href ? 'shadow' : 'solid'} // Active page styling
+              color={router.pathname === item.href ? 'default' : 'primary'}
+              href={item.href}
+            >
+              {item.label}
+            </Button>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   )
 }
