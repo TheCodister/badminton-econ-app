@@ -4,7 +4,10 @@ import {
   Input,
   Navbar,
   NavbarContent,
+  NavbarMenuToggle,
   NavbarItem,
+  Badge,
+  NavbarBrand,
 } from '@nextui-org/react'
 import {
   AllSidesIcon,
@@ -31,61 +34,53 @@ const Header = () => {
   ]
 
   return (
-    <Navbar className="w-full flex justify-center p-2 bg-primary text-white">
-      <Flex>
-        <NavbarContent>
-          <NavbarItem>
-            {/* <Image
+    <Navbar className="justify-center p-2 bg-primary text-white">
+      <NavbarMenuToggle className="xl:hidden sm:block" />
+      <NavbarBrand>
+        {/* <Image
               isBlurred
               width={20}
               src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
               alt="NextUI Album Cover"
               className="rounded-lg"
             /> */}
-            <h3 className="text-stone-50 font-extrabold">BMB</h3>
-          </NavbarItem>
-          {navItems.map((item) => (
-            <NavbarItem>
-              <Button
-                startContent={item.icon && <item.icon />}
-                key={item.href}
-                variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
-                color={router.pathname === item.href ? 'default' : 'primary'}
-                href={item.href}
-              >
-                {item.label}
-              </Button>
-            </NavbarItem>
-          ))}
-          <NavbarItem className="w-full">
-            <Input
-              startContent={
-                <MagnifyingGlassIcon width={20} height={20} color="black" />
-              }
-              className="w-[300px]"
-              placeholder="Search"
-            />
-          </NavbarItem>
+        <h3 className="text-stone-50 font-extrabold">BMB</h3>
+      </NavbarBrand>
+      <NavbarContent className="xl:flex gap-2 md:hidden sm:hidden">
+        {navItems.map((item) => (
           <NavbarItem>
             <Button
-              startContent={<LockClosedIcon />}
-              variant="flat"
-              color="default"
+              startContent={item.icon && <item.icon />}
+              key={item.href}
+              variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
+              color={router.pathname === item.href ? 'default' : 'primary'}
+              href={item.href}
             >
-              Cart
+              {item.label}
             </Button>
           </NavbarItem>
-          <NavbarItem>
-            <Button
-              startContent={<PersonIcon />}
-              variant="flat"
-              color="default"
-            >
-              Login
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
-      </Flex>
+        ))}
+        <NavbarItem>
+          <Input
+            startContent={
+              <MagnifyingGlassIcon width={20} height={20} color="black" />
+            }
+            placeholder="Search"
+          />
+        </NavbarItem>
+        <NavbarItem>
+          <Button startContent={<PersonIcon />} variant="solid" color="primary">
+            Login
+          </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <Button variant="solid" color="primary">
+            <Badge content="1" size="sm" color="danger">
+              <LockClosedIcon width={18} height={18} />
+            </Badge>
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
     </Navbar>
   )
 }
