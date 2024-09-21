@@ -1,4 +1,5 @@
 import { fontMono, fontSans } from '@/config/fonts'
+import DefaultLayout from '@/layouts/default'
 import '@/styles/globals.css'
 import { NextUIProvider } from '@nextui-org/system'
 import { Theme } from '@radix-ui/themes'
@@ -16,7 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextUIProvider navigate={router.push}>
         <NextThemesProvider>
           <Theme>
-            <Component {...pageProps} />
+            <DefaultLayout>
+              <Component {...pageProps} />
+            </DefaultLayout>
           </Theme>
         </NextThemesProvider>
       </NextUIProvider>

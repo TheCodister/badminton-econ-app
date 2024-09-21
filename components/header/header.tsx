@@ -1,15 +1,15 @@
 import { ROUTES } from '@/constants/routes'
 import {
+  Badge,
   Button,
   Input,
+  Link,
   Navbar,
   NavbarContent,
-  NavbarMenuToggle,
   NavbarItem,
-  Badge,
-  NavbarBrand,
   NavbarMenu,
   NavbarMenuItem,
+  NavbarMenuToggle,
 } from '@nextui-org/react'
 import {
   AllSidesIcon,
@@ -21,7 +21,6 @@ import {
   RocketIcon,
   StarFilledIcon,
 } from '@radix-ui/react-icons'
-import { Flex } from '@radix-ui/themes'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -70,15 +69,16 @@ const Header = () => {
       <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
         {navItems.map((item) => (
           <NavbarItem>
-            <Button
-              startContent={item.icon && <item.icon />}
-              key={item.href}
-              variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
-              color={router.pathname === item.href ? 'default' : 'primary'}
-              href={item.href}
-            >
-              {item.label}
-            </Button>
+            <Link color="foreground" href={item.href}>
+              <Button
+                startContent={item.icon && <item.icon />}
+                key={item.href}
+                variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
+                color={router.pathname === item.href ? 'default' : 'primary'}
+              >
+                {item.label}
+              </Button>
+            </Link>
           </NavbarItem>
         ))}
         <NavbarItem>

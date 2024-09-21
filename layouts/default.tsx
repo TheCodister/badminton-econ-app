@@ -8,7 +8,7 @@ export default function DefaultLayout({
   return (
     <div className="relative flex flex-col">
       <Header />
-      <main className="flex justify-center py-2 overflow-y-auto h-full">
+      <main className="flex justify-center py-2 h-full">
         <section className="flex flex-col items-start">
           <div className="p-4">
             <Breadcrumbs>
