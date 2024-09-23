@@ -1,10 +1,12 @@
 import { ROUTES } from '@/constants/routes'
+import LogoURL from '@/icons/FullLogo.png'
 import {
   Badge,
   Button,
   Input,
   Link,
   Navbar,
+  NavbarBrand,
   NavbarContent,
   NavbarItem,
   NavbarMenu,
@@ -21,9 +23,9 @@ import {
   RocketIcon,
   StarFilledIcon,
 } from '@radix-ui/react-icons'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-
 const Header = () => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -38,7 +40,7 @@ const Header = () => {
 
   return (
     <Navbar
-      className="justify-center p-2 bg-primary text-white"
+      className="w-screen justify-center p-2 bg-primary text-white"
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
@@ -46,16 +48,16 @@ const Header = () => {
           className="xl:hidden lg:hidden sm:block"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         />
-        {/* <NavbarBrand>
+        <NavbarBrand className="bg-white p-2 cursor-pointer rounded-full">
           <Image
-              isBlurred
-              width={20}
-              src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
-              alt="NextUI Album Cover"
-              className="rounded-lg"
-            />
-        </NavbarBrand> */}
-        <h3 className="text-stone-50 font-extrabold self-center">BMB</h3>
+            src={LogoURL}
+            alt="Logo"
+            layout="intrinsic"
+            width={200}
+            height={200}
+            className="rounded-full"
+          />
+        </NavbarBrand>
         <NavbarItem className="xl:hidden lg:hidden md:block sm:block">
           <Input
             className="w-full"
@@ -75,6 +77,7 @@ const Header = () => {
                 key={item.href}
                 variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
                 color={router.pathname === item.href ? 'default' : 'primary'}
+                className="text-white"
               >
                 {item.label}
               </Button>
@@ -83,19 +86,19 @@ const Header = () => {
         ))}
         <NavbarItem>
           <Input
-            className="w-[20vw]"
+            className="w-[10vw]"
             startContent={
               <MagnifyingGlassIcon width={20} height={20} color="black" />
             }
             placeholder="Search"
           />
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="w-20">
           <Button startContent={<PersonIcon />} variant="solid" color="primary">
             Login
           </Button>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="w-5">
           <Button variant="solid" color="primary">
             <Badge content="1" size="sm" color="danger">
               <LockClosedIcon width={18} height={18} />
