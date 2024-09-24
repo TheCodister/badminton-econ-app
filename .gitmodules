@@ -1,0 +1,3 @@
+[submodule "badminton-econ-backend"]
+	path = badminton-econ-backend
+	url = https://github.com/TheCodister/badminton-econ-backend.git
