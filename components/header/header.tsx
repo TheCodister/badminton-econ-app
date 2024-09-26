@@ -48,15 +48,16 @@ const Header = () => {
           className="xl:hidden lg:hidden sm:block"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         />
-        <NavbarBrand className="bg-white p-2 cursor-pointer rounded-full">
-          <Image
+        <NavbarBrand>
+          {/* <Image
             src={LogoURL}
             alt="Logo"
             layout="intrinsic"
             width={200}
             height={200}
             className="rounded-full"
-          />
+          /> */}
+          <h1>BMB</h1>
         </NavbarBrand>
         <NavbarItem className="xl:hidden lg:hidden md:block sm:block">
           <Input
