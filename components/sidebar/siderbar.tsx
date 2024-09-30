@@ -1,4 +1,5 @@
-import { Checkbox, Divider } from '@nextui-org/react'
+import { Checkbox } from '@nextui-org/checkbox'
+import { Divider } from '@nextui-org/divider'
 
 // Reusable component for each filter section
 const FilterSection = ({

@@ -1,5 +1,8 @@
 import { useChat } from 'ai/react'
-import { Button, Spinner, Input, Avatar } from '@nextui-org/react'
+import { Button } from '@nextui-org/button'
+import { Input } from '@nextui-org/input'
+import { Spinner } from '@nextui-org/spinner'
+import { Avatar } from '@nextui-org/avatar'
 import Markdown from 'react-markdown'
 
 export default function Chat() {

@@ -14,15 +14,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NextUIProvider navigate={router.push}>
-        <NextThemesProvider>
-          <Theme>
+      <Theme>
+        <NextUIProvider navigate={router.push}>
+          <NextThemesProvider>
             <DefaultLayout>
               <Component {...pageProps} />
             </DefaultLayout>
-          </Theme>
-        </NextThemesProvider>
-      </NextUIProvider>
+          </NextThemesProvider>
+        </NextUIProvider>
+      </Theme>
     </QueryClientProvider>
   )
 }

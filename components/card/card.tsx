@@ -1,11 +1,6 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Image,
-  Progress,
-} from '@nextui-org/react'
+import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card'
+import { Image } from '@nextui-org/image'
+import { Progress } from '@nextui-org/progress'
 
 interface RacketData {
   name: string

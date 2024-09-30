@@ -1,10 +1,11 @@
 import { ROUTES } from '@/constants/routes'
 import LogoURL from '@/icons/FullLogo.png'
+import { Badge } from '@nextui-org/badge'
+import { Button } from '@nextui-org/button'
+import { Input } from '@nextui-org/input'
+import { Link } from '@nextui-org/link'
+
 import {
-  Badge,
-  Button,
-  Input,
-  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -12,7 +13,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/react'
+} from '@nextui-org/navbar'
 import {
   AllSidesIcon,
   HomeIcon,
@@ -23,7 +24,6 @@ import {
   RocketIcon,
   StarFilledIcon,
 } from '@radix-ui/react-icons'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
     { label: 'Racket', href: ROUTES.RACKET, icon: StarFilledIcon },
     { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: RocketIcon },
     { label: 'Shoes', href: ROUTES.SHOES, icon: AllSidesIcon },
-    { label: 'Clothes', href: ROUTES.CLOTHES, icon: MagicWandIcon },
+    { label: 'Chat', href: ROUTES.CHAT, icon: MagicWandIcon },
   ]
 
   return (
@@ -70,8 +70,8 @@ const Header = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
-        {navItems.map((item) => (
-          <NavbarItem>
+        {navItems.map((item, index) => (
+          <NavbarItem key={index}>
             <Link color="foreground" href={item.href}>
               <Button
                 startContent={item.icon && <item.icon />}
@@ -108,8 +108,8 @@ const Header = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="mt-4">
-        {navItems.map((item) => (
-          <NavbarMenuItem>
+        {navItems.map((item, index) => (
+          <NavbarMenuItem key={index}>
             <Button
               className="w-full"
               startContent={item.icon && <item.icon />}

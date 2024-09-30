@@ -1,5 +1,5 @@
 import Header from '@/components/header/header'
-import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
+import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/breadcrumbs'
 export default function DefaultLayout({
   children,
 }: {

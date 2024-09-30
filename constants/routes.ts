@@ -4,5 +4,6 @@ export const ROUTES = {
   SHUTTLECOCK: '/shuttlecock',
   SHOES: '/shoes',
   CLOTHES: '/clothes',
+  CHAT: '/chat',
   //there will be more routes
 }
