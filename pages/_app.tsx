@@ -1,4 +1,3 @@
-import { fontMono, fontSans } from '@/config/fonts'
 import DefaultLayout from '@/layouts/default'
 import '@/styles/globals.css'
 import { NextUIProvider } from '@nextui-org/system'
@@ -25,9 +24,4 @@ export default function App({ Component, pageProps }: AppProps) {
       </Theme>
     </QueryClientProvider>
   )
-}
-
-export const fonts = {
-  sans: fontSans.style.fontFamily,
-  mono: fontMono.style.fontFamily,
 }

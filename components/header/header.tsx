@@ -1,5 +1,4 @@
 import { ROUTES } from '@/constants/routes'
-import LogoURL from '@/icons/FullLogo.png'
 import { Badge } from '@nextui-org/badge'
 import { Button } from '@nextui-org/button'
 import { Input } from '@nextui-org/input'

@@ -1,5 +1,6 @@
+import ErrorBoundary from '@/components/common/ErrorBoundary'
 import Header from '@/components/header/header'
-import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/breadcrumbs'
+import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs'
 export default function DefaultLayout({
   children,
 }: {
@@ -17,7 +18,7 @@ export default function DefaultLayout({
               <BreadcrumbItem>Lining</BreadcrumbItem>
             </Breadcrumbs>
           </div>
-          {children}
+          <ErrorBoundary>{children}</ErrorBoundary>
         </section>
       </main>
       <footer className="p-2 bg-primary text-white">
