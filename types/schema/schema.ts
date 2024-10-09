@@ -1,4 +1,4 @@
-interface RacketData {
+export interface RacketData {
   name: string
   brand: string
   image: string
@@ -8,8 +8,15 @@ interface RacketData {
   price: number
 }
 
-interface ShoeShuttlecockData {
+export interface ShoeShuttlecockData {
   name: string
   brand: string
   price: number
+}
+
+export interface User {
+  UserID: string
+  Username: string
+  mail: string
+  Phonenumber: string
 }
