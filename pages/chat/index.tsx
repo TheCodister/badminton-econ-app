@@ -1,8 +1,8 @@
-import { useChat } from 'ai/react'
+import { Avatar } from '@nextui-org/avatar'
 import { Button } from '@nextui-org/button'
 import { Input } from '@nextui-org/input'
 import { Spinner } from '@nextui-org/spinner'
-import { Avatar } from '@nextui-org/avatar'
+import { useChat } from 'ai/react'
 import Markdown from 'react-markdown'
 
 export default function Chat() {
@@ -10,15 +10,15 @@ export default function Chat() {
     useChat()
 
   return (
-    <div className="mx-auto w-full max-w-md py-24 flex flex-col stretch relative">
+    <div className="mx-auto w-full max-w-md flex flex-col items-center stretch relative">
       <div className="flex-grow overflow-y-auto mb-24 px-4">
         {messages.map((m) => (
           <div
             key={m.id}
-            className={`flex my-2 ${m.role === 'user' ? 'justify-start' : 'justify-end'}`}
+            className={`flex my-2 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {m.role === 'user' ? (
-              <Avatar isBordered className="mr-4" name="User" size="sm" />
+              <Avatar isBordered className="mr-4" name="U" size="sm" />
             ) : null}
             <div
               className={`p-4 text-black rounded-xl w-72 text-start ${
@@ -39,19 +39,21 @@ export default function Chat() {
           </div>
         )}
       </div>
-
       <form
-        className="fixed bottom-0 w-full max-w-md p-4 flex items-center bg-slate-950"
+        className="fixed bottom-10 w-full max-w-md p-4 flex"
         onSubmit={handleSubmit}
       >
         <Input
           fullWidth
-          className="flex-grow mr-2"
+          color="primary"
+          className="mr-2"
           placeholder="Say something..."
           value={input}
           onChange={handleInputChange}
         />
-        <Button type="submit">Send</Button>
+        <Button color="primary" type="submit">
+          Send
+        </Button>
       </form>
     </div>
   )

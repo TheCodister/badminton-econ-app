@@ -7,9 +7,9 @@ export default function DefaultLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="relative flex flex-col">
+    <div className="relative flex flex-col h-[100vh]">
       <Header />
-      <main className="flex justify-center py-2 h-full">
+      <main className="flex justify-center py-2 h-full overflow-auto">
         <section className="flex flex-col items-start">
           <div className="p-4">
             <Breadcrumbs>

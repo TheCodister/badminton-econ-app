@@ -94,9 +94,15 @@ const Header = () => {
           />
         </NavbarItem>
         <NavbarItem className="w-20">
-          <Button startContent={<PersonIcon />} variant="solid" color="primary">
-            Login
-          </Button>
+          <Link href={ROUTES.LOGIN}>
+            <Button
+              startContent={<PersonIcon />}
+              variant="solid"
+              color="primary"
+            >
+              Login
+            </Button>
+          </Link>
         </NavbarItem>
         <NavbarItem className="w-5">
           <Button variant="solid" color="primary">
