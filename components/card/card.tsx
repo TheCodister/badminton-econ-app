@@ -1,35 +1,19 @@
+import { Racket } from '@/types/schema/schema'
 import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import { Progress } from '@nextui-org/progress'
 
-interface RacketData {
-  name: string
-  brand: string
-  image: string
-  weight?: string
-  balance?: string
-  stiffness?: string
-  price: number
-}
-
-interface ShoeShuttlecockData {
-  name: string
-  brand: string
-  image: string
-  price: number
-}
-
-type ProductData = RacketData | ShoeShuttlecockData
+type ProductData = Racket
 
 interface ProductCardProps {
-  data: ProductData
+  data: Racket
 }
 
 const ProductCard = ({ data }: ProductCardProps) => {
-  const isRacket = (product: ProductData): product is RacketData => {
-    return (product as RacketData).balance !== undefined
+  const isRacket = (data: ProductData): data is Racket => {
+    return 'Balance' in data
   }
-
+  console.log(data)
   return (
     <Card
       isHoverable
@@ -37,32 +21,37 @@ const ProductCard = ({ data }: ProductCardProps) => {
       className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer"
     >
       <CardHeader>
-        <h6>{data.name}</h6>
+        <h6>{data.ProductName}</h6>
       </CardHeader>
       <CardBody className="gap-2">
-        <Image src={data.image} alt={data.name} width="300" height="300" />
+        <Image
+          src={data.ImageUrl}
+          alt={data.ProductName}
+          width="300"
+          height="300"
+        />
 
         {isRacket(data) && (
           <>
-            {data.balance && (
+            {data.Balance && (
               <Progress
-                label={`Balance: ${data.balance}`}
+                label={`Balance: ${data.Balance}`}
                 color="default"
                 size="sm"
                 value={70} // Placeholder value, customize as needed
               />
             )}
-            {data.stiffness && (
+            {data.Stiffness && (
               <Progress
-                label={`Stiffness: ${data.stiffness}`}
+                label={`Stiffness: ${data.Stiffness}`}
                 color="primary"
                 size="sm"
                 value={50} // Placeholder value, customize as needed
               />
             )}
-            {data.weight && (
+            {data.Weight && (
               <Progress
-                label={`Weight: ${data.weight}`}
+                label={`Weight: ${data.Weight}`}
                 color="secondary"
                 size="sm"
                 value={60} // Placeholder value, customize as needed
@@ -72,7 +61,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
         )}
       </CardBody>
       <CardFooter>
-        <h6 className="text-blue-700">Price: ${data.price}</h6>
+        <h6 className="text-blue-700">Price: ${data.Price}</h6>
       </CardFooter>
     </Card>
   )

@@ -6,7 +6,7 @@ const UserComponent = () => {
 
   if (error) return <div>Error fetching user data</div>
   if (isLoading) return <div>Loading...</div>
-
+  console.log(data)
   return (
     <div>
       <h2>Users List</h2>
