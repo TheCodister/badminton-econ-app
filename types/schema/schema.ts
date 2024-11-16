@@ -26,21 +26,21 @@ export enum Brand {
 }
 
 export interface Racket {
-  ProductID: string
-  ProductName: string
-  Brand: Brand
-  ImageUrl: string
-  Price: number
-  Description: string
-  Status: 'available' | 'unavailable'
-  Sales: boolean
-  Stock: number
-  AvailableLocation: string[]
-  Line: string
-  Stiffness: string
-  Weight: string
-  Balance: string
-  MaxTension: string
-  Length: number
-  Technology: string[]
+  product_id: string
+  product_name: string
+  brand: Brand
+  image_url: string
+  price: number
+  description: string
+  status: 'available' | 'unavailable'
+  sales: boolean
+  stock: number
+  available_location: string[]
+  line: string
+  stiffness: string
+  weight: string
+  balance: string
+  max_tension: string
+  length: number
+  technology: string[]
 }

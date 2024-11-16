@@ -11,7 +11,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ data }: ProductCardProps) => {
   const isRacket = (data: ProductData): data is Racket => {
-    return 'Balance' in data
+    return 'balance' in data
   }
   console.log(data)
   return (
@@ -21,37 +21,37 @@ const ProductCard = ({ data }: ProductCardProps) => {
       className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer"
     >
       <CardHeader>
-        <h6>{data.ProductName}</h6>
+        <h6>{data.product_name}</h6>
       </CardHeader>
       <CardBody className="gap-2">
         <Image
-          src={data.ImageUrl}
-          alt={data.ProductName}
+          src={data.image_url}
+          alt={data.product_name}
           width="300"
           height="300"
         />
 
         {isRacket(data) && (
           <>
-            {data.Balance && (
+            {data.balance && (
               <Progress
-                label={`Balance: ${data.Balance}`}
+                label={`Balance: ${data.balance}`}
                 color="default"
                 size="sm"
                 value={70} // Placeholder value, customize as needed
               />
             )}
-            {data.Stiffness && (
+            {data.stiffness && (
               <Progress
-                label={`Stiffness: ${data.Stiffness}`}
+                label={`Stiffness: ${data.stiffness}`}
                 color="primary"
                 size="sm"
                 value={50} // Placeholder value, customize as needed
               />
             )}
-            {data.Weight && (
+            {data.weight && (
               <Progress
-                label={`Weight: ${data.Weight}`}
+                label={`Weight: ${data.weight}`}
                 color="secondary"
                 size="sm"
                 value={60} // Placeholder value, customize as needed
@@ -61,7 +61,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
         )}
       </CardBody>
       <CardFooter>
-        <h6 className="text-blue-700">Price: ${data.Price}</h6>
+        <h6 className="text-blue-700">Price: ${data.price}</h6>
       </CardFooter>
     </Card>
   )
