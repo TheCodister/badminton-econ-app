@@ -22,7 +22,7 @@ const IndexPage = () => {
         <Card
           isFooterBlurred
           radius="lg"
-          className="border-none flex items-center"
+          className="border-none flex items-start"
         >
           <Image
             alt="Woman listing to music"
