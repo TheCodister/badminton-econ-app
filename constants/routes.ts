@@ -6,5 +6,6 @@ export const ROUTES = {
   CLOTHES: '/clothes',
   CHAT: '/chat',
   LOGIN: '/login',
+  ACCESORIES: '/accesories',
   //there will be more routes
 }

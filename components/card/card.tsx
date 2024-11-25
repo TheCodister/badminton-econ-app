@@ -1,4 +1,5 @@
 import { Racket } from '@/types/schema/schema'
+import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import { Progress } from '@nextui-org/progress'
@@ -24,19 +25,20 @@ const ProductCard = ({ data }: ProductCardProps) => {
         <h6>{data.product_name}</h6>
       </CardHeader>
       <CardBody className="gap-2">
-        <Image
-          src={data.image_url}
-          alt={data.product_name}
-          width="300"
-          height="300"
-        />
+        <div className="w-full h-[300px] flex justify-center items-center overflow-hidden">
+          <Image
+            src={data.image_url}
+            alt={data.product_name}
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         {isRacket(data) && (
           <>
             {data.balance && (
               <Progress
                 label={`Balance: ${data.balance}`}
-                color="default"
+                color="primary"
                 size="sm"
                 value={70} // Placeholder value, customize as needed
               />
@@ -44,7 +46,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
             {data.stiffness && (
               <Progress
                 label={`Stiffness: ${data.stiffness}`}
-                color="primary"
+                color="success"
                 size="sm"
                 value={50} // Placeholder value, customize as needed
               />
@@ -52,16 +54,22 @@ const ProductCard = ({ data }: ProductCardProps) => {
             {data.weight && (
               <Progress
                 label={`Weight: ${data.weight}`}
-                color="secondary"
+                color="danger"
                 size="sm"
                 value={60} // Placeholder value, customize as needed
               />
             )}
           </>
         )}
+        <h4 className="text-primary font-medium mt-2">${data.price}</h4>
       </CardBody>
-      <CardFooter>
-        <h6 className="text-blue-700">Price: ${data.price}</h6>
+      <CardFooter className="flex justify-center gap-5">
+        <Button color="default" variant="bordered" radius="full">
+          Add to cart
+        </Button>
+        <Button color="primary" radius="full">
+          Buy now
+        </Button>
       </CardFooter>
     </Card>
   )

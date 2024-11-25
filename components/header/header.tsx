@@ -34,6 +34,7 @@ const Header = () => {
     { label: 'Racket', href: ROUTES.RACKET, icon: StarFilledIcon },
     { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: RocketIcon },
     { label: 'Shoes', href: ROUTES.SHOES, icon: AllSidesIcon },
+    { label: 'Accesories', href: ROUTES.ACCESORIES, icon: StarFilledIcon },
     { label: 'Chat', href: ROUTES.CHAT, icon: MagicWandIcon },
   ]
 

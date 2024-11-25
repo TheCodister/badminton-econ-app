@@ -25,4 +25,13 @@ export const CATEGORY = [
       'Shuttlecocks are the most important part of the game. Choose the best shuttlecock for you.',
     route: '/shuttlecock',
   },
+  {
+    id: 4,
+    name: 'Accessories',
+    image:
+      'https://cdn.shopvnb.com/uploads/gallery/day-cuoc-cang-vot-cau-long-pro-kennex-fire_1709758359.webp',
+    description:
+      'Accessories are the most important part of the game. Choose the best accessories for you.',
+    route: '/accessories',
+  },
 ]
