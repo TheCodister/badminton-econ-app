@@ -1,4 +1,4 @@
-import ProductCard from '@/components/card/card'
+import ProductCard from '@/components/card/ProductCard'
 import Sidebar from '@/components/sidebar/siderbar'
 import useGetRacket from '@/hooks/useGetRacket'
 import { Racket } from '@/types/schema/schema'

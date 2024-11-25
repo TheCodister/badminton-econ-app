@@ -1,4 +1,4 @@
-import ProductCard from '@/components/card/card'
+import ProductCard from '@/components/card/ProductCard'
 import NavButton from '@/components/navbutton/navbutton'
 import { Racket } from '@/types/schema/schema'
 import { Flex, Grid } from '@radix-ui/themes'

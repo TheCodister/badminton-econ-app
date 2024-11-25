@@ -1,4 +1,4 @@
-import CategoryCard from '@/components/categorycard/categorycard'
+import CategoryCard from '@/components/card/CategoryCard'
 import { CATEGORY } from '@/constants/category'
 import useGetRacket from '@/hooks/useGetRacket'
 import ChatIcon from '@/icons/ChatIcon'
@@ -47,7 +47,7 @@ const IndexPage = () => {
           ))}
         </Flex>
         <section className="flex flex-col items-center gap-10">
-          <h2>Try our BMB AI!</h2>
+          <h2>TRY OUR BMB AI!</h2>
           <section
             className="bg-secondary w-[150px] h-[150px] rounded-full flex items-center justify-center cursor-pointer"
             onClick={() => handleChatNavigate()}
