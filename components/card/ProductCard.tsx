@@ -1,4 +1,7 @@
 import { Racket } from '@/types/schema/schema'
+import { BalanceConverter } from '@/utils/BalanceConverter'
+import { StiffnessConverter } from '@/utils/StiffnessConverter'
+import { WeightConverter } from '@/utils/WeightConverter'
 import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
@@ -15,14 +18,10 @@ const ProductCard = ({ data }: ProductCardProps) => {
   const isRacket = (data: ProductData): data is Racket => {
     return 'balance' in data
   }
-  console.log(data)
+
   return (
-    <Link href={`/${data.product_id}`}>
-      <Card
-        isHoverable
-        isPressable
-        className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer"
-      >
+    <Link href={`/${data.product_id}`} className="-z-0">
+      <Card className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer">
         <CardHeader>
           <h6>{data.product_name}</h6>
         </CardHeader>
@@ -42,7 +41,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
                   label={`Balance: ${data.balance}`}
                   color="primary"
                   size="sm"
-                  value={70} // Placeholder value, customize as needed
+                  value={BalanceConverter(data.balance)} // Placeholder value, customize as needed
                 />
               )}
               {data.stiffness && (
@@ -50,7 +49,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
                   label={`Stiffness: ${data.stiffness}`}
                   color="success"
                   size="sm"
-                  value={50} // Placeholder value, customize as needed
+                  value={StiffnessConverter(data.stiffness)} // Placeholder value, customize as needed
                 />
               )}
               {data.weight && (
@@ -58,7 +57,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
                   label={`Weight: ${data.weight}`}
                   color="danger"
                   size="sm"
-                  value={60} // Placeholder value, customize as needed
+                  value={WeightConverter(data.weight)} // Placeholder value, customize as needed
                 />
               )}
             </>
