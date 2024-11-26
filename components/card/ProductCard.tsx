@@ -1,7 +1,9 @@
 import { Racket } from '@/types/schema/schema'
-import { BalanceConverter } from '@/utils/BalanceConverter'
-import { StiffnessConverter } from '@/utils/StiffnessConverter'
-import { WeightConverter } from '@/utils/WeightConverter'
+import {
+  BalanceConverter,
+  StiffnessConverter,
+  WeightConverter,
+} from '@/utils/Converter'
 import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
