@@ -24,7 +24,7 @@ const IndexPage = () => {
         <Card
           isFooterBlurred
           radius="lg"
-          className="border-none flex items-start"
+          className="border-none flex items-start container"
         >
           <Image
             alt="Banner"
