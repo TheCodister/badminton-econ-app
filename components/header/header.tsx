@@ -4,6 +4,7 @@ import { Button } from '@nextui-org/button'
 import { Input } from '@nextui-org/input'
 import { Link } from '@nextui-org/link'
 
+import { useAuth } from '@/context/context'
 import {
   Navbar,
   NavbarBrand,
@@ -28,6 +29,7 @@ import { useState } from 'react'
 const Header = () => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { isLoggedIn } = useAuth()
 
   const navItems = [
     { label: 'Home', href: ROUTES.HOME, icon: HomeIcon },
@@ -35,7 +37,15 @@ const Header = () => {
     { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: RocketIcon },
     { label: 'Shoes', href: ROUTES.SHOES, icon: AllSidesIcon },
     { label: 'Accesories', href: ROUTES.ACCESORIES, icon: StarFilledIcon },
-    { label: 'Chat', href: ROUTES.CHAT, icon: MagicWandIcon },
+    ...(isLoggedIn
+      ? [
+          {
+            label: 'Chat',
+            href: ROUTES.CHAT,
+            icon: MagicWandIcon,
+          },
+        ]
+      : []),
   ]
 
   return (
