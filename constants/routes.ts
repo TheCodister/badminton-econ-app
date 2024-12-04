@@ -7,5 +7,6 @@ export const ROUTES = {
   CHAT: '/chat',
   LOGIN: '/login',
   ACCESORIES: '/accesories',
+  PROFILE: '/profile',
   //there will be more routes
 }

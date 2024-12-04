@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider>
+      <SessionProvider session={pageProps.session}>
         <ContextProvider>
           <Theme>
             <NextUIProvider navigate={router.push}>

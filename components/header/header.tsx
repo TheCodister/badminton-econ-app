@@ -105,15 +105,27 @@ const Header = () => {
           />
         </NavbarItem>
         <NavbarItem className="w-20">
-          <Link href={ROUTES.LOGIN}>
-            <Button
-              startContent={<PersonIcon />}
-              variant="solid"
-              color="primary"
-            >
-              Login
-            </Button>
-          </Link>
+          {!isLoggedIn ? (
+            <Link href={ROUTES.LOGIN}>
+              <Button
+                startContent={<PersonIcon />}
+                variant="solid"
+                color="primary"
+              >
+                Login
+              </Button>
+            </Link>
+          ) : (
+            <Link href={ROUTES.PROFILE}>
+              <Button
+                startContent={<PersonIcon />}
+                variant="solid"
+                color="primary"
+              >
+                Profile
+              </Button>
+            </Link>
+          )}
         </NavbarItem>
         <NavbarItem className="w-5">
           <Button variant="solid" color="primary">
