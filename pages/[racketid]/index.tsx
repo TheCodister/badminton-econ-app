@@ -4,6 +4,7 @@ import {
   StiffnessConverter,
   WeightConverter,
 } from '@/utils/Converter'
+import { Button } from '@nextui-org/button'
 import { Chip } from '@nextui-org/chip'
 import { Divider } from '@nextui-org/divider'
 import { Image } from '@nextui-org/image'
@@ -153,6 +154,25 @@ const ProductDetail = () => {
             </ul>
             <h5>Description</h5>
             <h6>{data.description}</h6>
+            <Flex gap="5" className="w-full mt-5">
+              <Button
+                size="lg"
+                className="w-full"
+                color="default"
+                variant="bordered"
+                radius="full"
+              >
+                Add to cart
+              </Button>
+              <Button
+                size="lg"
+                className="w-full"
+                color="primary"
+                radius="full"
+              >
+                Buy now
+              </Button>
+            </Flex>
           </Flex>
         </Flex>
       )}
