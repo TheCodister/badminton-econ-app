@@ -30,7 +30,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
   return (
     <Card className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer">
       <CardHeader>
-        <h6 className="text-danger-600">{data.product_name}</h6>
+        <h6 className="text-primary">{data.product_name}</h6>
       </CardHeader>
       <CardBody className="gap-2 pb-0 h-min">
         <div className="w-full h-[300px] flex justify-center items-center overflow-hidden">
@@ -85,7 +85,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
             </DropdownMenu>
           )}
         </Dropdown>
-        <h4 className="text-primary font-medium mt-2">${data.price}</h4>
+        <h4 className="text-danger font-medium mt-2">${data.price}</h4>
       </CardBody>
       <CardFooter className="flex justify-center w-full">
         <Link href={`/${data.product_id}`} className="w-full pt-0">

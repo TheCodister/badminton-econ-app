@@ -5,6 +5,7 @@ import { Input } from '@nextui-org/input'
 import { Spinner } from '@nextui-org/spinner'
 import { useChat } from 'ai/react'
 import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
@@ -25,13 +26,13 @@ export default function Chat() {
                 <Avatar isBordered className="mr-4" name="U" size="sm" />
               ) : null}
               <div
-                className={`p-4 text-black rounded-xl w-72 text-start ${
+                className={`p-4 text-black rounded-xl w-72 text-start text-xl${
                   m.role === 'user'
                     ? 'bg-green-100 text-left'
                     : 'bg-blue-100 text-right'
                 }`}
               >
-                <Markdown>{m.content}</Markdown>
+                <Markdown remarkPlugins={[remarkGfm]}>{m.content}</Markdown>
               </div>
             </div>
           ))}
@@ -44,7 +45,7 @@ export default function Chat() {
           )}
         </div>
         <form
-          className="fixed bottom-10 w-full max-w-md p-4 flex"
+          className="fixed bottom-9 w-full max-w-md p-3 flex bg-white"
           onSubmit={handleSubmit}
         >
           <Input

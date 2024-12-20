@@ -25,16 +25,10 @@ module.exports = {
           800: '#002e62',
           900: '#001731',
         },
-        primary: '#1E90FF',
         // .. rest of the colors
       },
     },
-    extend: {
-      fontFamily: {
-        sans: ['var(--font-sans)'],
-        mono: ['var(--font-mono)'],
-      },
-    },
+    extend: {},
   },
   darkMode: 'class',
   plugins: [nextui()],
