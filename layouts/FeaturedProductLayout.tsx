@@ -2,7 +2,7 @@ import ProductCard from '@/components/card/ProductCard'
 import NavButton from '@/components/navbutton/navbutton'
 import { Racket } from '@/types/schema/schema'
 import { Flex, Grid } from '@radix-ui/themes'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface FeaturedProductProps {
   title: string
@@ -11,7 +11,32 @@ interface FeaturedProductProps {
 
 const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsPerPage = 4 // Set maximum items to show per page
+  const [itemsPerPage, setItemsPerPage] = useState(4) // Default value for 2xl or xl screens
+
+  // Adjust items per page based on screen width
+  const handleResize = () => {
+    const width = window.innerWidth
+    if (width >= 1536)
+      setItemsPerPage(4) // 2xl
+    else if (width >= 1280)
+      setItemsPerPage(4) // xl
+    else if (width >= 1024)
+      setItemsPerPage(3) // lg
+    else if (width >= 768)
+      setItemsPerPage(1) // md
+    else setItemsPerPage(1) // sm
+  }
+
+  useEffect(() => {
+    // Initial setup
+    handleResize()
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize)
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const paginatedProducts = products.slice(
     currentIndex,

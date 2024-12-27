@@ -88,7 +88,7 @@ const Header = () => {
                 key={item.href}
                 variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
                 color={router.pathname === item.href ? 'default' : 'primary'}
-                className="text-white"
+                className="text-white font-semibold"
               >
                 {item.label}
               </Button>
@@ -111,6 +111,7 @@ const Header = () => {
                 startContent={<PersonIcon />}
                 variant="solid"
                 color="primary"
+                className="font-semibold"
               >
                 Login
               </Button>
@@ -121,6 +122,7 @@ const Header = () => {
                 startContent={<PersonIcon />}
                 variant="solid"
                 color="primary"
+                className="font-semibold"
               >
                 Profile
               </Button>
@@ -139,7 +141,7 @@ const Header = () => {
         {navItems.map((item, index) => (
           <NavbarMenuItem key={index}>
             <Button
-              className="w-full"
+              className="text-white font-semibold w-full"
               startContent={item.icon && <item.icon />}
               key={item.href}
               variant={router.pathname === item.href ? 'shadow' : 'solid'} // Active page styling

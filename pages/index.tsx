@@ -20,11 +20,11 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Flex direction="column" gap="5">
+      <Flex direction="column" justify="center" gap="5" className="px-3">
         <Card
           isFooterBlurred
           radius="lg"
-          className="border-none flex items-start container"
+          className="border-none flex items-stretch justify-center container"
         >
           <Image
             alt="Banner"
@@ -33,7 +33,9 @@ const IndexPage = () => {
             src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/business-banner-template-design-f4b281ca556e3d500e78fc6260273284_screen.jpg?ts=1561497794"
           />
         </Card>
-        <h2>Shop by categories</h2>
+        <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
+          Shop by categories
+        </h2>
         <Flex
           gap="5"
           px="4"
@@ -41,6 +43,7 @@ const IndexPage = () => {
           justify="center"
           align="center"
           direction={{ initial: 'column', sm: 'row', lg: 'row', xl: 'row' }}
+          display={{ initial: 'none', sm: 'flex', lg: 'flex', xl: 'flex' }}
         >
           {CATEGORY.map((category) => (
             <CategoryCard key={category.id} category={category} />

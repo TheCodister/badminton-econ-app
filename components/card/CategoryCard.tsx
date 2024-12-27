@@ -1,10 +1,9 @@
-import { Accordion, AccordionItem } from '@nextui-org/accordion'
 import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import { useRouter } from 'next/router'
+import { memo, useEffect } from 'react'
 
-// Adjusted CategoryCard to accept props
 interface Category {
   id: number
   name: string
@@ -13,29 +12,32 @@ interface Category {
   route: string
 }
 
-const CategoryCard = ({ category }: { category: Category }) => {
+const CategoryCard = memo(({ category }: { category: Category }) => {
   const { name, image, description, route } = category
   const router = useRouter()
+
   const handleClick = () => {
     router.push(route)
   }
+
+  useEffect(() => {
+    router.prefetch(route)
+  }, [route])
+
   return (
-    <Card isHoverable radius="md" className="w-[250px]">
-      <CardBody className="flex items-center justify-center">
+    <Card isHoverable radius="md" className="container max-w-[250px]">
+      <CardBody className="flex items-center justify-center gap-2">
         <Image width={200} height={250} src={image} alt={`${name} Image`} />
-        <Accordion fullWidth defaultSelectedKeys="all">
-          <AccordionItem title={name}>
-            <p>{description}</p>
-          </AccordionItem>
-        </Accordion>
+        <h4 className="self-start">{name}</h4>
+        <p>{description}</p>
       </CardBody>
       <CardFooter>
-        <Button onClick={() => handleClick()} color="primary">
+        <Button onClick={handleClick} color="primary">
           View {name}
         </Button>
       </CardFooter>
     </Card>
   )
-}
+})
 
 export default CategoryCard
