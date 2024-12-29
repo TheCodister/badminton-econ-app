@@ -7,9 +7,11 @@ import { Card } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import { Flex } from '@radix-ui/themes'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const IndexPage = () => {
-  const { data, error, isLoading } = useGetRacket()
+  const [filters, setFilters] = useState({})
+  const { data, error, isLoading } = useGetRacket(filters)
   const route = useRouter()
   const handleChatNavigate = () => {
     route.push('/chat')
