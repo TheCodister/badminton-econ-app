@@ -1,59 +1,38 @@
-import { Checkbox } from '@nextui-org/checkbox'
 import { Divider } from '@nextui-org/divider'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import FilterSection from '../filter/FilterSection'
 
-// Reusable component for each filter section
-const FilterSection = ({
-  title,
-  options,
-  selectedOptions,
-  onChange,
-}: {
-  title: string
-  options: string[]
-  selectedOptions: string[]
-  onChange: (option: string, isChecked: boolean) => void
-}) => {
-  return (
-    <section className="w-[80%] flex flex-col items-start pb-3">
-      <h3>{title}</h3>
-      {options.map((option) => (
-        <Checkbox
-          key={option}
-          isSelected={selectedOptions.includes(option)}
-          onChange={(e) => onChange(option, e.target.checked)}
-        >
-          {option}
-        </Checkbox>
-      ))}
-    </section>
-  )
-}
-
-const Sidebar = ({
-  onFilterChange,
-}: {
-  onFilterChange: (filters: any) => void
-}) => {
-  const [filters, setFilters] = useState({
-    brand: [],
-    balance: [],
-    weight: [],
-    stiffness: [],
-  })
+const Sidebar = () => {
+  const router = useRouter()
 
   const handleFilterChange = (
-    category: keyof typeof filters,
+    category: string,
     option: string,
     isChecked: boolean,
   ) => {
-    const updatedCategory = isChecked
-      ? [...filters[category], option]
-      : filters[category].filter((item) => item !== option)
+    const currentFilters = router.query
+    const categoryFilters =
+      (currentFilters[category] as string)?.split(',') || []
 
-    const updatedFilters = { ...filters, [category]: updatedCategory }
-    setFilters(updatedFilters)
-    onFilterChange(updatedFilters)
+    // Update the filters based on the checkbox action
+    const updatedFilters = isChecked
+      ? [...categoryFilters, option]
+      : categoryFilters.filter((item) => item !== option)
+
+    const newQuery = { ...currentFilters }
+
+    if (updatedFilters.length > 0) {
+      // Add the updated filters to the query
+      newQuery[category] = updatedFilters.join(',')
+    } else {
+      // Remove the category if no options are selected
+      delete newQuery[category]
+    }
+
+    router.push({
+      pathname: router.pathname,
+      query: newQuery,
+    })
   }
 
   return (
@@ -61,7 +40,7 @@ const Sidebar = ({
       <FilterSection
         title="Brand"
         options={['Lining', 'Yonex', 'Victor', 'Mizuno', 'Apacs']}
-        selectedOptions={filters.brand}
+        selectedOptions={(router.query.brand as string)?.split(',') || []}
         onChange={(option, isChecked) =>
           handleFilterChange('brand', option, isChecked)
         }
@@ -70,7 +49,7 @@ const Sidebar = ({
       <FilterSection
         title="Balance"
         options={['Head Heavy', 'Balance', 'Head Light']}
-        selectedOptions={filters.balance}
+        selectedOptions={(router.query.balance as string)?.split(',') || []}
         onChange={(option, isChecked) =>
           handleFilterChange('balance', option, isChecked)
         }
@@ -78,8 +57,8 @@ const Sidebar = ({
       <Divider />
       <FilterSection
         title="Weight"
-        options={['3U: 85 - 89g', '4U: 80 - 84g', '5U: 75 - 79g']}
-        selectedOptions={filters.weight}
+        options={['3U', '4U', '5U']}
+        selectedOptions={(router.query.weight as string)?.split(',') || []}
         onChange={(option, isChecked) =>
           handleFilterChange('weight', option, isChecked)
         }
@@ -87,8 +66,8 @@ const Sidebar = ({
       <Divider />
       <FilterSection
         title="Stiffness"
-        options={['Hard', 'Medium', 'Flexible']}
-        selectedOptions={filters.stiffness}
+        options={['Flexible', 'Medium', 'Stiff']}
+        selectedOptions={(router.query.stiffness as string)?.split(',') || []}
         onChange={(option, isChecked) =>
           handleFilterChange('stiffness', option, isChecked)
         }

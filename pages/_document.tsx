@@ -4,7 +4,9 @@ import { Head, Html, Main, NextScript } from 'next/document'
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        <title>BMB</title>
+      </Head>
       <body
         className={clsx(
           'min-h-screen bg-background font-sans antialiased light',

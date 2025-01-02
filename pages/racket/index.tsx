@@ -4,31 +4,39 @@ import useGetRacket from '@/hooks/useGetRacket'
 import { Racket } from '@/types/schema/schema'
 import { Pagination } from '@nextui-org/pagination'
 import { Flex, Grid } from '@radix-ui/themes'
-import { useState } from 'react'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 const IndexPage = () => {
-  const [filters, setFilters] = useState({})
+  const router = useRouter()
+  const filters = router.query
+
   const { data, error, isLoading } = useGetRacket(filters)
 
-  if (error) return <div>Error fetching user data</div>
+  if (error) return <div>Error fetching rackets</div>
   if (isLoading) return <div>Loading...</div>
-
-  const handleFilterChange = (updatedFilters: any) => {
-    setFilters(updatedFilters)
-  }
 
   return (
     <main>
+      <Head>
+        <title>Racket</title>
+      </Head>
       <Flex>
-        <Sidebar onFilterChange={handleFilterChange} />
+        <Sidebar />
         <Grid
           columns={{ xl: '5', lg: '4', md: '3', sm: '2', xs: '1' }}
           gap="5"
           px="4"
         >
-          {data.map((data: Racket) => (
-            <ProductCard key={data.product_id} data={data} />
-          ))}
+          {data.length > 0 ? (
+            data.map((data: Racket) => (
+              <ProductCard key={data.product_id} data={data} />
+            ))
+          ) : (
+            <div className="text-center text-lg font-medium text-red-500 w-full">
+              No rackets found
+            </div>
+          )}
         </Grid>
       </Flex>
       <div className="flex self-center justify-center mt-4">
