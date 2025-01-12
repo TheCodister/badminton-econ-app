@@ -1,5 +1,6 @@
 import CategoryCard from '@/components/card/CategoryCard'
 import { CATEGORY } from '@/constants/category'
+import { useAuth } from '@/context/context'
 import useGetRacket from '@/hooks/useGetRacket'
 import ChatIcon from '@/icons/ChatIcon'
 import FeaturedProduct from '@/layouts/FeaturedProductLayout'
@@ -11,10 +12,17 @@ import { useState } from 'react'
 
 const IndexPage = () => {
   const [filters, setFilters] = useState({})
+
   const { data, error, isLoading } = useGetRacket(filters)
+  const { isLoggedIn } = useAuth()
+
   const route = useRouter()
   const handleChatNavigate = () => {
-    route.push('/chat')
+    if (isLoggedIn) {
+      route.push('/chat')
+    } else {
+      route.push('/login')
+    }
   }
 
   if (error) return <div>Error fetching user data</div>
