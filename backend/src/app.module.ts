@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { Racket } from './models/racket.entity'
 import { Shoes } from './models/shoes.entity'
 import { Shuttlecock } from './models/shuttlecock.entity'
+import { Customer } from './models/user.entity'
+import { AuthModule } from './modules/auth/auth.module'
 import { RacketsModule } from './modules/products/rackets/rackets.module'
 
 @Module({
@@ -18,11 +20,12 @@ import { RacketsModule } from './modules/products/rackets/rackets.module'
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [Racket, Shoes, Shuttlecock],
+        entities: [Racket, Shoes, Shuttlecock, Customer],
       }),
       inject: [ConfigService],
     }),
     RacketsModule,
+    AuthModule,
   ],
 })
 export class AppModule {}

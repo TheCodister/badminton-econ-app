@@ -15,4 +15,8 @@ export class RacketsController {
   findAll(@Query() filters: Record<string, string>) {
     return this.racketsService.findAll(filters)
   }
+  @Get(':id')
+  findOne(@Query('id') id: string) {
+    return this.racketsService.findOne(id)
+  }
 }

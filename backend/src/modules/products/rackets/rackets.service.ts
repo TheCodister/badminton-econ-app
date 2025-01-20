@@ -15,6 +15,10 @@ export class RacketsService {
     return this.racketRepository.save(racket)
   }
 
+  async findOne(id: string) {
+    return this.racketRepository.findOneBy(id)
+  }
+
   async findAll(filters: Record<string, string>) {
     const query = this.racketRepository.createQueryBuilder('racket')
 
