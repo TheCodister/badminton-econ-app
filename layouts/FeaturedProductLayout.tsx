@@ -68,7 +68,7 @@ const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
           className="w-full"
         >
           {paginatedProducts.map((product) => (
-            <ProductCard key={product.product_id} data={product} />
+            <ProductCard key={product.id} data={product} />
           ))}
         </Grid>
         <NavButton

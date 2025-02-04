@@ -8,7 +8,10 @@ async function bootstrap() {
   // Use cors middleware
   app.use(
     cors({
-      origin: ['http://localhost:3001'], // Allowed origins
+      origin: [
+        'http://localhost:3001',
+        'https://badminton-econ-app.vercel.app/',
+      ], // Allowed origins
       credentials: true,
     }),
   )

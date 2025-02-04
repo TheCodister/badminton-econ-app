@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common'
-import { Racket } from 'src/models/racket.entity'
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common'
+import { Prisma } from '@prisma/client'
 import { RacketsService } from './rackets.service'
 
 @Controller('rackets')
@@ -7,7 +7,7 @@ export class RacketsController {
   constructor(private readonly racketsService: RacketsService) {}
 
   @Post()
-  create(@Body() racketData: Partial<Racket>) {
+  create(@Body() racketData: Prisma.RacketCreateInput) {
     return this.racketsService.create(racketData)
   }
 
@@ -15,8 +15,9 @@ export class RacketsController {
   findAll(@Query() filters: Record<string, string>) {
     return this.racketsService.findAll(filters)
   }
+
   @Get(':id')
-  findOne(@Query('id') id: string) {
+  findOne(@Param('id') id: string) {
     return this.racketsService.findOne(id)
   }
 }

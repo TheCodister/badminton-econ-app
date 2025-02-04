@@ -92,8 +92,8 @@ const ProductDetail = () => {
           <Flex direction="column">
             <div className="w-[350px] h-full flex justify-center items-center overflow-hidden">
               <Image
-                src={data.image_url}
-                alt={data.product_name}
+                src={data.product.image_url}
+                alt={data.product.product_name}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -118,22 +118,26 @@ const ProductDetail = () => {
           </Flex>
           <Divider orientation="vertical" className="h-auto" />
           <Flex direction="column" gap="2">
-            <h1 className="text-2xl font-medium">{data.product_name}</h1>
+            <h1 className="text-2xl font-medium">
+              {data.product.product_name}
+            </h1>
             <Divider />
             <Flex gap="5">
-              <h6>In stock: {data.stock}</h6>
-              <h6>Brand: {data.brand}</h6>
+              <h6>In stock: {data.product.stock}</h6>
+              <h6>Brand: {data.product.brand}</h6>
               <h6>
                 Status:{' '}
                 <Chip
                   variant="flat"
-                  color={data.status === 'available' ? 'success' : 'danger'}
+                  color={
+                    data.product.status === 'AVAILABLE' ? 'success' : 'danger'
+                  }
                 >
-                  {data.status.toUpperCase()}
+                  {data.product.status}
                 </Chip>
               </h6>
             </Flex>
-            <h2 className="text-danger-500">${data.price}</h2>
+            <h2 className="text-danger-500">${data.product.price}</h2>
             <ul className="space-y-2">
               <li>
                 <strong>Line:</strong> {data.line}
@@ -149,11 +153,11 @@ const ProductDetail = () => {
               </li>
               <li>
                 <strong>Available at</strong>{' '}
-                {data.available_location.join(', ')}
+                {data.product.available_location.join(', ')}
               </li>
             </ul>
             <h5>Description</h5>
-            <h6>{data.description}</h6>
+            <h6>{data.product.description}</h6>
             <Flex gap="5" className="w-full mt-5">
               <Button
                 size="lg"

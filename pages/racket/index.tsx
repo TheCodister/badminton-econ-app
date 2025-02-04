@@ -47,7 +47,7 @@ const IndexPage = () => {
           >
             {data.length > 0 ? (
               data.map((data: Racket) => (
-                <ProductCard key={data.product_id} data={data} />
+                <ProductCard key={data.id} data={data} />
               ))
             ) : (
               <div className="text-center text-lg font-medium text-red-500 w-full">

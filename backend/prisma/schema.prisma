@@ -1,0 +1,160 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Use environment variables for the connection string
+}
+
+// Enums
+enum Brand {
+  LINING
+  YONEX
+  VICTOR
+  MIZUNO
+  VS
+  KUMPOO
+  APACS
+  PROACE
+  FLEET
+  FLYPOWER
+  RESON
+}
+
+// Models
+model Branch {
+  branch_id      String  @id @db.VarChar(100)
+  branch_name    String  @db.VarChar(100)
+  branch_address String  @db.Text
+  branch_phone   String  @db.VarChar(15)
+  admins         Admin[]
+
+  @@map("branches")
+}
+
+model Admin {
+  user_id    String  @id @default(uuid())
+  username   String  @db.VarChar(100)
+  mail       String  @unique @db.VarChar(255)
+  phone_number String @db.VarChar(15)
+  password   String
+  branch_id  String
+  branch     Branch  @relation(fields: [branch_id], references: [branch_id])
+
+  @@map("admins")
+}
+
+model Customer {
+  user_id       String  @id @default(uuid())
+  username      String  @db.VarChar(100)
+  mail          String  @unique @db.VarChar(255)
+  phone_number  String  @db.VarChar(15)
+  password      String
+  address       String  @db.Text
+  orders        Order[]
+  shoppingCart  ShoppingCart?
+
+  @@map("customers")
+}
+
+model ShoppingCart {
+  cart_id     String    @id @default(uuid())
+  customer_id String    @unique
+  customer    Customer  @relation(fields: [customer_id], references: [user_id], onDelete: Cascade)
+  cart_items  CartItem[]
+
+  @@map("shopping_carts")
+}
+
+model CartItem {
+  item_id    String    @id @default(uuid())
+  cart_id    String
+  cart       ShoppingCart @relation(fields: [cart_id], references: [cart_id])
+  product_id String
+  quantity   Int
+
+  @@map("cart_items")
+}
+
+model Order {
+  order_id     String      @id @default(uuid())
+  order_date   DateTime
+  customer_id  String
+  customer     Customer    @relation(fields: [customer_id], references: [user_id])
+  total_price  Decimal     @db.Decimal(10, 2) // Use Decimal here
+  order_items  OrderItem[]
+
+  @@index([customer_id]) // Add index on customer_id
+  @@map("orders")
+}
+
+model OrderItem {
+  item_id    String    @id @default(uuid())
+  order_id   String
+  order      Order     @relation(fields: [order_id], references: [order_id])
+  product_id String
+  quantity   Int
+
+  @@map("order_items")
+}
+
+enum ProductStatus {
+  AVAILABLE
+  UNAVAILABLE
+  OUT_OF_STOCK
+}
+model Product {
+  id                 String        @id @default(uuid())  // Primary Key
+  image_url          String        @map("image_url")
+  product_name       String
+  brand              Brand
+  price              Decimal       @map("price") @db.Decimal(10, 2)
+  description        String
+  status             ProductStatus // Use enum here
+  sales              Boolean       @default(false)
+  stock              Int
+  available_location Json
+
+  racket             Racket[]       @relation // One-to-one relation
+  shoes              Shoes[]      @relation // One-to-one relation
+  shuttlecocks       Shuttlecock[]  @relation // One-to-one relation
+
+  @@map("products")
+}
+
+model Racket {
+  id          String  @id @default(uuid()) @map("product_id") // Same as Product ID
+  product     Product @relation(fields: [id], references: [id])  // One-to-one relation
+  line        String
+  stiffness   String
+  weight      String
+  balance     String
+  max_tension String
+  length      Float  
+  technology  Json
+
+  @@map("rackets")
+}
+
+
+model Shoes {
+  id             String  @id @default(uuid()) @map("product_id")
+  product        Product @relation(fields: [id], references: [id])
+  color          Json
+  size           Json
+  available_size Json
+  technology     Json
+
+  @@map("shoes")
+}
+
+model Shuttlecock {
+  id            String  @id @default(uuid()) @map("product_id")
+  product       Product @relation(fields: [id], references: [id])
+  shuttle_type  String
+  speed         Int
+  no_per_tube   Int
+
+  @@map("shuttlecocks")
+}

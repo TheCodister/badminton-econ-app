@@ -1,3 +1,4 @@
+import { IsEmail, IsNotEmpty } from 'class-validator'
 import {
   BaseEntity,
   Column,
@@ -13,9 +14,11 @@ export abstract class User extends BaseEntity {
   user_id: string
 
   @Column({ length: 100 })
+  @IsNotEmpty()
   username: string
 
   @Column({ unique: true, length: 255 })
+  @IsEmail()
   mail: string
 
   @Column({ length: 15 })

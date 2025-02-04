@@ -34,13 +34,13 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
       <CardBody className="gap-2 pb-0 h-min">
         <div className="w-full h-[300px] flex justify-center items-center overflow-hidden">
           <Image
-            src={data.image_url}
-            alt={data.product_name}
+            src={data.product.image_url}
+            alt={data.product.product_name}
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-danger font-medium mt-2">${data.price}</h4>
-        <h6 className="text-primary">{data.product_name}</h6>
+        <h4 className="text-danger font-medium mt-2">${data.product.price}</h4>
+        <h6 className="text-primary">{data.product.product_name}</h6>
       </CardBody>
       <CardFooter className="flex justify-center items-stretch flex-col gap-3">
         <Dropdown type="listbox">
@@ -88,7 +88,7 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
             </DropdownMenu>
           )}
         </Dropdown>
-        <Link href={`/${data.product_id}`} className="w-full pt-0">
+        <Link href={`/${data.id}`} className="w-full pt-0">
           <Button
             className="w-full"
             color="primary"

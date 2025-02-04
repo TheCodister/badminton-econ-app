@@ -1,47 +1,73 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
-import { Racket } from 'src/models/racket.entity'
-import { Repository } from 'typeorm'
+import { Brand, Prisma } from '@prisma/client' // ✅ Import Brand Enum
+import { PrismaService } from 'prisma/prisma.service'
 
 @Injectable()
 export class RacketsService {
-  constructor(
-    @InjectRepository(Racket)
-    private readonly racketRepository: Repository<Racket>,
-  ) {}
+  constructor(private readonly prisma: PrismaService) {}
 
-  async create(data: Partial<Racket>) {
-    const racket = this.racketRepository.create(data)
-    return this.racketRepository.save(racket)
+  async create(data: any) {
+    return this.prisma.product.create({
+      data: {
+        id: data.id,
+        image_url: data.image_url,
+        product_name: data.product_name,
+        brand: data.brand,
+        price: data.price,
+        description: data.description,
+        status: data.status,
+        sales: data.sales,
+        stock: data.stock,
+        available_location: data.available_location,
+
+        // Create a related racket entry
+        racket: {
+          create: {
+            line: data.racket.line,
+            stiffness: data.racket.stiffness,
+            weight: data.racket.weight,
+            balance: data.racket.balance,
+            max_tension: data.racket.max_tension,
+            length: data.racket.length,
+            technology: data.racket.technology,
+          },
+        },
+      },
+      include: {
+        racket: true, // Return the created racket along with the product
+      },
+    })
   }
 
   async findOne(id: string) {
-    return this.racketRepository.findOneBy(id)
+    return this.prisma.racket.findUnique({
+      where: { id },
+      include: { product: true },
+    })
   }
 
   async findAll(filters: Record<string, string>) {
-    const query = this.racketRepository.createQueryBuilder('racket')
+    const where: Prisma.RacketWhereInput = {}
 
     if (filters.brand) {
-      const brands = filters.brand.split(',')
-      query.andWhere('racket.brand IN (:...brands)', { brands })
+      const brands = filters.brand.toUpperCase().split(',') as Brand[] // ✅ Convert to Enum
+      where.product = {
+        brand: { in: brands },
+      }
     }
     if (filters.weight) {
-      query.andWhere('racket.weight LIKE :weight', {
-        weight: `%${filters.weight}%`,
-      })
+      where.weight = { in: filters.weight.split(',') }
     }
     if (filters.balance) {
-      query.andWhere('racket.balance LIKE :balance', {
-        balance: `%${filters.balance}%`,
-      })
+      where.balance = { contains: filters.balance, mode: 'insensitive' }
     }
     if (filters.stiffness) {
-      query.andWhere('racket.stiffness LIKE :stiffness', {
-        stiffness: `%${filters.stiffness}%`,
-      })
+      where.stiffness = { contains: filters.stiffness, mode: 'insensitive' }
     }
 
-    return query.getMany()
+    return this.prisma.racket.findMany({
+      where,
+      include: { product: true },
+    })
   }
 }
