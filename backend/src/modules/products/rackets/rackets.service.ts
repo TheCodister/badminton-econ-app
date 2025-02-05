@@ -6,37 +6,12 @@ import { PrismaService } from 'prisma/prisma.service'
 export class RacketsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(data: any) {
-    return this.prisma.product.create({
-      data: {
-        id: data.id,
-        image_url: data.image_url,
-        product_name: data.product_name,
-        brand: data.brand,
-        price: data.price,
-        description: data.description,
-        status: data.status,
-        sales: data.sales,
-        stock: data.stock,
-        available_location: data.available_location,
-
-        // Create a related racket entry
-        racket: {
-          create: {
-            line: data.racket.line,
-            stiffness: data.racket.stiffness,
-            weight: data.racket.weight,
-            balance: data.racket.balance,
-            max_tension: data.racket.max_tension,
-            length: data.racket.length,
-            technology: data.racket.technology,
-          },
-        },
-      },
-      include: {
-        racket: true, // Return the created racket along with the product
-      },
-    })
+  async create(
+    createProductDto: Prisma.ProductCreateInput & {
+      racket: Prisma.RacketCreateInput
+    },
+  ) {
+    return this.prisma.product.create({ data: createProductDto })
   }
 
   async findOne(id: string) {

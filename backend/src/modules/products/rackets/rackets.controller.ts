@@ -7,7 +7,12 @@ export class RacketsController {
   constructor(private readonly racketsService: RacketsService) {}
 
   @Post()
-  create(@Body() racketData: Prisma.RacketCreateInput) {
+  create(
+    @Body()
+    racketData: Prisma.ProductCreateInput & {
+      racket: Prisma.RacketCreateInput
+    },
+  ) {
     return this.racketsService.create(racketData)
   }
 

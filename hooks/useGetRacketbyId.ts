@@ -7,6 +7,7 @@ const useGetRacketbyId = (product_id: string) => {
     queryKey: ['racket'],
     queryFn: async () => {
       const { data } = await axios.get(`${BASE_URL}/rackets/${product_id}`)
+      console.log(data)
       return data
     },
   })
