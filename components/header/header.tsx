@@ -1,8 +1,8 @@
 import { ROUTES } from '@/constants/routes'
-import { Badge } from '@nextui-org/badge'
-import { Button } from '@nextui-org/button'
-import { Input } from '@nextui-org/input'
-import { Link } from '@nextui-org/link'
+import { Badge } from "@heroui/badge"
+import { Button } from "@heroui/button"
+import { Input } from "@heroui/input"
+import { Link } from "@heroui/link"
 
 import { useAuth } from '@/context/context'
 import {
@@ -13,7 +13,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/navbar'
+} from "@heroui/navbar"
 import {
   AllSidesIcon,
   HomeIcon,

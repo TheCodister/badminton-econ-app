@@ -4,17 +4,17 @@ import {
   StiffnessConverter,
   WeightConverter,
 } from '@/utils/Converter'
-import { Button } from '@nextui-org/button'
-import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card'
+import { Button } from "@heroui/button"
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card"
 import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from '@nextui-org/dropdown'
-import { Image } from '@nextui-org/image'
-import { Link } from '@nextui-org/link'
-import { Progress } from '@nextui-org/progress'
+} from "@heroui/dropdown"
+import { Image } from "@heroui/image"
+import { Link } from "@heroui/link"
+import { Progress } from "@heroui/progress"
 import { memo } from 'react'
 
 type ProductData = Racket

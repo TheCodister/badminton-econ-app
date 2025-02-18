@@ -6,9 +6,9 @@ export default function DefaultLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="relative flex flex-col h-[100vh]">
+    <div className="relative flex flex-col min-h-screen">
       <Header />
-      <main className="flex justify-center py-10 h-full overflow-auto">
+      <main className="flex justify-center py-10 h-full flex-grow overflow-auto">
         <section className="flex flex-col items-start">
           <ErrorBoundary>{children}</ErrorBoundary>
         </section>

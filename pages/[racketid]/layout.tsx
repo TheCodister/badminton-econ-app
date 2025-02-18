@@ -1,5 +1,5 @@
-import { Divider } from '@nextui-org/divider'
-import { Skeleton } from '@nextui-org/skeleton'
+import { Divider } from "@heroui/divider"
+import { Skeleton } from "@heroui/skeleton"
 import { Flex } from '@radix-ui/themes'
 export default function ProductDetailLayout() {
   return (

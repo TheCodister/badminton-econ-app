@@ -4,8 +4,8 @@ import { useAuth } from '@/context/context'
 import useGetRacket from '@/hooks/useGetRacket'
 import ChatIcon from '@/icons/ChatIcon'
 import FeaturedProduct from '@/layouts/FeaturedProductLayout'
-import { Card } from '@nextui-org/card'
-import { Image } from '@nextui-org/image'
+import { Card } from "@heroui/card"
+import { Image } from "@heroui/image"
 import { Flex } from '@radix-ui/themes'
 import { useRouter } from 'next/router'
 import { useState } from 'react'

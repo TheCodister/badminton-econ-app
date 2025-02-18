@@ -1,7 +1,7 @@
 import { ContextProvider } from '@/context/context'
 import DefaultLayout from '@/layouts/default'
 import '@/styles/globals.css'
-import { NextUIProvider } from '@nextui-org/system'
+import { HeroUIProvider } from "@heroui/system"
 import { Theme } from '@radix-ui/themes'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { SessionProvider } from 'next-auth/react'
@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <SessionProvider session={pageProps.session}>
         <ContextProvider>
           <Theme>
-            <NextUIProvider
+            <HeroUIProvider
               navigate={router.push}
               className={`${montserrat.variable} font-sans`}
             >
@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Component {...pageProps} />
                 </DefaultLayout>
               </NextThemesProvider>
-            </NextUIProvider>
+            </HeroUIProvider>
           </Theme>
         </ContextProvider>
       </SessionProvider>

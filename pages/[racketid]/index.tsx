@@ -4,11 +4,11 @@ import {
   StiffnessConverter,
   WeightConverter,
 } from '@/utils/Converter'
-import { Button } from '@nextui-org/button'
-import { Chip } from '@nextui-org/chip'
-import { Divider } from '@nextui-org/divider'
-import { Image } from '@nextui-org/image'
-import { Progress } from '@nextui-org/progress'
+import { Button } from "@heroui/button"
+import { Chip } from "@heroui/chip"
+import { Divider } from "@heroui/divider"
+import { Image } from "@heroui/image"
+import { Progress } from "@heroui/progress"
 import { Flex } from '@radix-ui/themes'
 import { useRouter } from 'next/router'
 import ProductDetailLayout from './layout'

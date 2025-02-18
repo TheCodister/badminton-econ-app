@@ -1,4 +1,4 @@
-import { Divider } from '@nextui-org/divider'
+import { Divider } from "@heroui/divider"
 import { useRouter } from 'next/router'
 import FilterSection from '../filter/FilterSection'
 

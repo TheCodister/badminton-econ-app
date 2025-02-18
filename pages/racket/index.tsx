@@ -2,8 +2,8 @@ import ProductCard from '@/components/card/ProductCard'
 import Sidebar from '@/components/sidebar/siderbar'
 import useGetRacket from '@/hooks/useGetRacket'
 import { Racket } from '@/types/schema/schema'
-import { Pagination } from '@nextui-org/pagination'
-import { Select, SelectItem } from '@nextui-org/select'
+import { Pagination } from "@heroui/pagination"
+import { Select, SelectItem } from "@heroui/select"
 import { Flex, Grid } from '@radix-ui/themes'
 import Head from 'next/head'
 import { useRouter } from 'next/router'

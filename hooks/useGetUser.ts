@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/constants/base_url'
+import { BACKEND_URL } from '@/constants/base_url'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -8,7 +8,7 @@ const useGetUser = () => {
   return useQuery({
     queryKey: ['user'],
     queryFn: async () => {
-      const { data } = await axios.get(`${BASE_URL}/users`)
+      const { data } = await axios.get(`${BACKEND_URL}/users`)
       return data
     },
   })

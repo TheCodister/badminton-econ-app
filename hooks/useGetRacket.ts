@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/constants/base_url'
+import { BACKEND_URL } from '@/constants/base_url'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -9,7 +9,7 @@ const useGetRacket = (filters: any) => {
   return useQuery({
     queryKey: ['racket', filters],
     queryFn: async () => {
-      const { data } = await axios.get(`${BASE_URL}/rackets?${queryString}`)
+      const { data } = await axios.get(`${BACKEND_URL}/rackets?${queryString}`)
       return data
     },
   })

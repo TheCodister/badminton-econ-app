@@ -1,8 +1,8 @@
 import { useAuth } from '@/context/context'
-import { Avatar } from '@nextui-org/avatar'
-import { Button } from '@nextui-org/button'
-import { Input } from '@nextui-org/input'
-import { Spinner } from '@nextui-org/spinner'
+import { Avatar } from "@heroui/avatar"
+import { Button } from "@heroui/button"
+import { Input } from "@heroui/input"
+import { Spinner } from "@heroui/spinner"
 import { useChat } from 'ai/react'
 import Markdown from 'react-markdown'
 
