@@ -1,7 +1,7 @@
 import { ContextProvider } from '@/context/context'
 import DefaultLayout from '@/layouts/default'
 import '@/styles/globals.css'
-import { HeroUIProvider } from "@heroui/system"
+import { HeroUIProvider } from '@heroui/system'
 import { Theme } from '@radix-ui/themes'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { SessionProvider } from 'next-auth/react'
@@ -23,22 +23,22 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider session={pageProps.session}>
-        <ContextProvider>
-          <Theme>
-            <HeroUIProvider
-              navigate={router.push}
-              className={`${montserrat.variable} font-sans`}
-            >
-              <NextThemesProvider>
+      <Theme>
+        <HeroUIProvider
+          navigate={router.push}
+          className={`${montserrat.variable} font-sans`}
+        >
+          <NextThemesProvider>
+            <SessionProvider session={pageProps.session}>
+              <ContextProvider>
                 <DefaultLayout>
                   <Component {...pageProps} />
                 </DefaultLayout>
-              </NextThemesProvider>
-            </HeroUIProvider>
-          </Theme>
-        </ContextProvider>
-      </SessionProvider>
+              </ContextProvider>
+            </SessionProvider>
+          </NextThemesProvider>
+        </HeroUIProvider>
+      </Theme>
     </QueryClientProvider>
   )
 }

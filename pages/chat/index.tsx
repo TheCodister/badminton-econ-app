@@ -1,8 +1,8 @@
 import { useAuth } from '@/context/context'
-import { Avatar } from "@heroui/avatar"
-import { Button } from "@heroui/button"
-import { Input } from "@heroui/input"
-import { Spinner } from "@heroui/spinner"
+import { Avatar } from '@heroui/avatar'
+import { Button } from '@heroui/button'
+import { Input } from '@heroui/input'
+import { Spinner } from '@heroui/spinner'
 import { useChat } from 'ai/react'
 import Markdown from 'react-markdown'
 
@@ -25,10 +25,10 @@ export default function Chat() {
                 <Avatar isBordered className="mr-4" name="U" size="sm" />
               ) : null}
               <div
-                className={`p-4 text-white rounded-xl w-72 text-start text-xl ${
+                className={`p-2 rounded-xl w-80 text-start text-xl font-semibold ${
                   m.role === 'user'
-                    ? 'bg-secondary-500 text-left'
-                    : 'bg-primary-500 text-right'
+                    ? 'text-white bg-secondary-500 text-left'
+                    : 'text-black text-right'
                 }`}
               >
                 <Markdown>{m.content}</Markdown>

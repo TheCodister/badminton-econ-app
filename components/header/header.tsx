@@ -1,10 +1,19 @@
 import { ROUTES } from '@/constants/routes'
-import { Badge } from "@heroui/badge"
-import { Button } from "@heroui/button"
-import { Input } from "@heroui/input"
-import { Link } from "@heroui/link"
+import { Badge } from '@heroui/badge'
+import { Button } from '@heroui/button'
+import { Input } from '@heroui/input'
+import { Link } from '@heroui/link'
 
 import { useAuth } from '@/context/context'
+import AccessoryIcon from '@/icons/AccessoryIcon'
+import CartIcon from '@/icons/CartIcon'
+import ChatIcon from '@/icons/ChatIcon'
+import HomeIcon from '@/icons/HomeIcon'
+import PersonIcon from '@/icons/PersonIcon'
+import RacketIcon from '@/icons/RacketIcon'
+import RunIcon from '@/icons/RunIcon'
+import SearchIcon from '@/icons/SearchIcon'
+import ShuttleIcon from '@/icons/ShuttleIcon'
 import {
   Navbar,
   NavbarBrand,
@@ -13,17 +22,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from "@heroui/navbar"
-import {
-  AllSidesIcon,
-  HomeIcon,
-  LockClosedIcon,
-  MagicWandIcon,
-  MagnifyingGlassIcon,
-  PersonIcon,
-  RocketIcon,
-  StarFilledIcon,
-} from '@radix-ui/react-icons'
+} from '@heroui/navbar'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 const Header = () => {
@@ -33,16 +32,16 @@ const Header = () => {
 
   const navItems = [
     { label: 'Home', href: ROUTES.HOME, icon: HomeIcon },
-    { label: 'Racket', href: ROUTES.RACKET, icon: StarFilledIcon },
-    { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: RocketIcon },
-    { label: 'Shoes', href: ROUTES.SHOES, icon: AllSidesIcon },
-    { label: 'Accesories', href: ROUTES.ACCESORIES, icon: StarFilledIcon },
+    { label: 'Racket', href: ROUTES.RACKET, icon: RacketIcon },
+    { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: ShuttleIcon },
+    { label: 'Shoes', href: ROUTES.SHOES, icon: RunIcon },
+    { label: 'Accesories', href: ROUTES.ACCESORIES, icon: AccessoryIcon },
     ...(isLoggedIn
       ? [
           {
             label: 'Chat',
             href: ROUTES.CHAT,
-            icon: MagicWandIcon,
+            icon: ChatIcon,
           },
         ]
       : []),
@@ -72,9 +71,7 @@ const Header = () => {
         <NavbarItem className="xl:hidden lg:hidden md:block sm:block">
           <Input
             className="w-full"
-            startContent={
-              <MagnifyingGlassIcon width={20} height={20} color="black" />
-            }
+            startContent={<SearchIcon width={20} height={20} color="black" />}
             placeholder="Search"
           />
         </NavbarItem>
@@ -98,10 +95,9 @@ const Header = () => {
         <NavbarItem>
           <Input
             className="w-[10vw]"
-            startContent={
-              <MagnifyingGlassIcon width={20} height={20} color="black" />
-            }
+            startContent={<SearchIcon width={20} height={20} color="black" />}
             placeholder="Search"
+            type="text"
           />
         </NavbarItem>
         <NavbarItem className="w-20">
@@ -132,7 +128,7 @@ const Header = () => {
         <NavbarItem className="w-5">
           <Button variant="solid" color="primary">
             <Badge content="1" size="sm" color="danger">
-              <LockClosedIcon width={18} height={18} />
+              <CartIcon stroke="white" fill="white" />
             </Badge>
           </Button>
         </NavbarItem>

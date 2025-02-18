@@ -4,10 +4,16 @@ import OrderIcon from '@/icons/OrderIcon'
 import { Button } from '@heroui/button'
 import { Form } from '@heroui/form'
 import { Input } from '@heroui/input'
+import { signOut } from 'next-auth/react'
 
 const formStyles =
   'border-2 p-5 space-y-6 xl:w-[900px] lg:w-[700px] md:w-full sm:w-full max-w-[1000px] min-w-0'
 const buttonStyles = 'justify-center w-full lg:justify-start sm:justify-center'
+// const handleSignOut = () => {
+//   const navigate = useRouter()
+//   signOut()
+//   navigate.push('/')
+// }
 
 const AccountActions = () => (
   <div className="border-2 p-5 flex flex-col gap-4">
@@ -33,7 +39,7 @@ const AccountActions = () => (
     >
       My Wishlist
     </Button>
-    <Button className={buttonStyles} color="danger">
+    <Button className={buttonStyles} color="danger" onPress={() => signOut()}>
       Log Out
     </Button>
   </div>
@@ -50,6 +56,7 @@ const UserProfile = () => (
           labelPlacement="outside"
           name="fullname"
           placeholder="Enter your full name"
+          type="text"
         />
         <Input
           errorMessage="Please enter a valid email"

@@ -11,7 +11,7 @@ export default function HistoryIcon(props: React.SVGProps<SVGSVGElement>) {
       <path
         d="M12 8V12L14.5 14.5"
         stroke="currentColor"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
