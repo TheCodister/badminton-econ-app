@@ -5,79 +5,79 @@ import { Button } from '@heroui/button'
 import { Form } from '@heroui/form'
 import { Input } from '@heroui/input'
 
-const UserComponent = () => {
-  return (
-    <div>
-      <h1 className="text-left">My Account</h1>
-      <div className="flex justify-center gap-5 container">
-        <Form className="xl:w-[900px] lg:w-[700px] md:w-full sm:w-full max-w-[1000px] min-w-0 border-solid border-2 p-5 space-y-8">
-          <h2>Personal Information</h2>
-          <Input
-            label="Full Name"
-            labelPlacement="outside"
-            name="fullname"
-            placeholder="Enter your full name"
-            type="text"
-          ></Input>
-          <Input
-            errorMessage="Please enter a valid email"
-            label="Email"
-            labelPlacement="outside"
-            name="email"
-            placeholder="Enter your email"
-            type="email"
-          />
-          <Input
-            label="Phone Number"
-            labelPlacement="outside"
-            name="phonenumber"
-            placeholder="Enter your phone number"
-            type="number"
-          ></Input>
-          <Input
-            label="Address"
-            labelPlacement="outside"
-            type="text"
-            placeholder="Enter your address"
-            name="address"
-          ></Input>
-          <Button className="w-full" color="primary">
-            Update Information
-          </Button>
-        </Form>
-        <div className="border-solid border-2 p-5 flex flex-col gap-5">
-          <h2>Account Actions</h2>
-          <Button
-            className="justify-start"
-            startContent={<HistoryIcon />}
-            variant="bordered"
-            fullWidth
-          >
-            View Order History
-          </Button>
-          <Button
-            className="justify-start"
-            startContent={<OrderIcon />}
-            variant="bordered"
-            fullWidth
-          >
-            Current Orders
-          </Button>
-          <Button
-            className="justify-start"
-            startContent={<ListIcon />}
-            variant="bordered"
-            fullWidth
-          >
-            My Wishlist
-          </Button>
-          <Button className="justify-start" fullWidth color="danger">
-            Log Out
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
-}
+const formStyles =
+  'border-2 p-5 space-y-6 xl:w-[900px] lg:w-[700px] md:w-full sm:w-full max-w-[1000px] min-w-0'
+const buttonStyles = 'justify-center w-full lg:justify-start sm:justify-center'
 
-export default UserComponent
+const AccountActions = () => (
+  <div className="border-2 p-5 flex flex-col gap-4">
+    <h2>Account Actions</h2>
+    <Button
+      className={buttonStyles}
+      startContent={<HistoryIcon />}
+      variant="bordered"
+    >
+      View Order History
+    </Button>
+    <Button
+      className={buttonStyles}
+      startContent={<OrderIcon />}
+      variant="bordered"
+    >
+      Current Orders
+    </Button>
+    <Button
+      className={buttonStyles}
+      startContent={<ListIcon />}
+      variant="bordered"
+    >
+      My Wishlist
+    </Button>
+    <Button className={buttonStyles} color="danger">
+      Log Out
+    </Button>
+  </div>
+)
+
+const UserProfile = () => (
+  <>
+    <h1 className="text-left">My Account</h1>
+    <div className="flex flex-col lg:flex-row sm:flex-col justify-center gap-5 container">
+      <Form className={formStyles}>
+        <h2>Personal Information</h2>
+        <Input
+          label="Full Name"
+          labelPlacement="outside"
+          name="fullname"
+          placeholder="Enter your full name"
+        />
+        <Input
+          errorMessage="Please enter a valid email"
+          label="Email"
+          labelPlacement="outside"
+          name="email"
+          placeholder="Enter your email"
+        />
+        <Input
+          label="Phone Number"
+          labelPlacement="outside"
+          name="phonenumber"
+          placeholder="Enter your phone number"
+          type="number"
+        />
+        <Input
+          label="Address"
+          labelPlacement="outside"
+          name="address"
+          placeholder="Enter your address"
+        />
+        <Button className="w-full" color="primary">
+          Update Information
+        </Button>
+      </Form>
+      <AccountActions />
+    </div>
+  </>
+)
+
+export default UserProfile
