@@ -1,5 +1,6 @@
 import ProductCard from '@/components/card/ProductCard'
 import NavButton from '@/components/navbutton/navbutton'
+import { SCREEN_WIDTH } from '@/constants/screen-width'
 import { Racket } from '@/types/schema/schema'
 import { Flex, Grid } from '@radix-ui/themes'
 import { useEffect, useState } from 'react'
@@ -16,13 +17,13 @@ const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
   // Adjust items per page based on screen width
   const handleResize = () => {
     const width = window.innerWidth
-    if (width >= 1536)
+    if (width >= SCREEN_WIDTH.xxl)
       setItemsPerPage(4) // 2xl
-    else if (width >= 1280)
+    else if (width >= SCREEN_WIDTH.xl)
       setItemsPerPage(4) // xl
-    else if (width >= 1024)
+    else if (width >= SCREEN_WIDTH.lg)
       setItemsPerPage(3) // lg
-    else if (width >= 768)
+    else if (width >= SCREEN_WIDTH.md)
       setItemsPerPage(1) // md
     else setItemsPerPage(1) // sm
   }

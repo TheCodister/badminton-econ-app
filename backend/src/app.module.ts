@@ -1,29 +1,20 @@
+import { CacheModule } from '@nestjs/cache-manager'
 import { Module } from '@nestjs/common'
-import { ConfigModule, ConfigService } from '@nestjs/config'
-import { TypeOrmModule } from '@nestjs/typeorm'
-import { Racket } from './models/racket.entity'
-import { Shoes } from './models/shoes.entity'
-import { Shuttlecock } from './models/shuttlecock.entity'
-import { Customer } from './models/user.entity'
+import { ConfigModule } from '@nestjs/config'
+import { PrismaModule } from 'prisma/prisma.module'
 import { AuthModule } from './modules/auth/auth.module'
 import { RacketsModule } from './modules/products/rackets/rackets.module'
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), // Load .env variables globally
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        type: 'postgres',
-        host: configService.get('DB_HOST'),
-        port: parseInt(configService.get('DB_PORT'), 10),
-        username: configService.get('DB_USERNAME'),
-        password: configService.get('DB_PASSWORD'),
-        database: configService.get('DB_NAME'),
-        entities: [Racket, Shoes, Shuttlecock, Customer],
-      }),
-      inject: [ConfigService],
+    CacheModule.register({
+      store: require('cache-manager-redis-store'),
+      host: 'localhost', // Replace with your Redis host
+      port: 6379, // Default Redis port
+      ttl: 60, // Cache expiration in seconds
     }),
+    PrismaModule, // Import PrismaModule
     RacketsModule,
     AuthModule,
   ],
