@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/constants/base_url'
+import { BACKEND_URL } from '@/constants/base_url'
 import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GitHubProvider from 'next-auth/providers/github'
@@ -28,11 +28,11 @@ export const authConfig: NextAuthOptions = {
         try {
           console.log('Attempting to login with credentials:', credentials)
 
-          const res = await fetch(`${BASE_URL}/auth/login`, {
+          const res = await fetch(`${BACKEND_URL}/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              email: credentials?.email,
+              mail: credentials?.email,
               password: credentials?.password,
             }),
           })
@@ -51,6 +51,8 @@ export const authConfig: NextAuthOptions = {
               id: user.user_id,
               email: user.mail,
               name: user.username,
+              phone: user.phone,
+              address: user.address,
               token: user.access_token, // Ensure this is correct
             }
           } else {
@@ -72,7 +74,7 @@ export const authConfig: NextAuthOptions = {
       if (user) {
         token.accessToken = user.token ?? '' // Add access token to JWT
         token.email = user.email
-        token.name = user.name // Include user name
+        token.name = user.name // Include user name in JWT
       }
       return token
     },

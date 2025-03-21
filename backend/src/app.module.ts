@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { PrismaModule } from 'prisma/prisma.module'
 import { AuthModule } from './modules/auth/auth.module'
+import { ShoppingCartModule } from './modules/cart/cart.module'
 import { RacketsModule } from './modules/products/rackets/rackets.module'
 
 @Module({
@@ -17,6 +18,7 @@ import { RacketsModule } from './modules/products/rackets/rackets.module'
     PrismaModule, // Import PrismaModule
     RacketsModule,
     AuthModule,
+    ShoppingCartModule,
   ],
 })
 export class AppModule {}

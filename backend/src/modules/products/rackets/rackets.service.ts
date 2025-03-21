@@ -8,10 +8,21 @@ export class RacketsService {
 
   async create(
     createProductDto: Prisma.ProductCreateInput & {
-      racket: Prisma.RacketCreateInput
+      racket?: Prisma.RacketCreateInput
     },
   ) {
-    return this.prisma.product.create({ data: createProductDto })
+    const { racket, ...productData } = createProductDto
+
+    return this.prisma.product.create({
+      data: {
+        ...productData,
+        racket: racket
+          ? {
+              create: racket, // Proper nested creation
+            }
+          : undefined,
+      },
+    })
   }
 
   async findOne(id: string) {

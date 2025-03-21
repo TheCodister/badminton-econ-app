@@ -1,9 +1,9 @@
 import { useAuth } from '@/context/context'
 import GoogleIcon from '@/icons/GoogleIcon'
 import { handleLogin } from '@/lib/flaskauth'
-import { Button } from "@heroui/button"
-import { Input } from "@heroui/input"
-import { Link } from "@heroui/link"
+import { Button } from '@heroui/button'
+import { Input } from '@heroui/input'
+import { Link } from '@heroui/link'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { signIn, signOut } from 'next-auth/react'
 import { useRouter } from 'next/router'
