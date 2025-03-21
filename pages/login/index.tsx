@@ -15,14 +15,6 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const router = useRouter()
 
-  // const handleLogin = () => {
-  //   signIn('credentials', {
-  //     redirect: false,
-  //     email,
-  //     password,
-  //   })
-  // }
-
   const login = async () => {
     await handleLogin(email, password)
   }
