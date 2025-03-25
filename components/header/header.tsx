@@ -126,11 +126,13 @@ const Header = () => {
           )}
         </NavbarItem>
         <NavbarItem className="w-5">
-          <Button variant="solid" color="primary">
-            <Badge content="1" size="sm" color="danger">
-              <CartIcon stroke="white" fill="white" />
-            </Badge>
-          </Button>
+          <Link href={ROUTES.CART}>
+            <Button variant="solid" color="primary">
+              <Badge content="1" size="sm" color="danger">
+                <CartIcon stroke="white" fill="white" />
+              </Badge>
+            </Button>
+          </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="mt-4">

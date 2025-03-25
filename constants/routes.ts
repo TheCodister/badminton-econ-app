@@ -8,5 +8,6 @@ export const ROUTES = {
   LOGIN: '/login',
   ACCESORIES: '/accesories',
   PROFILE: '/profile',
+  CART: '/cart',
   //there will be more routes
 }
