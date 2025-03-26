@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./
+    ports:
+      - '3001:3001'
+    environment:
+      DATABASE_URL: 'postgresql://postgres:xMJHlbgiaQyCSVaRzDsfuNiHhWXwYlLX@gondola.proxy.rlwy.net:19129/railway'
+      NODE_ENV: 'production'

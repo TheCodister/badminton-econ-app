@@ -37,8 +37,10 @@ products, an AI-powered recommendation system, and user-friendly authentication.
   - Context API (User authentication & global state)
 
 - **Backend:**
-  - [Flask](https://flask.palletsprojects.com/) (Python-based backend)
+  - [NestJS](https://nestjs.com/) (Python-based backend)
   - PostgreSQL (Relational database for storing products & orders)
+  - [RailWay](https://railway.com/) (Cloud Database)
+  - [Prisma] (https://www.prisma.io/) (ORM library)
 - **Linting & Formatting:**
   - [ESLint](https://eslint.org/) (Code quality)
   - [Prettier](https://prettier.io/) (Code formatting)
@@ -78,8 +80,7 @@ Create a `.env.local` file in the root directory and add the necessary API keys
 and database credentials:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000
-DATABASE_URL=postgresql://user:password@localhost:5432/badminton_db
+DATABASE_URL=Will-be-provied
 NEXTAUTH_SECRET=your-secret-key
 ```
 
