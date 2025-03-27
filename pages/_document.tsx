@@ -7,7 +7,7 @@ export default function Document() {
       <Head></Head>
       <body
         className={clsx(
-          'min-h-screen bg-background font-sans antialiased light',
+          'min-h-screen bg-background font-sans antialiased light text-black',
         )}
       >
         <Main />

@@ -31,7 +31,16 @@ export default function Chat() {
                     : 'text-black text-right'
                 }`}
               >
-                <Markdown>{m.content}</Markdown>
+                {m.parts.map((part, i) => {
+                  switch (part.type) {
+                    case 'text':
+                      return (
+                        <div key={`${m.id}-${i}`}>
+                          <Markdown>{part.text}</Markdown>
+                        </div>
+                      )
+                  }
+                })}
               </div>
             </div>
           ))}
