@@ -12,6 +12,7 @@ const useGetRacket = (filters: any) => {
       const { data } = await axios.get(`${BACKEND_URL}/rackets?${queryString}`)
       return data
     },
+    staleTime: 1000 * 60 * 5, // 5 minutes caching
   })
 }
 

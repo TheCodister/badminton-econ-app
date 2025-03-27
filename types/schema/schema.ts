@@ -15,6 +15,11 @@ export const BrandEnum = z.enum([
   'RESON',
 ])
 
+export const CartItem = z.object({
+  product_id: z.string().uuid(),
+  quantity: z.number().int().positive(),
+})
+
 // User Schema (matches backend structure)
 export const UserSchema = z.object({
   id: z.string().uuid(), // Match UUID format in Prisma

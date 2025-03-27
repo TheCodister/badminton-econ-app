@@ -4,7 +4,7 @@ import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Link } from '@heroui/link'
 
-import { useAuth } from '@/context/context'
+import { useGetCart } from '@/hooks/useGetCart'
 import AccessoryIcon from '@/icons/AccessoryIcon'
 import CartIcon from '@/icons/CartIcon'
 import ChatIcon from '@/icons/ChatIcon'
@@ -23,29 +23,28 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@heroui/navbar'
+import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 const Header = () => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { isLoggedIn } = useAuth()
+  const { data: session } = useSession()
+  const { data: cart } = useGetCart(session?.user?.id || '')
 
-  const navItems = [
-    { label: 'Home', href: ROUTES.HOME, icon: HomeIcon },
-    { label: 'Racket', href: ROUTES.RACKET, icon: RacketIcon },
-    { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: ShuttleIcon },
-    { label: 'Shoes', href: ROUTES.SHOES, icon: RunIcon },
-    { label: 'Accesories', href: ROUTES.ACCESORIES, icon: AccessoryIcon },
-    ...(isLoggedIn
-      ? [
-          {
-            label: 'Chat',
-            href: ROUTES.CHAT,
-            icon: ChatIcon,
-          },
-        ]
-      : []),
-  ]
+  const navItems = useMemo(
+    () => [
+      { label: 'Home', href: ROUTES.HOME, icon: HomeIcon },
+      { label: 'Racket', href: ROUTES.RACKET, icon: RacketIcon },
+      { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: ShuttleIcon },
+      { label: 'Shoes', href: ROUTES.SHOES, icon: RunIcon },
+      { label: 'Accessories', href: ROUTES.ACCESORIES, icon: AccessoryIcon },
+      ...(session
+        ? [{ label: 'Chat', href: ROUTES.CHAT, icon: ChatIcon }]
+        : []),
+    ],
+    [session],
+  )
 
   return (
     <Navbar
@@ -77,13 +76,12 @@ const Header = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
-        {navItems.map((item, index) => (
-          <NavbarItem key={index}>
+        {navItems.map((item) => (
+          <NavbarItem key={item.href}>
             <Link color="foreground" href={item.href}>
               <Button
-                startContent={item.icon && <item.icon />}
-                key={item.href}
-                variant={router.pathname === item.href ? 'flat' : 'solid'} // Active page styling
+                startContent={<item.icon />}
+                variant={router.pathname === item.href ? 'flat' : 'solid'}
                 color={router.pathname === item.href ? 'default' : 'primary'}
                 className="text-white font-semibold"
               >
@@ -92,6 +90,7 @@ const Header = () => {
             </Link>
           </NavbarItem>
         ))}
+
         <NavbarItem>
           <Input
             className="w-[10vw]"
@@ -101,7 +100,7 @@ const Header = () => {
           />
         </NavbarItem>
         <NavbarItem className="w-20">
-          {!isLoggedIn ? (
+          {!session ? (
             <Link href={ROUTES.LOGIN}>
               <Button
                 startContent={<PersonIcon />}
@@ -128,7 +127,13 @@ const Header = () => {
         <NavbarItem className="w-5">
           <Link href={ROUTES.CART}>
             <Button variant="solid" color="primary">
-              <Badge content="1" size="sm" color="danger">
+              <Badge
+                content={
+                  cart?.cart_items.length > 0 ? cart?.cart_items.length : ''
+                }
+                size="sm"
+                color="danger"
+              >
                 <CartIcon stroke="white" fill="white" />
               </Badge>
             </Button>

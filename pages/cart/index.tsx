@@ -1,17 +1,32 @@
+import { CartItem } from '@/backend/src/models/cart_item.entity'
 import CartCard from '@/components/CartProductCard'
+import { useGetCart } from '@/hooks/useGetCart'
 import { Button } from '@heroui/button'
+import { useSession } from 'next-auth/react'
+
 export default function ShoppingCart() {
+  const { data: session } = useSession()
+  const { data: cart, error } = useGetCart(session?.user?.id || '')
+
+  if (error) return <p>Failed to load cart</p>
+
   return (
     <div>
       <h1>Your Shopping Cart</h1>
       <div className="flex flex-col justify-between gap-4 w-full 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col">
-        <div className="flex flex-col gap-4 w-">
+        <div className="flex flex-col gap-4">
           <h2>Cart content</h2>
-          <CartCard />
-          <CartCard />
-          <CartCard />
-          <CartCard />
-          <CartCard />
+          {cart?.cart_items.length > 0 ? (
+            cart.cart_items.map((item: CartItem) => (
+              <CartCard
+                key={item.item_id}
+                productId={item.product_id}
+                quantity={item.quantity}
+              />
+            ))
+          ) : (
+            <p>Your cart is empty</p>
+          )}
         </div>
         <div className="flex flex-col gap-4 bg-slate-200 h-fit p-4 rounded-xl">
           <h2>Order Summary</h2>

@@ -1,17 +1,17 @@
-import { useAuth } from '@/context/context'
+import { useChat } from '@ai-sdk/react'
 import { Avatar } from '@heroui/avatar'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Spinner } from '@heroui/spinner'
-import { useChat } from 'ai/react'
+import { useSession } from 'next-auth/react'
 import Markdown from 'react-markdown'
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat()
 
-  const { isLoggedIn } = useAuth()
-  if (!isLoggedIn) return <div>Unauthorized</div>
+  const { data: session } = useSession()
+  if (!session) return <div>Unauthorized</div>
   else
     return (
       <div className="mx-auto w-full max-w-md flex flex-col items-center stretch relative">

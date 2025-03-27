@@ -1,16 +1,15 @@
-import { useAuth } from '@/context/context'
 import GoogleIcon from '@/icons/GoogleIcon'
 import { handleLogin } from '@/lib/flaskauth'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Link } from '@heroui/link'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 export default function LoginPage() {
-  const { isLoggedIn } = useAuth()
+  const { data: session } = useSession()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
@@ -19,14 +18,14 @@ export default function LoginPage() {
     await handleLogin(email, password)
   }
 
-  if (isLoggedIn) {
+  if (session) {
     router.push('/')
   }
 
   return (
     <div className="flex flex-col gap-5 p-5 items-center justify-center border-solid border-2 rounded-xl">
-      <h1>{isLoggedIn ? 'Welcome Back!' : 'Login'}</h1>
-      {!isLoggedIn ? (
+      <h1>{session ? 'Welcome Back!' : 'Login'}</h1>
+      {!session ? (
         <>
           {/* Normal login form */}
           <Input

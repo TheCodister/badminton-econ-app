@@ -1,3 +1,4 @@
+import AddToCartButton from '@/components/button/AddToCartButton'
 import useGetRacketbyId from '@/hooks/useGetRacketbyId'
 import {
   BalanceConverter,
@@ -10,7 +11,6 @@ import { Divider } from '@heroui/divider'
 import { Image } from '@heroui/image'
 import { Progress } from '@heroui/progress'
 import { Skeleton } from '@heroui/skeleton'
-import { Flex } from '@radix-ui/themes'
 import { useRouter } from 'next/router'
 
 const ProductDetail = () => {
@@ -30,8 +30,8 @@ const ProductDetail = () => {
       )}
       {isFetching && <ProductDetailSkeleton />}
       {data && (
-        <Flex gap="9">
-          <Flex direction="column">
+        <div className="flex gap-9">
+          <div className="flex flex-col">
             <div className="w-[350px] h-full flex justify-center items-center overflow-hidden">
               <Image
                 src={data.product.image_url}
@@ -57,14 +57,14 @@ const ProductDetail = () => {
               size="md"
               value={WeightConverter(data.weight)} // Customize as needed
             />
-          </Flex>
+          </div>
           <Divider orientation="vertical" className="h-auto" />
-          <Flex direction="column" gap="2">
+          <div className="flex flex-col gap-2">
             <h1 className="text-2xl font-medium">
               {data.product.product_name}
             </h1>
             <Divider />
-            <Flex gap="5">
+            <div className="flex gap-5">
               <h6>In stock: {data.product.stock}</h6>
               <h6>Brand: {data.product.brand}</h6>
               <h6>
@@ -78,7 +78,7 @@ const ProductDetail = () => {
                   {data.product.status}
                 </Chip>
               </h6>
-            </Flex>
+            </div>
             <h2 className="text-danger-500">${data.product.price}</h2>
             <ul className="space-y-2">
               <li>
@@ -100,16 +100,8 @@ const ProductDetail = () => {
             </ul>
             <h5>Description</h5>
             <h6>{data.product.description}</h6>
-            <Flex gap="5" className="w-full mt-5">
-              <Button
-                size="lg"
-                className="w-full"
-                color="default"
-                variant="bordered"
-                radius="full"
-              >
-                Add to cart
-              </Button>
+            <div className="flex gap-5 w-full mt-5">
+              <AddToCartButton racketId={data.product.id} />
               <Button
                 size="lg"
                 className="w-full"
@@ -118,9 +110,9 @@ const ProductDetail = () => {
               >
                 Buy now
               </Button>
-            </Flex>
-          </Flex>
-        </Flex>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )
@@ -128,9 +120,9 @@ const ProductDetail = () => {
 
 export function ProductDetailSkeleton() {
   return (
-    <Flex gap="9">
+    <div className="flex gap-9">
       {/* Image Skeleton */}
-      <Flex direction="column" gap="5">
+      <div className="flex flex-col gap-5">
         <Skeleton className="rounded-lg">
           <div className="w-[300px] h-[400px] bg-default-300 object-cover"></div>
         </Skeleton>
@@ -143,11 +135,11 @@ export function ProductDetailSkeleton() {
         <Skeleton>
           <div className="w-[300px] h-6 bg-default-300"></div>
         </Skeleton>
-      </Flex>
+      </div>
 
       <Divider orientation="vertical" className="h-auto" />
 
-      <Flex direction="column" gap="2" className="w-full">
+      <div className="flex flex-col gap-2 w-full">
         {/* Title Skeleton */}
         <Skeleton className="rounded-lg w-full">
           <div className="w-[250px] h-14 bg-default-300"></div>
@@ -156,7 +148,7 @@ export function ProductDetailSkeleton() {
         <Divider />
 
         {/* Metadata Skeleton */}
-        <Flex gap="5">
+        <div className="flex gap-5">
           <Skeleton className="w-2/4 rounded-lg">
             <div className="h-6 bg-default-300"></div>
           </Skeleton>
@@ -166,7 +158,7 @@ export function ProductDetailSkeleton() {
           <Skeleton className="w-3/4 rounded-lg">
             <div className="h-6 bg-default-300"></div>
           </Skeleton>
-        </Flex>
+        </div>
 
         {/* Price Skeleton */}
         <Skeleton className="w-2/4 rounded-lg">
@@ -186,8 +178,8 @@ export function ProductDetailSkeleton() {
         <Skeleton className="rounded-lg">
           <div className="w-96 h-16 bg-default-300"></div>
         </Skeleton>
-      </Flex>
-    </Flex>
+      </div>
+    </div>
   )
 }
 

@@ -2,7 +2,6 @@ import ProductCard from '@/components/card/ProductCard'
 import NavButton from '@/components/navbutton/navbutton'
 import { SCREEN_WIDTH } from '@/constants/screen-width'
 import { Racket } from '@/types/schema/schema'
-import { Flex, Grid } from '@radix-ui/themes'
 import { useEffect, useState } from 'react'
 
 interface FeaturedProductProps {
@@ -57,28 +56,24 @@ const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
   }
 
   return (
-    <Flex direction="column" gap="5" className="bg-gray-300 rounded-xl pb-5">
+    <div className="bg-gray-300 rounded-xl pb-5 flex flex-col gap-5">
       <section className="bg-primary w-fit ml-16 text-white px-5 py-3 rounded-b-xl">
         <h4>{title}</h4>
       </section>
-      <Flex gap="5" px="4" height="full" align="center">
+      <div className="flex items-center gap-5 px-4 h-full">
         <NavButton onClick={handlePrevious} disabled={currentIndex === 0} />
-        <Grid
-          columns={{ initial: '1', sm: '3', lg: '4' }}
-          gap="4"
-          className="w-full"
-        >
+        <div className="grid w-full gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
           {paginatedProducts.map((product) => (
             <ProductCard key={product.id} data={product} />
           ))}
-        </Grid>
+        </div>
         <NavButton
           onClick={handleNext}
           disabled={currentIndex + itemsPerPage >= products.length}
           reverse
         />
-      </Flex>
-    </Flex>
+      </div>
+    </div>
   )
 }
 

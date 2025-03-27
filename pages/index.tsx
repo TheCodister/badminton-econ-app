@@ -1,13 +1,12 @@
 import CategoryCard from '@/components/card/CategoryCard'
 import FeaturedProduct from '@/components/FeatureProductDisplay'
 import { CATEGORY } from '@/constants/category'
-import { useAuth } from '@/context/context'
 import useGetRacket from '@/hooks/useGetRacket'
 import ChatIcon from '@/icons/ChatIcon'
 import { Card } from '@heroui/card'
 import { Image } from '@heroui/image'
 import { Skeleton } from '@heroui/skeleton'
-import { Flex } from '@radix-ui/themes'
+import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -15,11 +14,11 @@ const IndexPage = () => {
   const [filters, setFilters] = useState({})
 
   const { data, error, isLoading } = useGetRacket(filters)
-  const { isLoggedIn } = useAuth()
+  const { data: session } = useSession()
 
   const route = useRouter()
   const handleChatNavigate = () => {
-    if (isLoggedIn) {
+    if (session) {
       route.push('/chat')
     } else {
       route.push('/login')
@@ -31,7 +30,7 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Flex direction="column" justify="center" gap="5" className="px-3">
+      <div className="flex flex-col content-center gap-5 px-3">
         <Card
           isFooterBlurred
           radius="lg"
@@ -47,19 +46,13 @@ const IndexPage = () => {
         <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
           Shop by categories
         </h2>
-        <Flex
-          gap="5"
-          px="4"
-          height="full"
-          justify="center"
-          align="center"
-          direction={{ initial: 'column', sm: 'row', lg: 'row', xl: 'row' }}
-          display={{ initial: 'none', sm: 'flex', lg: 'flex', xl: 'flex' }}
-        >
+
+        <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
           {CATEGORY.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}
-        </Flex>
+        </div>
+
         <section className="flex flex-col items-center gap-10">
           <h2>TRY OUR BMB AI!</h2>
           <section
@@ -79,7 +72,7 @@ const IndexPage = () => {
         <FeaturedProduct title="Best Seller Racket" products={data} />
 
         <FeaturedProduct title="Best Seller Shoes" products={data} />
-      </Flex>
+      </div>
     </main>
   )
 }
@@ -87,7 +80,7 @@ const IndexPage = () => {
 export function IndexPageSkeleton() {
   return (
     <main>
-      <Flex direction="column" justify="center" gap="5" className="px-3">
+      <div className="flex flex-col content-center gap-5 px-3">
         {/* Banner Skeleton */}
         <Skeleton className="w-full h-[200px] rounded-lg" />
 
@@ -113,25 +106,17 @@ export function IndexPageSkeleton() {
         <Skeleton className="w-full h-[300px] rounded-lg" />
         <Skeleton className="w-full h-[300px] rounded-lg" />
         <Skeleton className="w-full h-[300px] rounded-lg" />
-      </Flex>
+      </div>
     </main>
   )
 }
 
 const CategorySkeleton = () => (
-  <Flex
-    gap="5"
-    px="4"
-    height="full"
-    justify="center"
-    align="center"
-    direction={{ initial: 'column', sm: 'row', lg: 'row', xl: 'row' }}
-    display={{ initial: 'none', sm: 'flex', lg: 'flex', xl: 'flex' }}
-  >
+  <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
     {CATEGORY.map((category) => (
       <Skeleton key={category.id} className="w-[250px] h-[400px] rounded-lg" />
     ))}
-  </Flex>
+  </div>
 )
 
 export default IndexPage

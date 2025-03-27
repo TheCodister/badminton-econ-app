@@ -7,7 +7,6 @@ import { Divider } from '@heroui/divider'
 import { Pagination } from '@heroui/pagination'
 import { Select, SelectItem } from '@heroui/select'
 import { Skeleton } from '@heroui/skeleton'
-import { Flex, Grid } from '@radix-ui/themes'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
@@ -25,7 +24,7 @@ const IndexPage = () => {
       <Head>
         <title>Racket</title>
       </Head>
-      <Flex direction="column" gap="4">
+      <div className="flex flex-col gap-4">
         <Select className="max-w-xs self-end" label="Sort by" size="sm">
           {PRICEOPTION.map((option) => (
             <SelectItem className="text-black" key={option.key}>
@@ -33,25 +32,21 @@ const IndexPage = () => {
             </SelectItem>
           ))}
         </Select>
-        <Flex>
+        <div className="flex">
           <Sidebar />
-          <Grid
-            columns={{ xl: '5', lg: '4', md: '3', sm: '2', xs: '1' }}
-            gap="5"
-            px="4"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 px-4">
             {data.length > 0 ? (
-              data.map((data: Racket) => (
-                <ProductCard key={data.id} data={data} />
+              data.map((racket: Racket) => (
+                <ProductCard key={racket.id} data={racket} />
               ))
             ) : (
               <div className="text-center text-lg font-medium text-red-500 w-full">
                 No rackets found
               </div>
             )}
-          </Grid>
-        </Flex>
-      </Flex>
+          </div>
+        </div>
+      </div>
       <div className="flex self-center justify-center mt-4">
         <Pagination total={10} initialPage={1} />
       </div>
@@ -62,24 +57,20 @@ const IndexPage = () => {
 export function RacketPageSkeleton() {
   return (
     <main>
-      <Flex direction="column" gap="4">
+      <div className="flex flex-col gap-4">
         <Skeleton className="rounded-lg w-60 h-12 self-end" />
-        <Flex>
+        <div className="flex">
           <Skeleton className="w-44 h-[500px] rounded-lg" />
           <Divider orientation="vertical" className="ml-2 h-[500px] w-[2px]" />
-          <Grid
-            columns={{ xl: '5', lg: '4', md: '3', sm: '2', xs: '1' }}
-            gap="5"
-            px="4"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 px-4">
             <Skeleton className="w-56 h-[500px] rounded-lg" />
             <Skeleton className="w-56 h-[500px] rounded-lg" />
             <Skeleton className="w-56 h-[500px] rounded-lg" />
             <Skeleton className="w-56 h-[500px] rounded-lg" />
             <Skeleton className="w-56 h-[500px] rounded-lg" />
-          </Grid>
-        </Flex>
-      </Flex>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }

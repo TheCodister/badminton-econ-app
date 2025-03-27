@@ -72,16 +72,18 @@ export const authConfig: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.accessToken = user.token ?? '' // Add access token to JWT
+        token.id = user.id // Store user ID in JWT
+        token.accessToken = user.token ?? '' // Store access token
         token.email = user.email
-        token.name = user.name // Include user name in JWT
+        token.name = user.name
       }
       return token
     },
     async session({ session, token }) {
-      session.accessToken = token.accessToken // Include JWT token in session
+      session.user.id = token.id as string // Store user ID in session
+      session.accessToken = token.accessToken // Store access token
       session.user.email = token.email
-      session.user.name = token.name ?? undefined // Include user name in session
+      session.user.name = token.name ?? undefined
       return session
     },
   },
