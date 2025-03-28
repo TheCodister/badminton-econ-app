@@ -10,7 +10,8 @@
       "jsx": true
     },
     "project": ["./tsconfig.json"],
-    "createDefaultProgram": true
+    "createDefaultProgram": true,
+    "sourceType": "module"
   },
   "rules": {},
   "overrides": [
