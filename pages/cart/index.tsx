@@ -1,8 +1,13 @@
-import { CartItem } from '@/backend/src/models/cart_item.entity'
 import CartCard from '@/components/CartProductCard'
 import { useGetCart } from '@/hooks/useGetCart'
 import { Button } from '@heroui/button'
 import { useSession } from 'next-auth/react'
+
+interface CartItem {
+  item_id: string
+  product_id: string
+  quantity: number
+}
 
 export default function ShoppingCart() {
   const { data: session } = useSession()
