@@ -4,17 +4,17 @@ import {
   StiffnessConverter,
   WeightConverter,
 } from '@/utils/Converter'
-import { Button } from "@heroui/button"
-import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card"
+import { Button } from '@heroui/button'
+import { Card, CardBody, CardFooter, CardHeader } from '@heroui/card'
 import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@heroui/dropdown"
-import { Image } from "@heroui/image"
-import { Link } from "@heroui/link"
-import { Progress } from "@heroui/progress"
+} from '@heroui/dropdown'
+import { Image } from '@heroui/image'
+import { Link } from '@heroui/link'
+import { Progress } from '@heroui/progress'
 import { memo } from 'react'
 
 type ProductData = Racket
@@ -55,7 +55,7 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
               autoFocus
               className="text-black"
             >
-              <DropdownItem>
+              <DropdownItem key="balance">
                 {data.balance && (
                   <Progress
                     label={`Balance: ${data.balance}`}
@@ -65,7 +65,7 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
                   />
                 )}
               </DropdownItem>
-              <DropdownItem>
+              <DropdownItem key="stiffness">
                 {data.stiffness && (
                   <Progress
                     label={`Stiffness: ${data.stiffness}`}
@@ -75,7 +75,7 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
                   />
                 )}
               </DropdownItem>
-              <DropdownItem>
+              <DropdownItem key="weight">
                 {data.weight && (
                   <Progress
                     label={`Weight: ${data.weight}`}

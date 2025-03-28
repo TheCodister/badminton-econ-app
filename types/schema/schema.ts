@@ -37,15 +37,7 @@ export const ShoeShuttlecockSchema = z.object({
 
 // Racket Schema (matches backend structure)
 export const RacketSchema = z.object({
-  id: z.string().uuid(), // Use UUID to match product_id in backend
-  brand: BrandEnum,
-  image_url: z.string().url(),
-  price: z.number().nonnegative(),
-  description: z.string(),
-  status: z.enum(['ACTIVE', 'INACTIVE']), // Match backend enum (if applicable)
-  sales: z.boolean(),
-  stock: z.number().nonnegative(),
-  available_location: z.array(z.string()), // Match JSON structure
+  id: z.string().uuid(),
   line: z.string(),
   stiffness: z.string(),
   weight: z.string(),
@@ -53,6 +45,18 @@ export const RacketSchema = z.object({
   max_tension: z.string(),
   length: z.number().positive(),
   technology: z.array(z.string()),
+  product: z.object({
+    id: z.string().uuid(),
+    image_url: z.string().url(),
+    product_name: z.string(),
+    brand: z.enum(['YONEX', 'LINING', 'VICTOR']), // Add all possible brands here
+    price: z.string(), // Backend is returning price as string, not number
+    description: z.string(),
+    status: z.enum(['AVAILABLE', 'UNAVAILABLE', 'INACTIVE']), // Match backend enum if applicable
+    sales: z.boolean(),
+    stock: z.number().nonnegative(),
+    available_location: z.array(z.string()),
+  }),
 })
 
 // Types inferred from schema
