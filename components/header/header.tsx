@@ -141,18 +141,18 @@ const Header = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="mt-4">
-        {navItems.map((item, index) => (
-          <NavbarMenuItem key={index}>
-            <Button
-              className="text-white font-semibold w-full"
-              startContent={item.icon && <item.icon />}
-              key={item.href}
-              variant={router.pathname === item.href ? 'shadow' : 'solid'} // Active page styling
-              color={router.pathname === item.href ? 'default' : 'primary'}
-              href={item.href}
-            >
-              {item.label}
-            </Button>
+        {navItems.map((item) => (
+          <NavbarMenuItem key={item.href}>
+            <Link className="w-full" color="foreground" href={item.href}>
+              <Button
+                className="text-white font-semibold w-full"
+                startContent={item.icon && <item.icon />}
+                variant={router.pathname === item.href ? 'shadow' : 'solid'} // Active page styling
+                color={router.pathname === item.href ? 'default' : 'primary'}
+              >
+                {item.label}
+              </Button>
+            </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
