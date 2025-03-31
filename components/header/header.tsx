@@ -48,16 +48,17 @@ const Header = () => {
 
   return (
     <Navbar
-      className="w-screen justify-center p-2 bg-primary text-white"
+      className="w-screen p-2 bg-primary text-white"
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent>
-        <NavbarMenuToggle
-          className="xl:hidden lg:hidden sm:block"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        />
-        <NavbarBrand>
-          {/* <Image
+      <NavbarContent className="flex flex-col w-full">
+        <div className="flex w-full h-full gap-4 items-center">
+          <NavbarMenuToggle
+            className="xl:hidden lg:hidden sm:block"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          />
+          <NavbarBrand className="self-center">
+            {/* <Image
             src={LogoURL}
             alt="Logo"
             layout="intrinsic"
@@ -65,15 +66,49 @@ const Header = () => {
             height={200}
             className="rounded-full"
           /> */}
-          <h1>BMB</h1>
-        </NavbarBrand>
-        <NavbarItem className="xl:hidden lg:hidden md:block sm:block">
-          <Input
-            className="w-full"
-            startContent={<SearchIcon width={20} height={20} color="black" />}
-            placeholder="Search"
-          />
-        </NavbarItem>
+            <h1>BMB</h1>
+          </NavbarBrand>
+          <NavbarItem className="xl:hidden lg:hidden sm:block">
+            {!session ? (
+              <Link href={ROUTES.LOGIN}>
+                <Button
+                  startContent={<PersonIcon />}
+                  isIconOnly
+                  variant="solid"
+                  color="primary"
+                  className="font-semibold"
+                >
+                  Login
+                </Button>
+              </Link>
+            ) : (
+              <Link href={ROUTES.PROFILE}>
+                <Button
+                  startContent={<PersonIcon />}
+                  isIconOnly
+                  variant="solid"
+                  color="primary"
+                  className="font-semibold"
+                ></Button>
+              </Link>
+            )}
+          </NavbarItem>
+          <NavbarItem className="xl:hidden lg:hidden sm:block">
+            <Link href={ROUTES.CART}>
+              <Button variant="solid" color="primary" isIconOnly>
+                <Badge
+                  content={
+                    cart?.cart_items.length > 0 ? cart?.cart_items.length : ''
+                  }
+                  size="sm"
+                  color="danger"
+                >
+                  <CartIcon stroke="white" fill="white" />
+                </Badge>
+              </Button>
+            </Link>
+          </NavbarItem>
+        </div>
       </NavbarContent>
       <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
         {navItems.map((item) => (
@@ -141,6 +176,13 @@ const Header = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="mt-4">
+        <NavbarMenuItem className="mb-4">
+          <Input
+            className="w-full"
+            startContent={<SearchIcon width={20} height={20} color="black" />}
+            placeholder="Search"
+          />
+        </NavbarMenuItem>
         {navItems.map((item) => (
           <NavbarMenuItem key={item.href}>
             <Link className="w-full" color="foreground" href={item.href}>
