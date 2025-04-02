@@ -1,18 +1,38 @@
-const Register = () => {
-  return (
-    //use the Hero UI to style these
-    <div>
-      <h1>Register</h1>
-      <form>
-        <input type="text" placeholder="Username" />
-        <input type="email" placeholder="Email" />
-        <input type="tel" placeholder="Phone" />
-        <input type="password" placeholder="Password" />
-        <input type="text" placeholder="Address" />
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  )
-}
+import { Button } from '@heroui/button';
+import { Input } from '@heroui/input';
+import { Link } from '@heroui/link';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { handleRegister } from '@/lib/flaskauth';
 
-export default Register
+const Register = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [address, setAddress] = useState('');
+  const router = useRouter();
+
+  const register = async () => {
+    await handleRegister(username, email, phone, password, address);
+    router.push('/login');
+  };
+
+  return (
+    <div className="flex flex-col gap-5 p-5 items-center justify-center border-solid border-2 rounded-xl">
+      <h1>Register</h1>
+      <form className="flex flex-col gap-5 w-full xl:w-[30vw] lg:w-auto md:w-auto sm:w-auto" onSubmit={register}>
+        <Input size="lg" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <Input size="lg" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Input size="lg" placeholder="Phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
+        <Input size="lg" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <Input size="lg" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
+      </form>
+      <Button size="lg" color="primary" type="submit">Register</Button>
+      <p>Already have an account? <Link href="/login">Login</Link></p>
+    </div>
+  );
+};
+
+export default Register;
+
