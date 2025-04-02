@@ -38,5 +38,29 @@ async function handleLogin(email: string, password: string) {
     alert('Login failed: ' + error.message)
   }
 }
+async function handleRegister(username:string, email:string, phone:string, password:string, address:string) {
+  try {
+    console.log('Registering user:', { username, email, phone, address });
 
-export { handleLogin }
+    // Send POST request to NestJS backend register route
+    const response = await fetch(`${BACKEND_URL}/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, mail: email, phone, password, address }), // Ensure 'mail' matches NestJS DTO
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Registration failed');
+    }
+
+    const data = await response.json();
+    console.log('Registration success:', data);
+
+    return data; // Return data for further use (e.g., auto-login, UI updates)
+  } catch (error:any) {
+    console.error('Registration error:', error.message);
+    throw error;
+  }
+}
+export { handleLogin, handleRegister }

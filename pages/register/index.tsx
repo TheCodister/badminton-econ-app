@@ -14,7 +14,6 @@ const Register = () => {
   const router = useRouter();
 
   const register = async () => {
-    e.preventDefault();
     await handleRegister(username, email, phone, password, address);
     router.push('/login');
   };
