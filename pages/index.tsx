@@ -3,7 +3,6 @@ import FeaturedProduct from '@/components/FeatureProductDisplay'
 import { CATEGORY } from '@/constants/category'
 import useGetRacket from '@/hooks/useGetRacket'
 import ChatIcon from '@/icons/ChatIcon'
-import { Card } from '@heroui/card'
 import { Image } from '@heroui/image'
 import { Skeleton } from '@heroui/skeleton'
 import { useSession } from 'next-auth/react'
@@ -26,32 +25,35 @@ const IndexPage = () => {
   }
 
   if (error) return <div>Error fetching user data</div>
-  if (isLoading) return <IndexPageSkeleton />
 
   return (
     <main>
-      <div className="flex flex-col content-center gap-5 px-3">
-        <Card
-          isFooterBlurred
-          radius="lg"
-          className="border-none flex items-stretch justify-center container"
-        >
+      <div className="flex flex-col justify-center gap-5 px-3 items-center">
+        <div className="flex flex-col justify-center items-center gap-5 px-4 h-full w-8/12">
           <Image
             alt="Banner"
-            className="object-cover"
-            height="full"
-            src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/business-banner-template-design-f4b281ca556e3d500e78fc6260273284_screen.jpg?ts=1561497794"
+            className="w-full h-full object-cover"
+            src="https://static.vecteezy.com/system/resources/previews/035/277/450/non_2x/badminton-sport-banner-background-in-red-and-white-with-halftone-and-diagonal-stripes-vector.jpg"
           />
-        </Card>
-        <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
-          Shop by categories
-        </h2>
+          <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
+            Shop by categories
+          </h2>
+        </div>
 
-        <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
+        {/* <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
           {CATEGORY.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}
-        </div>
+        </div> */}
+        {isLoading ? (
+          <CategorySkeleton />
+        ) : (
+          <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
+            {CATEGORY.map((category) => (
+              <CategoryCard key={category.id} category={category} />
+            ))}
+          </div>
+        )}
 
         <section className="flex flex-col items-center gap-10">
           <h2>TRY OUR BMB AI!</h2>
@@ -67,11 +69,19 @@ const IndexPage = () => {
           </h4>
         </section>
 
-        <FeaturedProduct title="Mega Sale" products={data} />
-
-        <FeaturedProduct title="Best Seller Racket" products={data} />
-
-        <FeaturedProduct title="Best Seller Shoes" products={data} />
+        {isLoading ? (
+          <div className="flex flex-col gap-5">
+            <Skeleton className="w-full h-[300px] rounded-lg" />
+            <Skeleton className="w-full h-[300px] rounded-lg" />
+            <Skeleton className="w-full h-[300px] rounded-lg" />
+          </div>
+        ) : (
+          <div className="flex flex-col gap-5">
+            <FeaturedProduct title="Mega Sale" products={data} />
+            <FeaturedProduct title="Best Seller Racket" products={data} />
+            <FeaturedProduct title="Best Seller Shoes" products={data} />
+          </div>
+        )}
       </div>
     </main>
   )
