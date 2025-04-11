@@ -1,9 +1,4 @@
 import { ROUTES } from '@/constants/routes'
-import { Badge } from '@heroui/badge'
-import { Button } from '@heroui/button'
-import { Input } from '@heroui/input'
-import { Link } from '@heroui/link'
-
 import { useGetCart } from '@/hooks/useGetCart'
 import AccessoryIcon from '@/icons/AccessoryIcon'
 import CartIcon from '@/icons/CartIcon'
@@ -14,6 +9,10 @@ import RacketIcon from '@/icons/RacketIcon'
 import RunIcon from '@/icons/RunIcon'
 import SearchIcon from '@/icons/SearchIcon'
 import ShuttleIcon from '@/icons/ShuttleIcon'
+import { Badge } from '@heroui/badge'
+import { Button } from '@heroui/button'
+import { Input } from '@heroui/input'
+import { Link } from '@heroui/link'
 import {
   Navbar,
   NavbarBrand,
@@ -26,6 +25,7 @@ import {
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
+import ProductSearchBar from '../SearchBar'
 const Header = () => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -127,12 +127,7 @@ const Header = () => {
         ))}
 
         <NavbarItem>
-          <Input
-            className="w-[10vw]"
-            startContent={<SearchIcon width={20} height={20} color="black" />}
-            placeholder="Search"
-            type="text"
-          />
+          <ProductSearchBar />
         </NavbarItem>
         <NavbarItem className="w-20">
           {!session ? (

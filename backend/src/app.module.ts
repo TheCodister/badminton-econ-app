@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config'
 import { PrismaModule } from 'prisma/prisma.module'
 import { AuthModule } from './modules/auth/auth.module'
 import { ShoppingCartModule } from './modules/cart/cart.module'
+import { ProductModule } from './modules/products/product.module'
 import { RacketsModule } from './modules/products/rackets/rackets.module'
 
 @Module({
@@ -19,6 +20,7 @@ import { RacketsModule } from './modules/products/rackets/rackets.module'
     RacketsModule,
     AuthModule,
     ShoppingCartModule,
+    ProductModule,
   ],
 })
 export class AppModule {}

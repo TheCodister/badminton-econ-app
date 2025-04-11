@@ -76,7 +76,7 @@ const IndexPage = () => {
             <Skeleton className="w-full h-[300px] rounded-lg" />
           </div>
         ) : (
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 items-center">
             <FeaturedProduct title="Mega Sale" products={data} />
             <FeaturedProduct title="Best Seller Racket" products={data} />
             <FeaturedProduct title="Best Seller Shoes" products={data} />
