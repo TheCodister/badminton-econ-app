@@ -9,7 +9,20 @@ export class ShoppingCartService {
   async getCart(customerId: string) {
     return this.prisma.shoppingCart.findUnique({
       where: { customer_id: customerId },
-      include: { cart_items: true },
+      include: {
+        cart_items: {
+          include: {
+            product: {
+              select: {
+                id: true,
+                product_name: true,
+                price: true,
+                image_url: true,
+              },
+            },
+          },
+        },
+      },
     })
   }
 
@@ -74,7 +87,6 @@ export class ShoppingCartService {
     return { message: 'Product removed from cart' }
   }
 
-  // Clear entire cart
   async clearCart(customerId: string) {
     const cart = await this.prisma.shoppingCart.findUnique({
       where: { customer_id: customerId },

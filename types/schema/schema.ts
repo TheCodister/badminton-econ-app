@@ -15,6 +15,13 @@ export const BrandEnum = z.enum([
   'RESON',
 ])
 
+export interface ProductItem {
+  id: string
+  product_name: string
+  price: number
+  image_url: string
+}
+
 export const CartItem = z.object({
   product_id: z.string().uuid(),
   quantity: z.number().int().positive(),
