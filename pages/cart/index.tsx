@@ -2,6 +2,7 @@ import CartCard from '@/components/CartProductCard'
 import { useGetCart } from '@/hooks/useGetCart'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
+import { Link } from '@heroui/link'
 import { useSession } from 'next-auth/react'
 
 interface CartItem {
@@ -14,8 +15,6 @@ interface CartItem {
 export default function ShoppingCart() {
   const { data: session } = useSession()
   const { data: cart, error } = useGetCart(session?.user?.id || '')
-
-  console.log(cart)
 
   if (error) return <p>Failed to load cart</p>
 
@@ -62,9 +61,11 @@ export default function ShoppingCart() {
                 : '$0.00'}
             </h6>
           </div>
-          <Button className="w-full" color="primary">
-            Checkout
-          </Button>
+          <Link href="/checkout" className="w-full">
+            <Button className="w-full" color="primary">
+              Checkout
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
