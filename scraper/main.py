@@ -14,7 +14,16 @@ import argparse
 import traceback
 import numpy as np
 import json
-
+def count_nunique_fields(rackets_list):
+    # Count number of appearances of each field in the list of rackets
+    field_count = {}
+    for racket in rackets_list:
+        for field in racket["specs"].keys():
+            if field in field_count:
+                field_count[field] += 1
+            else:
+                field_count[field] = 1
+    print(f"Field count: {field_count}")
 def get_rackets_url():
     # Get all rackets url from shopvnb.com
     # https://shopvnb.com/vot-cau-long.html
@@ -35,6 +44,7 @@ def get_rackets_url():
         url = racket.find('a').get('href')
         rackets_url_list.append(url)
     return rackets_url_list
+
 def get_racket_info(racket_url):
     """
     Return following json object: id is no needed
@@ -65,6 +75,9 @@ def get_racket_info(racket_url):
     
     image_url = soup.find('img', class_=re.compile(r'\bimg-responsive\b')).get('src')
     product_name = soup.find('h1', class_=re.compile(r'\btitle-product\b')).text
+    #if product name has "COMBO" in it
+    if "Combo" in product_name:
+        return None
     brand = soup.find('a', class_=re.compile(r'\ba-vendor\b')).text.strip()
     price = soup.find('span', class_=re.compile(r'\bprice product-price\b')).text.split()[1]
     description = None #TO DO AI summaraize the description
@@ -73,14 +86,29 @@ def get_racket_info(racket_url):
     
     spec_table = soup.find('table', class_='table table-bordered')
     specs = {}
-    print("break_point_1")
-    for spec in spec_table.find_all('tr')[:-1]:
+    CONST_SPECS = {
+        'Trình Độ Chơi:': 'Skill Level',
+        'Phong Cách Chơi:': 'Playing Style',
+        'Độ Cứng Đũa:': 'Stiffness',
+        'Điểm Cân Bằng:': 'Balance Point',
+        'Trọng Lượng:': 'Weight',
+        'Chiều dài vợt:': 'Racket Length'
+    }
+    #to do translate to english
+    for spec in spec_table.find_all('tr')[:]:
         #TO DO translate to english
         spec_name = spec.b.text.strip()
+        if spec_name not in CONST_SPECS.keys():
+            continue
+
         spec_value = spec.find_all('td')[-1].text.strip()
-        specs[spec_name] = spec_value
+        specs[CONST_SPECS[spec_name]] = spec_value
         spec_value = spec.find_all('td')[-1].text
-    #print(specs)
+    if specs.get('Racket Length') is None:
+        specs['Racket Length'] = "675 mm"
+    specs = dict(sorted(specs.items()))
+
+
     racket_info = {
         "image_url": image_url,
         "product_name": product_name,
@@ -99,7 +127,9 @@ def process_single_page():
     rackets_list = []
     for url in url_list:
         try:
-           rackets_list.append(get_racket_info(url))
+           racket_info = get_racket_info(url)
+           if racket_info is not None:
+            rackets_list.append(racket_info)
         except Exception as e:
             print(f"Error: {e}")
             print(url)
@@ -109,15 +139,18 @@ def process_single_page():
     for racket in rackets_list:
         unique_keys.update(racket["specs"].keys())
     print(f"Unique keys in rackets_list: {unique_keys}")
-    # with open('rackets.json', 'w') as f:
-    #     json.dump(rackets_list, f, indent=4)
-    # print(f"Total rackets: {len(rackets_list)}")
+    with open('rackets.json', 'w') as f:
+        json.dump(rackets_list, f, indent=4,ensure_ascii = False)
+    print(f"Total rackets: {len(rackets_list)}")
+    count_nunique_fields(rackets_list)
+
 def debugger(url_list):
     for url in url_list:
         print(url)
         print(get_racket_info(url))
         print(f"complete{url}")
 if __name__ == "__main__":
-    bugged_urls = [ "vot-cau-long-vnb-carbon-training-150g.html", missing table]
-    debugger(bugged_urls)
-    #process_single_page()
+    #bugged_urls = [ "vot-cau-long-vnb-carbon-training-150g.html", missing table]
+    #debugger(bugged_urls)
+    process_single_page()
+    #get_racket_info('vot-cau-long-vnb-v200i-hong.html')

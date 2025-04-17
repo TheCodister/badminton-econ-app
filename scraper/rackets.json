@@ -1,251 +1,308 @@
 [
     {
         "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v88-xanh-chinh-hang-1.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB V88 xanh ch\u00ednh h\u00e3ng",
+        "product_name": "Vợt cầu lông VNB V88 xanh chính hãng",
         "brand": "VNB",
         "price": "638.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
-        "stock": 15,
+        "stock": 22,
         "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "T\u1ea5n C\u00f4ng",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "Trung B\u00ecnh",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "N\u1eb7ng \u0110\u1ea7u",
-            "Tr\u1ecdng L\u01b0\u1ee3ng:": "4U: 80 - 84g",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm"
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
         }
     },
     {
         "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v200i-hong-3.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB V200i H\u1ed3ng",
+        "product_name": "Vợt cầu lông VNB V200i Hồng",
         "brand": "VNB",
         "price": "529.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
-        "stock": 16,
+        "stock": 6,
         "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "M\u1edbi Ch\u01a1i",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "D\u1ebbo",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "N\u1eb7ng \u0110\u1ea7u"
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "5U: 75 - 79g"
         }
     },
     {
         "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v88-3.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB V88 cam ch\u00ednh h\u00e3ng",
+        "product_name": "Vợt cầu lông VNB V88 cam chính hãng",
         "brand": "VNB",
         "price": "638.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 3,
-        "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "T\u1ea5n C\u00f4ng",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "Trung B\u00ecnh",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "N\u1eb7ng \u0110\u1ea7u",
-            "Tr\u1ecdng L\u01b0\u1ee3ng:": "4U: 80 - 84g",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-tc88b-1.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB TC88B",
-        "brand": "VNB",
-        "price": "799.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 18,
-        "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "Trung B\u00ecnh",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-tc88c-1.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB TC88C",
-        "brand": "VNB",
-        "price": "799.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 12,
-        "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Kh\u00e1 T\u1ed1t",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "Trung B\u00ecnh",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v200-do-2.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB V200 \u0110\u1ecf ch\u00ednh h\u00e3ng",
-        "brand": "VNB",
-        "price": "529.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 15,
-        "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "M\u1edbi Ch\u01a1i",
-            "N\u1ed9i Dung Ch\u01a1i:": "\u0110\u00e1nh \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "Ph\u1ea3n T\u1ea1t, Ph\u00f2ng Th\u1ee7",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "D\u1ebbo",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "C\u00e2n B\u1eb1ng",
-            "Tr\u1ecdng L\u01b0\u1ee3ng:": "4U: 80 - 84g"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v200-xanh-2.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng VNB V200 Xanh ch\u00ednh h\u00e3ng",
-        "brand": "VNB",
-        "price": "529.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 24,
-        "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "M\u1edbi Ch\u01a1i",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "D\u1ebbo",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u",
-            "Tr\u1ecdng L\u01b0\u1ee3ng:": "4U: 80 - 84g"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victor-thruster-ryuga-ii-td-chinh-hang_1744309520.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng Victor Thruster Ryuga II TD ch\u00ednh h\u00e3ng",
-        "brand": "Victor",
-        "price": "3.100.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 9,
-        "specs": {
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "Phong C\u00e1ch Ch\u01a1i:": "T\u1ea5n C\u00f4ng",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "C\u1ee9ng",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "N\u1eb7ng \u0110\u1ea7u"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/gallery/combo-mua-vot-cau-long-victor-ars-100x-ultra-g-tang-vot-victor-ars-9990k-vot-victor-ars-8000_1744255758.webp",
-        "product_name": "Combo Mua V\u1ee3t C\u1ea7u L\u00f4ng Victor ARS 100X Ultra G T\u1eb7ng V\u1ee3t Victor ARS 9990K + V\u1ee3t Victor ARS 8000",
-        "brand": "Victor",
-        "price": "5.830.000",
-        "description": null,
-        "status": "UNAVAILABLE",
-        "sales": false,
-        "stock": 19,
-        "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Kh\u00e1 T\u1ed1t",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "C\u1ee9ng",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u"
-        }
-    },
-    {
-        "image_url": "https://cdn.shopvnb.com/uploads/gallery/combo-mua-vot-cau-long-victor-bs12-se-55th-tang-vot-victor-ars-9990k-vot-victor-tk-ryuga-cls-ao-victor-t-39014b_1744252080.webp",
-        "product_name": "Combo Mua V\u1ee3t C\u1ea7u L\u00f4ng Victor BS12 SE 55TH T\u1eb7ng V\u1ee3t Victor ARS 9990K + V\u1ee3t Victor TK Ryuga CLS + \u00c1o Victor T-39014B",
-        "brand": "Victor",
-        "price": "5.480.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
         "stock": 4,
         "specs": {
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Tr\u1ecdng L\u01b0\u1ee3ng:": "3U: 85 - 89g,4U: 80 - 84g",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "C\u1ee9ng"
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
         }
     },
     {
-        "image_url": "https://cdn.shopvnb.com/uploads/gallery/combo-mua-vot-cau-long-victor-ars-90k-metallic-tang-vot-ars-9990k-vot-victor-tk220h-ii_1744247980.webp",
-        "product_name": "Combo Mua V\u1ee3t C\u1ea7u L\u00f4ng Victor ARS 90K Metallic T\u1eb7ng V\u1ee3t ARS 9990K + V\u1ee3t Victor TK220H II",
-        "brand": "Victor",
-        "price": "5.430.000",
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-tc88b-1.webp",
+        "product_name": "Vợt cầu lông VNB TC88B",
+        "brand": "VNB",
+        "price": "799.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
-        "stock": 9,
+        "stock": 17,
         "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "Tr\u1ecdng L\u01b0\u1ee3ng:": "4U: 80 - 84g",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "C\u00e2n B\u1eb1ng"
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
         }
     },
     {
-        "image_url": "https://cdn.shopvnb.com/uploads/gallery/combo-mua-vot-cau-long-victor-ars-100x-tang-vot-victor-ars-9990k-vot-victor-tk-ryuga-cls_1744245704.webp",
-        "product_name": "Combo Mua V\u1ee3t C\u1ea7u L\u00f4ng Victor ARS 100X T\u1eb7ng V\u1ee3t Victor ARS 9990K + V\u1ee3t Victor TK Ryuga CLS",
-        "brand": "Victor",
-        "price": "5.330.000",
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-tc88c-1.webp",
+        "product_name": "Vợt cầu lông VNB TC88C",
+        "brand": "VNB",
+        "price": "799.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
-        "stock": 13,
+        "stock": 5,
         "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "Trung B\u00ecnh",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "C\u1ee9ng",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u"
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v200-do-2.webp",
+        "product_name": "Vợt cầu lông VNB V200 Đỏ chính hãng",
+        "brand": "VNB",
+        "price": "529.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 12,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-vnb-v200-xanh-2.webp",
+        "product_name": "Vợt cầu lông VNB V200 Xanh chính hãng",
+        "brand": "VNB",
+        "price": "529.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-halbertec-3000-noi-dia-trung_1744832379.webp",
+        "product_name": "Vợt cầu lông Lining Halbertec 3000",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 3,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victor-thruster-ryuga-ii-td-chinh-hang_1744309520.webp",
+        "product_name": "Vợt cầu lông Victor Thruster Ryuga II TD chính hãng",
+        "brand": "Victor",
+        "price": "3.100.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 3,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-redson-shape-esg-ma-tw_1743799396.webp",
+        "product_name": "Vợt cầu lông Redson Shape ESG",
+        "brand": "Redson",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 10,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-aero-carbon-white-chinh-hang_1743795131.webp",
+        "product_name": "Vợt Cầu Lông Felet Aero Carbon",
+        "brand": "Felet",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 10,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kumpoo-e30-xanh-chinh-hang-2_1743736352.webp",
+        "product_name": "Cặp Vợt Cầu Lông Kumpoo E30",
+        "brand": "Kumpoo",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 6,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "670 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "3U: 85 - 89g"
         }
     },
     {
         "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-prokennex-turbo-716-trang-xanh-chinh-hang_1743445877.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng Prokennex Turbo 716 - Tr\u1eafng Xanh Ch\u00ednh H\u00e3ng",
+        "product_name": "Vợt cầu lông Prokennex Turbo 716 - Trắng Xanh Chính Hãng",
         "brand": "Pro Kennex",
         "price": "738.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
-        "stock": 8,
+        "stock": 9,
         "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "M\u1edbi Ch\u01a1i",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "D\u1ebbo",
-            "Phong C\u00e1ch Ch\u01a1i:": "Ph\u1ea3n T\u1ea1t, Ph\u00f2ng Th\u1ee7",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "Nh\u1eb9 \u0110\u1ea7u"
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
         }
     },
     {
         "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-prokennex-turbo-717-trang-do-chinh-hang_1743445213.webp",
-        "product_name": "V\u1ee3t c\u1ea7u l\u00f4ng Prokennex Turbo 717 - Tr\u1eafng \u0110\u1ecf Ch\u00ednh H\u00e3ng",
+        "product_name": "Vợt cầu lông Prokennex Turbo 717 - Trắng Đỏ Chính Hãng",
         "brand": "Pro Kennex",
         "price": "818.000",
         "description": null,
         "status": "UNAVAILABLE",
         "sales": false,
-        "stock": 8,
+        "stock": 7,
         "specs": {
-            "Tr\u00ecnh \u0110\u1ed9 Ch\u01a1i:": "M\u1edbi Ch\u01a1i",
-            "Chi\u1ec1u d\u00e0i v\u1ee3t:": "675 mm",
-            "N\u1ed9i Dung Ch\u01a1i:": "C\u1ea3 \u0110\u01a1n v\u00e0 \u0110\u00f4i",
-            "Phong C\u00e1ch Ch\u01a1i:": "C\u00f4ng Th\u1ee7 To\u00e0n Di\u1ec7n",
-            "\u0110\u1ed9 C\u1ee9ng \u0110\u0169a:": "D\u1ebbo",
-            "\u0110i\u1ec3m C\u00e2n B\u1eb1ng:": "H\u01a1i N\u1eb7ng \u0110\u1ea7u"
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-axforce-90-new-loh-kean-yew-2024-ma-jp_1744311108.jpg",
+        "product_name": "Vợt cầu lông Lining Axforce 90 New - Loh Kean Yew 2024",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 6,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-halbertec-4000-noi-dia-trung_1743358700.webp",
+        "product_name": "Vợt cầu lông Lining Halbertec 4000",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 4,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-axforce-bigbang-new-den-chinh-hang_1743021627.webp",
+        "product_name": "Vợt cầu lông Lining Axforce BigBang new",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 4,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
         }
     }
 ]
