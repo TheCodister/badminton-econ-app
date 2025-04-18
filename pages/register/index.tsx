@@ -1,7 +1,10 @@
+import GoogleIcon from '@/icons/GoogleIcon'
 import { handleRegister } from '@/lib/flaskauth'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Link } from '@heroui/link'
+import { GitHubLogoIcon } from '@radix-ui/react-icons'
+import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -63,9 +66,27 @@ const Register = () => {
           onChange={(e) => setAddress(e.target.value)}
         />
       </form>
-      <Button size="lg" color="primary" type="submit" onPress={register}>
-        Register
-      </Button>
+      <div className="flex gap-2">
+        <Button size="lg" color="primary" type="submit" onPress={register}>
+          Register
+        </Button>
+        <Button
+          startContent={<GoogleIcon width={16} />}
+          variant="bordered"
+          size="lg"
+          onPress={() => signIn('google')}
+        >
+          Google
+        </Button>
+        <Button
+          startContent={<GitHubLogoIcon />}
+          variant="bordered"
+          size="lg"
+          onPress={() => signIn('github')}
+        >
+          GitHub
+        </Button>
+      </div>
       <p>
         Already have an account? <Link href="/login">Login</Link>
       </p>

@@ -17,7 +17,7 @@ export default function LoginPage() {
   const login = async () => {
     await handleLogin(email, password)
   }
-  const to_signup = async() => {
+  const to_signup = async () => {
     router.push('/register')
   }
 
@@ -51,7 +51,9 @@ export default function LoginPage() {
             <Button size="lg" color="primary" onPress={login}>
               Login
             </Button>
-            <Button size="lg" onPress={to_signup}>Sign up</Button>
+            <Button size="lg" onPress={to_signup}>
+              Sign up
+            </Button>
           </div>
           <p>Or login with:</p>
           {/* OAuth login buttons */}
