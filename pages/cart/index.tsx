@@ -1,12 +1,15 @@
 import CartCard from '@/components/CartProductCard'
 import { useGetCart } from '@/hooks/useGetCart'
+import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
+import { Link } from '@heroui/link'
 import { useSession } from 'next-auth/react'
 
 interface CartItem {
   item_id: string
-  product_id: string
+  product: ProductItem
   quantity: number
+  price: number
 }
 
 export default function ShoppingCart() {
@@ -14,6 +17,13 @@ export default function ShoppingCart() {
   const { data: cart, error } = useGetCart(session?.user?.id || '')
 
   if (error) return <p>Failed to load cart</p>
+
+  const calcSumPrice = (cartItems: CartItem[]) => {
+    return cartItems.reduce(
+      (acc, item) => acc + item.product.price * item.quantity,
+      0,
+    )
+  }
 
   return (
     <div>
@@ -25,7 +35,7 @@ export default function ShoppingCart() {
             cart.cart_items.map((item: CartItem) => (
               <CartCard
                 key={item.item_id}
-                productId={item.product_id}
+                product={item.product}
                 quantity={item.quantity}
               />
             ))
@@ -45,11 +55,17 @@ export default function ShoppingCart() {
           </div>
           <div className="flex justify-between">
             <h6>Total:</h6>
-            <h6>$0</h6>
+            <h6 className="font-bold">
+              {cart?.cart_items.length > 0
+                ? `$${calcSumPrice(cart.cart_items).toFixed(2)}`
+                : '$0.00'}
+            </h6>
           </div>
-          <Button className="w-full" color="primary">
-            Checkout
-          </Button>
+          <Link href="/checkout" className="w-full">
+            <Button className="w-full" color="primary">
+              Checkout
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

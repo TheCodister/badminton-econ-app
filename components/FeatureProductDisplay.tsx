@@ -62,7 +62,7 @@ const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
       </section>
       <div className="flex items-center gap-5 px-4 h-full">
         <NavButton onClick={handlePrevious} disabled={currentIndex === 0} />
-        <div className="grid w-full gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid w-full gap-4 grid-cols-1 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 items-center">
           {paginatedProducts.map((product) => (
             <ProductCard key={product.id} data={product} />
           ))}

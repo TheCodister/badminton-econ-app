@@ -1,0 +1,34 @@
+[
+  {
+    "query": "Yonex",
+    "result": "Yonex Astrox 99 Pro"
+  },
+  {
+    "query": "Victor",
+    "result": "Victor Thruster Ryuga Metallic"
+  },
+  {
+    "query": "nanoflare",
+    "result": "Yonex Nanoflare 700 pro"
+  },
+  {
+    "query": "navy",
+    "result": "Yonex Astrox 100zz Navy"
+  },
+  {
+    "query": "Astrox",
+    "result": "Yonex Astrox 99 Pro"
+  },
+  {
+    "query": "Astrox 99 Pro",
+    "result": "Yonex Astrox 99 Pro"
+  },
+  {
+    "query": "Astrox 100zz",
+    "result": "Yonex Astrox 100zz Navy"
+  },
+  {
+    "query": "Astrox 100zz Navy",
+    "result": "Yonex Astrox 100zz Navy"
+  }
+]
