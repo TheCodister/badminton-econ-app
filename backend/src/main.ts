@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
   const config = new DocumentBuilder()
-    .setTitle('My API')
+    .setTitle('Badminton E-commerce API')
     .setDescription('API documentation for the badminton e-commerce platform')
     .setVersion('1.0')
     .addBearerAuth() // optional: for JWT
