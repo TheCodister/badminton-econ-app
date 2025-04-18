@@ -33,9 +33,13 @@ const ProductSearchBar = () => {
           {products.map((product) => (
             <li
               key={product.id}
-              className="px-3 text-black py-2 hover:bg-gray-400 cursor-pointer text-sm flex gap-2"
+              className="px-3 text-black py-2 hover:bg-gray-200 cursor-pointer text-sm flex gap-2"
             >
-              <Link color="foreground" href={`/${product.id}`}>
+              <Link
+                className="space-x-2"
+                color="foreground"
+                href={`/${product.id}`}
+              >
                 <Image
                   src={product.image_url}
                   alt={product.product_name}
@@ -43,7 +47,7 @@ const ProductSearchBar = () => {
                   height={50}
                   className="inline-block mr-2"
                 />
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <p>{product.product_name}</p>
                   <p className="font-semibold">${product.price}</p>
                 </div>
