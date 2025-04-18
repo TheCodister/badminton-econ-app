@@ -1,0 +1,12 @@
+[
+  {
+    "email": "Benny@gmail.com",
+    "password": "securepassword",
+    "expectedAlert": "Login successful!"
+  },
+  {
+    "email": "wrong@email.com",
+    "password": "wrongpass",
+    "expectedAlert": "Login failed: Invalid credentials"
+  }
+]
