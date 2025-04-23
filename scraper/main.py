@@ -159,10 +159,10 @@ def get_racket_info(racket_url):
     CONST_SPECS = {
         'Trình Độ Chơi:': 'Skill Level',
         'Phong Cách Chơi:': 'Playing Style',
-        'Độ Cứng Đũa:': 'Stiffness',
-        'Điểm Cân Bằng:': 'Balance Point',
-        'Trọng Lượng:': 'Weight',
-        'Chiều dài vợt:': 'Racket Length'
+        'Độ Cứng Đũa:': 'stiffness',
+        'Điểm Cân Bằng:': 'balance',
+        'Trọng Lượng:': 'weight',
+        'Chiều dài vợt:': 'length'
     }
     #to do translate to english
     for spec in spec_table.find_all('tr')[:]:
@@ -173,10 +173,16 @@ def get_racket_info(racket_url):
         spec_value = spec.find_all('td')[-1].text.strip()
         specs[CONST_SPECS[spec_name]] = spec_value
         spec_value = spec.find_all('td')[-1].text
+    specs['line']
     if specs.get('Racket Length') is None:
         specs['Racket Length'] = "675 mm"
     specs = dict(sorted(specs.items()))
-
+    #TO DO 
+    # ADD country = [random]
+    # ADD technology default = ["Isometric", "Carbon Material", " BUILT-IN T-JOINT"]
+    # ADD line 
+    # CHANGE specs name to racket
+    # add max_tension = 30 lbs
 
     racket_info = {
         "image_url": image_url,
@@ -228,7 +234,7 @@ def debugger(url_list):
         print(get_racket_info(url))
         print(f"complete{url}")
 if __name__ == "__main__":
-    # for i in range(1,50):
+    # for i in range(1,10):
     #     print(f"Processing page {i}")
     #     process_single_page(i)
     #merge_all_json_list()
