@@ -3,6 +3,7 @@ import requests
 import re
 import json
 from googletrans import Translator, constants
+import numpy as np
 import json
 def count_nunique_fields(rackets_list):
     # Count number of appearances of each field in the list of rackets
@@ -46,16 +47,30 @@ def translate_name_product(name):
     # given string like "Set Vợt Cầu Lông Kumpoo 99 Pro" translate it to "Kumpoo 99 Pro Badminton Racket Set"
     # capitialize first letter of each word
     name = name.title()
-    translated_name = ""
-    #switch case
-    if "Set Vợt Cầu Lông" in name:
-        translated_name = name.replace("Set Vợt Cầu Lông", "Badminton Racket Set")
-    elif "Vợt Cầu Lông" in name:
-        translated_name = name.replace("Vợt Cầu Lông", "Badminton Racket")
-    elif "Vợt" in name:
-        translated_name = name.replace("Vợt", "Badminton Racket")
+    translated_name = Translator().translate(name, dest='en').text
     return translated_name
-    return translated_name
+def clean_product_name(product_name):
+    product_name = re.sub(r"Vợt cầu lông|Vợt|cầu lông|chính hãng|-", "", product_name, flags=re.IGNORECASE)
+    # Translate color names in product name
+    color_translation = {
+        "Đen": "Black",
+        "Xám": "Gray",
+        "Trắng": "White",
+        "Đỏ": "Red",
+        "Bạc": "Silver",
+        "Hồng": "Pink",
+        "Xanh": "Blue",
+        "Cam": "Orange",
+        "Vàng": "Yellow",
+        "Nâu": "Brown",
+        "Tím": "Purple",
+        "Xanh lá": "Green",
+        "Xanh dương": "Blue",
+    }
+    for vietnamese_color, english_color in color_translation.items():
+        product_name = re.sub(rf"\b{vietnamese_color}\b", english_color, product_name, flags=re.IGNORECASE)
+    product_name = re.sub(r"\s+", " ", product_name).strip()
+    return product_name
 def translate_all_json():
     #Read all rackets_page_n.json
     #Translate all value in specs
@@ -66,7 +81,9 @@ def translate_all_json():
         rackets_list = json.load(f)
         for racket in rackets_list:
             #translate name
-            racket['product_name'] = translate_name_product(racket['product_name'])
+            #racket['product_name'] = translate_name_product(racket['product_name'])
+            racket['product_name'] = clean_product_name(racket['product_name'])
+            
             for key in racket['specs'].keys():
                 if key in ['Racket Length','Weight']:
                     continue
@@ -129,7 +146,7 @@ def get_racket_info(racket_url):
     if "Combo" in product_name or "SET" in product_name:
         return None
     brand = soup.find('a', class_=re.compile(r'\ba-vendor\b')).text.strip()
-    price = soup.find('span', class_=re.compile(r'\bprice product-price\b')).text.split()[1]
+    price = soup.find('span', class_=re.compile(r'\bprice product-price\b')).span.text
     description = None #TO DO AI summaraize the description
     state = "AVAILABLE"  if soup.find('span', class_=re.compile(r'\ba-stock\b')) == 'Còn hàng' else "UNAVAILABLE"
     stock = np.random.randint(24)+1 if soup.find('span', class_='a-stock').text == 'Còn hàng' else 0
@@ -211,12 +228,10 @@ def debugger(url_list):
         print(get_racket_info(url))
         print(f"complete{url}")
 if __name__ == "__main__":
-    #bugged_urls = [ "vot-cau-long-vnb-carbon-training-150g.html", missing table]
-    #debugger(bugged_urls)
-    #print(spec_value_translation('Trung Bình'))
-    #merge_all_json_list()
-    translate_all_json()
     # for i in range(1,50):
     #     print(f"Processing page {i}")
     #     process_single_page(i)
+    #merge_all_json_list()
+    translate_all_json()
+
     #get_racket_info('vot-cau-long-vnb-v200i-hong.html')
