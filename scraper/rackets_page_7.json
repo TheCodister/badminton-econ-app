@@ -1,0 +1,344 @@
+[
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-nanoflare-700-pro-chinh-hang_1727042472.webp",
+        "product_name": "Vợt cầu lông Yonex Nanoflare 700 Pro 2024",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-altius-5-1-kinryu-vang-nau-trang-chinh-hang_1728703334.webp",
+        "product_name": "Vợt cầu lông Mizuno Altius 5.1 Kinryũ",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-xyst-07-xanh-ngoc-vang-chanh-chinh-hang_1728703169.webp",
+        "product_name": "Vợt cầu lông Mizuno XYST 07",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-fortius-55-swift-xam-den-xanh-chuoi-chinh-hang_1728702949.webp",
+        "product_name": "Vợt cầu lông Mizuno Fortius 50 Swift",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 21,
+        "specs": {
+            "Balance Point": "Siêu Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-fortius-55-spirit-den-xam-xanh-do-chinh-hang_1728702719.webp",
+        "product_name": "Vợt cầu lông Mizuno Fortius 50 Spirit",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 8,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-fortius-55-strive-xanh-nau-nhat-chinh-hang_1728702443.webp",
+        "product_name": "Vợt cầu lông Mizuno Fortius 55 Strive",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 19,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-altius-5-3-ryujin-bac-do-chinh-hang_1728702300.webp",
+        "product_name": "Vợt cầu lông Mizuno Altius 5.3 Ryũjin",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-nanoflare-starbucks-xanh-noi-dia-trung_1728956640.webp",
+        "product_name": "Vợt cầu lông Yonex Nanoflare Starbucks",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 1,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-proace-stroke-318iii-xanh-ngoc-trang-chinh-hang_1696209737.webp",
+        "product_name": "Vợt cầu lông Proace Stroke 318III",
+        "brand": "Proace",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 14,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-bladex-900-max-xanh-noi-dia-4.webp",
+        "product_name": "Vợt cầu lông Lining Bladex 900",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 4,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-calibar-900-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Lining Calibar 900",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 21,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-calibar-900b-chinh-hang-5.webp",
+        "product_name": "Vợt cầu lông Lining Calibar 900B",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 6,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-aeronaut-7000b-noi-dia-trung_1727380332.jpg",
+        "product_name": "Vợt cầu lông Lining Aeronaut 7000B",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 8,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-tectonic-9-noi-dia-trung_1727380094.jpg",
+        "product_name": "Vợt cầu lông Lining Tectonic 9",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 11,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-nanoflare-1000z-chinh-hang_1724879816.webp",
+        "product_name": "Vợt cầu lông Yonex Nanoflare 1000Z",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-astrox-88d-pro-2024-chinh-hang_1710988318.webp",
+        "product_name": "Vợt Cầu Lông Yonex Astrox 88D Pro 2024",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 20,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-turbo-charging-marshal-trang-noi-dia-trung_1726795694.webp",
+        "product_name": "Vợt Cầu Lông Lining Turbo Charging Marshal",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-halbertec-motor-do-chinh-hang_1727141839.jpg",
+        "product_name": "Vợt Cầu Lông Lining Halbertec Motor",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 12,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-axforce-cannon-pro-do-noi-dia-trung_1719169098.webp",
+        "product_name": "Vợt Cầu Lông Lining Axforce Cannon Pro",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 23,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
+        }
+    }
+]

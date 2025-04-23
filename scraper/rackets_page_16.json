@@ -1,0 +1,361 @@
+[
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-woven-999-chinh-hang_1701805283.webp",
+        "product_name": "Vợt Cầu Lông Felet Woven 999 Chính Hãng",
+        "brand": "Felet",
+        "price": "2.979.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 13,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-apacs-edge-saber-10-red--1.webp",
+        "product_name": "Vợt cầu lông Apacs EDGE SABER 10",
+        "brand": "Apacs",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-sport-force-gold-chinh-hang_1698694834.webp",
+        "product_name": "Vợt cầu lông Felet Sport Force",
+        "brand": "Felet",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 17,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-warrior-w1-xanh-ngoc-chinh-hang-5_1700859090.webp",
+        "product_name": "Vợt cầu lông Felet Warrior W1",
+        "brand": "Felet",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 20,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-axforce-80-noi-dia-trung_1735505088.jpg",
+        "product_name": "Vợt cầu lông Lining Axforce 80",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 17,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-nanoflare-800-play-chinh-hang_1700092990.webp",
+        "product_name": "Vợt Cầu Lông Yonex Nanoflare 800 Play Chính Hãng",
+        "brand": "Yonex",
+        "price": "1.250.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 2,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victor-bs12-se-55th-chinh-hang-5.webp",
+        "product_name": "Vợt cầu lông Victor BS12 SE 55TH",
+        "brand": "Victor",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 2,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-astrox-77-pro-xanh-china-limited-noi-dia-trung_1726539659.webp",
+        "product_name": "Vợt Cầu Lông Yonex Astrox 77 Pro Xanh China Limited",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 8,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Siêu Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-astrox-77-pro-do-china-limited-noi-dia-trung_1724892181.webp",
+        "product_name": "Vợt Cầu Lông Yonex Astrox 77 Pro Đỏ China Limited",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 1,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kawasaki-3570-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Kawasaki 3570",
+        "brand": "Kawasaki",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 20,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-arcana-80s-red-chinh-hang-3.webp",
+        "product_name": "Vợt cầu lông Felet Arcana 80S",
+        "brand": "Felet",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 22,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-velton-green-chinh-hang_1699238161.webp",
+        "product_name": "Vợt cầu lông Felet Velton",
+        "brand": "Felet",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 21,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-hi-tex-200-wht-blue-chinh-hang_1699233779.webp",
+        "product_name": "Vợt cầu lông Felet Hi-Tex 200",
+        "brand": "Felet",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 2,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-nanoflare-800-game-chinh-hang_1698803663.webp",
+        "product_name": "Vợt cầu lông Yonex Nanoflare 800 Game chính hãng",
+        "brand": "Yonex",
+        "price": "1.779.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 13,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-yonex-nanoflare-800-tour-chinh-hang_1698802698.webp",
+        "product_name": "Vợt cầu lông Yonex Nanoflare 800 Tour chính hãng",
+        "brand": "Yonex",
+        "price": "2.619.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 12,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-apacs-z-power-900-rp-chinh-hang_1698628933.webp",
+        "product_name": "Vợt cầu lông Apacs Z-Power 900 RP+  chính hãng",
+        "brand": "Apacs",
+        "price": "1.100.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "F: 70 - 74g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-apacs-z-power-800-rp-chinh-hang_1698628312.webp",
+        "product_name": "Vợt cầu lông Apacs Z-Power 800 RP+  chính hãng",
+        "brand": "Apacs",
+        "price": "1.000.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-apacs-z-power-800-rp-xanh-chinh-hang_1698627333.webp",
+        "product_name": "Vợt cầu lông Apacs Z-Power 800 RP+",
+        "brand": "Apacs",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 12,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-hc-1600-red-noi-dia-trung_1735505279.webp",
+        "product_name": "Vợt cầu lông Lining HC 1600 Red",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 16,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victor-auraspeed-9000-chinh-hang_1728521113.webp",
+        "product_name": "Vợt cầu lông Victor Auraspeed 9000 chính hãng",
+        "brand": "Victor",
+        "price": "1.450.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 6,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Weight": "4U: 80 - 84g"
+        }
+    }
+]

@@ -1,0 +1,254 @@
+[
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-aeronaut-6000-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Lining Aeronaut 6000",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 16,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-prokennex-laser-7z-power-chinh-hang_1735069563.webp",
+        "product_name": "Vợt cầu lông Prokennex Laser 7Z Power chính hãng",
+        "brand": "Pro Kennex",
+        "price": "7.270.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 1,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victec-woven-titanium-chinh-hang_1735066069.webp",
+        "product_name": "Vợt cầu lông Victec Woven Titanium chính hãng",
+        "brand": "Victec",
+        "price": "2.500.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/set-vot-cau-long-kumpoo-fecility-new-year-chinh-hang_1734981876.webp",
+        "product_name": "Set Vợt Cầu Lông Kumpoo Fecility New Year Chính Hãng",
+        "brand": "Kumpoo",
+        "price": "1.600.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 23,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-gosen-trivista-gx800-den-chinh-hang_1734635685.webp",
+        "product_name": "Vợt cầu lông Gosen Trivista GX800",
+        "brand": "Gosen",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 10,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-gosen-mira-light-aura-trang-chinh-hang_1734665382.webp",
+        "product_name": "Vợt cầu lông Gosen Mira Light Aura",
+        "brand": "Gosen",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 14,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-gosen-graenergy-pro-t-xanh-bien-chinh-hang_1734634947.webp",
+        "product_name": "Vợt cầu lông Gosen Graenergy Pro T",
+        "brand": "Gosen",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 22,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-gosen-grapower-max-1-0-cam-chinh-hang_1734577095.webp",
+        "product_name": "Vợt cầu lông Gosen Grapower Max 1.0",
+        "brand": "Gosen",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 13,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kumpoo-k01-hong-chinh-hang_1733773727.webp",
+        "product_name": "Vợt Cầu Lông Kumpoo K01",
+        "brand": "Kumpoo",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 20,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kumpoo-flower-partner-xanh-chinh-hang_1733520305.webp",
+        "product_name": "Vợt Cầu Lông Kumpoo Flower Partner",
+        "brand": "Kumpoo",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 17,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kumpoo-small-tiger-wings-trang-chinh-hang_1733530493.webp",
+        "product_name": "Vợt Cầu Lông Kumpoo Small Tiger Wings Trắng",
+        "brand": "Kumpoo",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 9,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-vs-titan-7-pro-den-cam-chinh-hang_1733188916.webp",
+        "product_name": "Vợt Cầu Lông VS Titan 7 Pro",
+        "brand": "VS",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 21,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/set-vot-cau-long-lining-bladex-900-master-chinh-hang_1736804365.jpg",
+        "product_name": "Set Vợt Cầu Lông Lining Bladex 900 Master New 2024",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 16,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kumpoo-flower-partner-pro-xanh-chinh-hang_1733089791.webp",
+        "product_name": "Vợt Câu Lông Kumpoo Flower Partner Pro",
+        "brand": "Kumpoo",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 4,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    }
+]

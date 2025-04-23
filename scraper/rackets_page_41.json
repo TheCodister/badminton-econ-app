@@ -1,0 +1,92 @@
+[
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victor-ars-ljh-chinh-hang_1717036152.webp",
+        "product_name": "Vợt Cầu Lông Victor ARS LJH",
+        "brand": "Victor",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 0,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-altius-01-speed-limited-ma-jp_1716773348.webp",
+        "product_name": "Vợt Cầu Lông Mizuno Altius 01 Speed Limited",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 0,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-altius-01-feel-limited-ma-jp_1716320159.webp",
+        "product_name": "Vợt Cầu Lông Mizuno Altius 01 Feel Limited",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 0,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-victor-auraspeed-100x-tuc-ac-limited_1716166113.webp",
+        "product_name": "Vợt Cầu Lông Victor Auraspeed 100X TUC/AC",
+        "brand": "Victor",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 0,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kawasaki-aurora-chinh-hang-2_1716412041.webp",
+        "product_name": "Vợt Cầu Lông Kawasaki Aurora",
+        "brand": "Kawasaki",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 0,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    }
+]

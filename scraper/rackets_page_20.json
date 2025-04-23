@@ -1,0 +1,289 @@
+[
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-vicleo-turbo-7100-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Vicleo Turbo 7100 chính hãng",
+        "brand": "Vicleo",
+        "price": "499.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-axforce-60-chinh-hang..webp",
+        "product_name": "Vợt Cầu Lông Lining Axforce 60",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 22,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-bladex-sonar-chinh-hang-8.webp",
+        "product_name": "Vợt Cầu Lông Lining Bladex Sonar",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 9,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-bladex-600-chinh-hang..webp",
+        "product_name": "Vợt Cầu Lông Lining Bladex 600",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 22,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-lining-axforce-bigbang-trang-chinh-hang.webp",
+        "product_name": "Vợt Cầu Lông Lining Axforce BigBang",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 3,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-windstorm-74-grey-chinh-hang-1.webp",
+        "product_name": "Vợt Cầu Lông Lining Windstorm 74",
+        "brand": "Lining",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Siêu Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-kawasaki-3270-chinh-hang.8.webp",
+        "product_name": "Vợt cầu lông Kawasaki 3270 chính hãng",
+        "brand": "Kawasaki",
+        "price": "950.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 9,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-vicleo-power-1200-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Vicleo Power 1200 chính hãng",
+        "brand": "Vicleo",
+        "price": "390.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 24,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-vicleo-power-8800-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Vicleo Power 8800 chính hãng",
+        "brand": "Vicleo",
+        "price": "390.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 13,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-vicleo-power-880-chinh-hang..webp",
+        "product_name": "Vợt cầu lông Vicleo Power 880 chính hãng",
+        "brand": "Vicleo",
+        "price": "390.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 2,
+        "specs": {
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-woven-tj-1000-control-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Felet Woven TJ 1000 Control chính hãng",
+        "brand": "Felet",
+        "price": "1.569.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 1,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-woven-tj-1000-speed-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Felet Woven TJ 1000 Speed chính hãng",
+        "brand": "Felet",
+        "price": "1.569.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 7,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-felet-woven-tj-1000-power-chinh-hang.webp",
+        "product_name": "Vợt cầu lông Felet Woven TJ 1000 Power chính hãng",
+        "brand": "Felet",
+        "price": "1.569.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-apacs-honor-pro-chinh-hang.-1.webp",
+        "product_name": "Vợt cầu lông Apacs Honor Pro Chính Hãng",
+        "brand": "Apacs",
+        "price": "2.500.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-apacs-blizzard-pro-chinh-hang_1.webp",
+        "product_name": "Vợt cầu lông Apacs Blizzard Pro Chính Hãng",
+        "brand": "Apacs",
+        "price": "2.500.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 14,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-apacs-precision-1-0-chinh-hang.-1.webp",
+        "product_name": "Vợt cầu lông Apacs Precision 1.0 Chính Hãng",
+        "brand": "Apacs",
+        "price": "980.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 11,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    }
+]

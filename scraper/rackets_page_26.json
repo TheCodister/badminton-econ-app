@@ -1,0 +1,326 @@
+[
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/cap-vot-cau-long-adidas-spieler-w09-1-scralet-do-xanh-la-chinh-hang-1.webp",
+        "product_name": "Cặp vợt cầu lông Adidas Spieler W09.1 Scralet - Đỏ xanh lá chính hãng",
+        "brand": "Adidas",
+        "price": "2.470.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 9,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-proace-titanium-9-chinh-hang-4.webp",
+        "product_name": "Vợt cầu lông Proace Titanium 9 chính hãng",
+        "brand": "Proace",
+        "price": "1.990.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 11,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-flypower-ultra-force-c3-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Flypower Ultra Force C3 chính hãng",
+        "brand": "FlyPower",
+        "price": "1.980.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 16,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-the-3rd-game-black-panther-c-trang-1.webp",
+        "product_name": "Vợt cầu lông The 3rd Game Panther C - Trắng",
+        "brand": "The 3rd Game",
+        "price": "1.400.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 10,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-victor-tkfc-ltd-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Victor TK-FC LTD chính hãng",
+        "brand": "Victor",
+        "price": "3.900.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-mizuno-turbo-blade-k600-hong-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Mizuno Turbo Blade K600",
+        "brand": "Mizuno",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-yonex-duora-z-strike-1.webp",
+        "product_name": "Vợt cầu lông Yonex Duora Z-Strike",
+        "brand": "Yonex",
+        "price": "₫",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 22,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Khá Tốt",
+            "Stiffness": "Siêu Cứng",
+            "Weight": "2U: 90 - 94g,3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-the-3rd-game-woven-88-2.webp",
+        "product_name": "Vợt cầu lông The 3rd Game Woven 88",
+        "brand": "The 3rd Game",
+        "price": "1.500.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 6,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-the-3rd-game-xm8ii-1.webp",
+        "product_name": "Vợt cầu lông The 3rd Game XM8II",
+        "brand": "The 3rd Game",
+        "price": "1.800.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 12,
+        "specs": {
+            "Balance Point": "Nặng Đầu",
+            "Playing Style": "Tấn Công",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-the-3rd-game-thunder-bolt-1.webp",
+        "product_name": "Vợt cầu lông The 3rd Game Thunder Bolt",
+        "brand": "The 3rd Game",
+        "price": "1.650.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Cứng",
+            "Weight": "3U: 85 - 89g,4U: 80 - 84g,5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-aeronaut-6000-speed-chinh-hang-3.webp",
+        "product_name": "Vợt cầu lông Lining Aeronaut 6000 Speed chính hãng",
+        "brand": "Lining",
+        "price": "1.950.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 2,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-aeronaut-6000-power-chinh-hang-3.webp",
+        "product_name": "Vợt cầu lông Lining Aeronaut 6000 Power chính hãng",
+        "brand": "Lining",
+        "price": "1.950.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 9,
+        "specs": {
+            "Balance Point": "Hơi Nặng Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-aeronaut-6000-max-chinh-hang-3.webp",
+        "product_name": "Vợt cầu lông Lining Aeronaut 6000 Max chính hãng",
+        "brand": "Lining",
+        "price": "1.950.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 18,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "3U: 85 - 89g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-lining-aeronaut-6000-control-chinh-hang-3.webp",
+        "product_name": "Vợt cầu lông Lining Aeronaut 6000 Control chính hãng",
+        "brand": "Lining",
+        "price": "2.150.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 5,
+        "specs": {
+            "Balance Point": "Siêu Nặng Đầu",
+            "Playing Style": "Phản Tạt, Phòng Thủ",
+            "Racket Length": "675 mm",
+            "Skill Level": "Trung Bình",
+            "Stiffness": "Trung Bình",
+            "Weight": "5U: 75 - 79g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-mizuno-carbo-pro-829-xanh-la-chinh-hang-2.webp",
+        "product_name": "Vợt cầu lông Mizuno Carbo Pro 829 - Xanh Lá chính hãng",
+        "brand": "Mizuno",
+        "price": "1.250.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/gallery/vot-cau-long-mizuno-carbo-pro-825-cam-chinh-hang_1713558445.webp",
+        "product_name": "Vợt cầu lông Mizuno Carbo Pro 825 - Cam chính hãng",
+        "brand": "Mizuno",
+        "price": "1.250.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 15,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-yonex-arcsaber-11-play-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Yonex Arcsaber 11 Play chính hãng",
+        "brand": "Yonex",
+        "price": "1.139.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 17,
+        "specs": {
+            "Balance Point": "Cân Bằng",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Trung Bình",
+            "Weight": "4U: 80 - 84g"
+        }
+    },
+    {
+        "image_url": "https://cdn.shopvnb.com/uploads/san_pham/vot-cau-long-apacs-power-concept-928-chinh-hang-1.webp",
+        "product_name": "Vợt cầu lông Apacs Power Concept 928 chính hãng",
+        "brand": "Apacs",
+        "price": "915.000",
+        "description": null,
+        "status": "UNAVAILABLE",
+        "sales": false,
+        "stock": 19,
+        "specs": {
+            "Balance Point": "Nhẹ Đầu",
+            "Playing Style": "Công Thủ Toàn Diện",
+            "Racket Length": "675 mm",
+            "Skill Level": "Mới Chơi",
+            "Stiffness": "Dẻo",
+            "Weight": "4U: 80 - 84g"
+        }
+    }
+]
