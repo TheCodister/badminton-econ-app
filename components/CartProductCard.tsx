@@ -1,5 +1,6 @@
 import { useRemoveCart } from '@/hooks/useRemoveCart'
 import { useUpdateCartQuantity } from '@/hooks/useUpdateCartQuantity'
+import { useSelectedCart } from '@/stores/useSelectedCart'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
 import { Checkbox } from '@heroui/checkbox'
@@ -15,18 +16,14 @@ const CartCard = ({
   product: ProductItem
   quantity: number
 }) => {
-  // if (isLoading)
-  //   return (
-  //     <Skeleton className="min-w-fit xl:w-[700px] md:w-[500px] sm:w-96 h-32 rounded-lg" />
-  //   )
-  // if (error) return <p>Failed to load product</p>
-
   const { data: session } = useSession()
   const removeCartMutation = useRemoveCart()
   const [itemQuantity, setItemQuantity] = useState(quantity)
+  const { selectedItems, toggleItem } = useSelectedCart()
+  const isChecked = selectedItems.some((item) => item.product.id === product.id)
 
   const { mutate: updateQuantity } = useUpdateCartQuantity()
-  const debouncedUpdate = debounce(updateQuantity, 300)
+  const debouncedUpdate = debounce(updateQuantity, 500)
 
   const increaseQuantity = () => {
     const newQty = itemQuantity + 1
@@ -65,9 +62,13 @@ const CartCard = ({
   }
 
   return (
-    <div className="flex items-center justify-center container w-fit border-2 p-4 rounded-md">
-      <div className="flex items-center h-full">
-        <Checkbox size="lg" />
+    <div className="flex items-center justify-center container w-fit border-2 p-4 rounded-lg">
+      <div className="flex items-center justify-center">
+        <Checkbox
+          size="lg"
+          isSelected={isChecked}
+          onChange={() => toggleItem(product, quantity)}
+        />
       </div>
       <div className="flex items-center gap-4 min-w-fit xl:w-[700px] md:w-[500px] sm:w-96">
         <div>
