@@ -1,4 +1,4 @@
-import { Divider } from "@heroui/divider"
+import { Divider } from '@heroui/divider'
 import { useRouter } from 'next/router'
 import FilterSection from '../filter/FilterSection'
 
@@ -48,7 +48,7 @@ const Sidebar = () => {
       <Divider />
       <FilterSection
         title="Balance"
-        options={['Head Heavy', 'Balance', 'Head Light']}
+        options={['Head Heavy', 'Even Balance', 'Head Light']}
         selectedOptions={(router.query.balance as string)?.split(',') || []}
         onChange={(option, isChecked) =>
           handleFilterChange('balance', option, isChecked)

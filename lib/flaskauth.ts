@@ -18,7 +18,6 @@ async function handleLogin(email: string, password: string) {
     }
 
     const { access_token } = await response.json()
-    console.log('JWT Token:', access_token)
 
     // Sign in with NextAuth, passing the JWT token
     const signInResponse = await signIn('credentials', {
@@ -31,6 +30,8 @@ async function handleLogin(email: string, password: string) {
     if (!signInResponse || !signInResponse.ok) {
       throw new Error(signInResponse?.error || 'Login failed')
     }
+
+    console.log('Login successful:', signInResponse)
 
     alert('Login successful!')
   } catch (error: any) {

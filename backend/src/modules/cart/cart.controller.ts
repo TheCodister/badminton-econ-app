@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common'
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+} from '@nestjs/common'
 import {
   ApiBody,
   ApiOperation,
@@ -43,6 +51,24 @@ export class ShoppingCartController {
       customerId,
       productId,
       body.quantity || 1,
+    )
+  }
+
+  @Post(':customerId/:productId/:quantity')
+  @ApiOperation({ summary: 'Change quantity of the product in cart' })
+  @ApiParam({ name: 'customerId', type: String })
+  @ApiParam({ name: 'productId', type: String })
+  @ApiParam({ name: 'quantity', type: Number })
+  @ApiResponse({ status: 200, description: 'Product quantity updated' })
+  async changeQuantity(
+    @Param('customerId') customerId: string,
+    @Param('productId') productId: string,
+    @Param('quantity', ParseIntPipe) quantity: number, // 👈 this is the fix
+  ) {
+    return this.shoppingCartService.changeQuantity(
+      customerId,
+      productId,
+      quantity,
     )
   }
 

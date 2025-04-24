@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { Brand, Prisma } from '@prisma/client' // ✅ Import Brand Enum
+import { Balance, Brand, Prisma, Stiffness } from '@prisma/client' // ✅ Import Brand Enum
 import { PrismaService } from 'prisma/prisma.service'
 
 @Injectable()
@@ -16,11 +16,12 @@ export class RacketsService {
     return this.prisma.product.create({
       data: {
         ...productData,
-        racket: racket
-          ? {
-              create: racket, // Proper nested creation
-            }
-          : undefined,
+        racket: {
+          create: {
+            ...racket,
+            // Let Prisma defaults handle missing fields
+          },
+        },
       },
     })
   }
@@ -42,13 +43,24 @@ export class RacketsService {
       }
     }
     if (filters.weight) {
-      where.weight = { in: filters.weight.split(',') }
+      const weights = filters.weight.split(',').map((w) => w.trim())
+      where.OR = weights.map((w) => ({
+        weight: { contains: w, mode: 'insensitive' },
+      }))
     }
+
     if (filters.balance) {
-      where.balance = { contains: filters.balance, mode: 'insensitive' }
+      const balances = filters.balance
+        .split(',')
+        .map((b) => b.replace(/\s+/g, '') as Balance) // Remove all spaces
+      where.balance = { in: balances }
     }
+
     if (filters.stiffness) {
-      where.stiffness = { contains: filters.stiffness, mode: 'insensitive' }
+      const stiffness = filters.stiffness
+        .split(',')
+        .map((s) => s.replace(/\s+/g, '') as Stiffness) // Remove all spaces
+      where.stiffness = { in: stiffness }
     }
 
     return this.prisma.racket.findMany({

@@ -1,4 +1,4 @@
-import { Checkbox } from "@heroui/checkbox"
+import { Checkbox } from '@heroui/checkbox'
 
 const FilterSection = ({
   title,

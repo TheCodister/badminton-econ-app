@@ -1,0 +1,27 @@
+// hooks/useUpdateCartQuantity.ts
+import { BACKEND_URL } from '@/constants/base_url'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import axios from 'axios'
+
+export const useUpdateCartQuantity = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async ({
+      customerId,
+      productId,
+      quantity,
+    }: {
+      customerId: string
+      productId: string
+      quantity: number
+    }) => {
+      return axios.post(
+        `${BACKEND_URL}/shoppingcart/${customerId}/${productId}/${quantity}`,
+      )
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['cart'] }) // Refresh cart data
+    },
+  })
+}

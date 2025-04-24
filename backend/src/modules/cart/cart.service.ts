@@ -87,6 +87,29 @@ export class ShoppingCartService {
     return { message: 'Product removed from cart' }
   }
 
+  async changeQuantity(
+    customerId: string,
+    productId: string,
+    quantity: number,
+  ) {
+    const cart = await this.prisma.shoppingCart.findUnique({
+      where: { customer_id: customerId },
+    })
+
+    if (!cart) throw new NotFoundException('Shopping cart not found')
+
+    const cartItem = await this.prisma.cartItem.findFirst({
+      where: { cart_id: cart.cart_id, product_id: productId },
+    })
+
+    if (!cartItem) throw new NotFoundException('Product not found in cart')
+
+    return this.prisma.cartItem.update({
+      where: { item_id: cartItem.item_id },
+      data: { quantity },
+    })
+  }
+
   async clearCart(customerId: string) {
     const cart = await this.prisma.shoppingCart.findUnique({
       where: { customer_id: customerId },

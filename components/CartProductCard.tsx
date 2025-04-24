@@ -1,8 +1,12 @@
 import { useRemoveCart } from '@/hooks/useRemoveCart'
+import { useUpdateCartQuantity } from '@/hooks/useUpdateCartQuantity'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
+import { Checkbox } from '@heroui/checkbox'
 import { Image } from '@heroui/image'
+import { debounce } from 'lodash'
 import { useSession } from 'next-auth/react'
+import { useState } from 'react'
 
 const CartCard = ({
   product,
@@ -19,6 +23,32 @@ const CartCard = ({
 
   const { data: session } = useSession()
   const removeCartMutation = useRemoveCart()
+  const [itemQuantity, setItemQuantity] = useState(quantity)
+
+  const { mutate: updateQuantity } = useUpdateCartQuantity()
+  const debouncedUpdate = debounce(updateQuantity, 300)
+
+  const increaseQuantity = () => {
+    const newQty = itemQuantity + 1
+    setItemQuantity(newQty)
+    debouncedUpdate({
+      customerId: session?.user.id ?? '',
+      productId: product.id,
+      quantity: newQty,
+    })
+  }
+
+  const decreaseQuantity = () => {
+    if (itemQuantity > 1) {
+      const newQty = itemQuantity - 1
+      setItemQuantity(newQty)
+      debouncedUpdate({
+        customerId: session?.user.id ?? '',
+        productId: product.id,
+        quantity: newQty,
+      })
+    }
+  }
 
   const handleRemoveFromCart = () => {
     if (!session?.user?.id) {
@@ -35,7 +65,10 @@ const CartCard = ({
   }
 
   return (
-    <div className="flex items-center container w-fit border-b-2 pb-4">
+    <div className="flex items-center justify-center container w-fit border-2 p-4 rounded-md">
+      <div className="flex items-center h-full">
+        <Checkbox size="lg" />
+      </div>
       <div className="flex items-center gap-4 min-w-fit xl:w-[700px] md:w-[500px] sm:w-96">
         <div>
           <Image
@@ -48,7 +81,29 @@ const CartCard = ({
         <div>
           <h5>{product.product_name || 'Unknown Product'}</h5>
           <p>Price: ${product.price || 'N/A'}</p>
-          <p>Quantity: {quantity}</p>
+          <section className="flex items-center gap-1 border-2 rounded-md w-fit">
+            <Button
+              variant="light"
+              onPress={() => increaseQuantity()}
+              isIconOnly
+              size="sm"
+              className="text-lg"
+            >
+              +
+            </Button>
+            <h6 className="bg-slate-300 w-10 text-center rounded-md">
+              {itemQuantity}
+            </h6>
+            <Button
+              variant="light"
+              onPress={() => decreaseQuantity()}
+              isIconOnly
+              size="sm"
+              className="text-lg"
+            >
+              -
+            </Button>
+          </section>
         </div>
       </div>
       <Button color="danger" onPress={() => handleRemoveFromCart()}>

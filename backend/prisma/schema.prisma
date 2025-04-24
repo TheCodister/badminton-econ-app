@@ -20,6 +20,14 @@ enum Brand {
   FLEET
   FLYPOWER
   RESON
+  TARO
+  FELET
+  VNB
+  PROKENNEX
+  KAWASAKI
+  GOSEN
+  IXE
+  KAMITO
 }
 
 // Models
@@ -155,19 +163,33 @@ model Product {
 }
 
 model Racket {
-  id          String  @id @default(uuid()) @map("product_id") // Same as Product ID
-  product     Product @relation(fields: [id], references: [id])  // One-to-one relation
-  line        String
-  stiffness   String
-  weight      String
-  balance     String
-  max_tension String
-  length      Float  
-  technology  Json
+  id           String   @id @default(uuid()) @map("product_id")
+  product      Product  @relation(fields: [id], references: [id])
+  line         String
+  stiffness    Stiffness @default(Medium) // ✅ New field with default
+  weight       String   @default("4U") // ✅ New field with default
+  balance      Balance  @default(EvenBalance) // ✅ New field with default
+  max_tension  String   @default("30 lbs") // ✅ New field with default
+  length       Float    @default(675) // ✅ New field with default
+  technology   Json
+  player_level String   @default("average") // ✅ New field with default
 
   @@map("rackets")
 }
 
+enum Stiffness {
+  Medium
+  Stiff
+  ExtraStiff
+  Flexible
+  ExtraFlexible
+}
+
+enum Balance {
+  EvenBalance
+  HeadHeavy
+  HeadLight
+}
 
 model Shoes {
   id             String  @id @default(uuid()) @map("product_id")
