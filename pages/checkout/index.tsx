@@ -7,12 +7,14 @@ import { useSession } from 'next-auth/react'
 const CheckOutPage = () => {
   const { data: session } = useSession()
   const { selectedItems } = useSelectedCart()
+
   const calcOrderPrice = () => {
     return selectedItems.reduce(
       (acc, item) => acc + item.product.price * item.quantity,
       0,
     )
   }
+
   const paymentMethods = [
     { value: 'credit-card', label: 'Credit Card' },
     { value: 'paypal', label: 'PayPal' },

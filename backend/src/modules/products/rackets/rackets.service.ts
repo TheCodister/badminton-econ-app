@@ -27,10 +27,18 @@ export class RacketsService {
   }
 
   async findOne(id: string) {
-    return this.prisma.racket.findUnique({
+    const racket = await this.prisma.racket.findUnique({
       where: { id },
       include: { product: true },
     })
+
+    return {
+      ...racket,
+      product: {
+        ...racket.product,
+        price: parseFloat((+racket.product.price / 24000).toFixed(2)),
+      },
+    }
   }
 
   async findAll(filters: Record<string, string>) {
@@ -63,9 +71,17 @@ export class RacketsService {
       where.stiffness = { in: stiffness }
     }
 
-    return this.prisma.racket.findMany({
+    const racks = await this.prisma.racket.findMany({
       where,
       include: { product: true },
     })
+
+    return racks.map((r) => ({
+      ...r,
+      product: {
+        ...r.product,
+        price: parseFloat((+r.product.price / 24000).toFixed(2)),
+      },
+    }))
   }
 }

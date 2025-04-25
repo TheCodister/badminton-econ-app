@@ -149,6 +149,7 @@ model Product {
   description        String
   status             ProductStatus // Use enum here
   sales              Boolean       @default(false)
+  number_of_sales    Int          @default(0)
   stock              Int
   available_location Json
 
@@ -172,9 +173,16 @@ model Racket {
   max_tension  String   @default("30 lbs") // ✅ New field with default
   length       Float    @default(675) // ✅ New field with default
   technology   Json
+  playing_style String  @default("all-rounder") // ✅ New field with default
   player_level String   @default("average") // ✅ New field with default
 
   @@map("rackets")
+}
+
+enum Balance {
+  HeadHeavy
+  EvenBalance
+  HeadLight
 }
 
 enum Stiffness {
@@ -183,12 +191,6 @@ enum Stiffness {
   ExtraStiff
   Flexible
   ExtraFlexible
-}
-
-enum Balance {
-  EvenBalance
-  HeadHeavy
-  HeadLight
 }
 
 model Shoes {

@@ -7,7 +7,7 @@ export class ShoppingCartService {
 
   // Get shopping cart by customer ID
   async getCart(customerId: string) {
-    return this.prisma.shoppingCart.findUnique({
+    const cart = await this.prisma.shoppingCart.findUnique({
       where: { customer_id: customerId },
       include: {
         cart_items: {
@@ -24,6 +24,19 @@ export class ShoppingCartService {
         },
       },
     })
+
+    if (!cart) return null
+
+    return {
+      ...cart,
+      cart_items: cart.cart_items.map((item) => ({
+        ...item,
+        product: {
+          ...item.product,
+          price: parseFloat((+item.product.price / 24000).toFixed(2)),
+        },
+      })),
+    }
   }
 
   // Add product to cart
