@@ -30,8 +30,8 @@ const ProductDetail = () => {
       )}
       {isFetching && <ProductDetailSkeleton />}
       {data && (
-        <div className="flex gap-9">
-          <div className="flex flex-col">
+        <div className="flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col gap-9">
+          <div className="flex flex-col items-center gap-1">
             <div className="w-[350px] h-full flex justify-center items-center overflow-hidden">
               <Image
                 src={data.product.image_url}

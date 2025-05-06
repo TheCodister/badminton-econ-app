@@ -22,7 +22,7 @@ const CheckOutPage = () => {
     { value: 'cash-on-delivery', label: 'Cash on Delivery' },
   ]
   return (
-    <div>
+    <div className="p-3">
       <h1>Checkout</h1>
       <div className="flex flex-col justify-between gap-4 w-full 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col">
         <div className="flex flex-col gap-4">

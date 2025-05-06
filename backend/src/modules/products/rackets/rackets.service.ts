@@ -41,6 +41,41 @@ export class RacketsService {
     }
   }
 
+  async bulkCreateRackets(data: any[]) {
+    const created = await this.prisma.$transaction(
+      data.map((entry) =>
+        this.prisma.racket.create({
+          data: {
+            balance: entry.racket.balance,
+            length: entry.racket.length,
+            player_level: entry.racket.player_level,
+            playing_style: entry.racket.playing_style,
+            stiffness: entry.racket.stiffness,
+            weight: entry.racket.weight,
+            line: entry.racket.line,
+            technology: entry.racket.technology,
+            max_tension: entry.racket.max_tension,
+            product: {
+              create: {
+                image_url: entry.image_url,
+                product_name: entry.product_name,
+                brand: entry.brand,
+                price: entry.price,
+                description: entry.description,
+                status: entry.status,
+                sales: entry.sales,
+                stock: entry.stock,
+                available_location: entry.available_location,
+              },
+            },
+          },
+        }),
+      ),
+    )
+
+    return created
+  }
+
   async findAll(filters: Record<string, string>) {
     const where: Prisma.RacketWhereInput = {}
 

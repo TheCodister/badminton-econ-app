@@ -1,3 +1,4 @@
+import ChatProductCard from '@/components/card/ChatProductCard'
 import { useChat } from '@ai-sdk/react'
 import { Avatar } from '@heroui/avatar'
 import { Button } from '@heroui/button'
@@ -14,8 +15,8 @@ export default function Chat() {
   if (!session) return <div>Unauthorized</div>
   else
     return (
-      <div className="mx-auto w-full max-w-md flex flex-col items-center stretch relative">
-        <div className="flex-grow overflow-y-auto mb-24 px-4">
+      <div className="mx-auto w-full max-w-3xl items-center relative">
+        <div className="overflow-y-auto mb-24 px-4">
           {messages.map((m) => (
             <div
               key={m.id}
@@ -25,7 +26,7 @@ export default function Chat() {
                 <Avatar isBordered className="mr-4" name="U" size="sm" />
               ) : null}
               <div
-                className={`p-2 rounded-xl w-80 text-start text-xl font-semibold ${
+                className={`w-full p-2 rounded-xl text-start text-xl font-semibold ${
                   m.role === 'user'
                     ? 'text-white bg-secondary-500 text-left'
                     : 'text-black text-right'
@@ -39,6 +40,72 @@ export default function Chat() {
                           <Markdown>{part.text}</Markdown>
                         </div>
                       )
+                    case 'tool-invocation': {
+                      const callId = part.toolInvocation.toolCallId
+
+                      switch (part.toolInvocation.toolName) {
+                        case 'search_racket': {
+                          switch (part.toolInvocation.state) {
+                            case 'partial-call':
+                              return (
+                                <pre key={callId}>
+                                  {JSON.stringify(part.toolInvocation, null, 2)}
+                                </pre>
+                              )
+                            case 'call':
+                              return (
+                                <div key={callId}>
+                                  Searching for rackets with keyword "
+                                  {part.toolInvocation.args.keyword}"...
+                                </div>
+                              )
+                            case 'result':
+                              const result = part.toolInvocation.result as {
+                                product_name: string
+                                found: boolean
+                                rackets: {
+                                  id: string
+                                  name: string
+                                  price: number
+                                  image: string
+                                }[]
+                              }
+
+                              return (
+                                <div key={callId} className="space-y-4 w-full">
+                                  <h3 className="font-bold text-lg">
+                                    Results for "{result.product_name}":
+                                  </h3>
+
+                                  {result.found ? (
+                                    <div className="w-full overflow-x-auto">
+                                      <div className="flex flex-row gap-4 w-max">
+                                        {result.rackets.map((racket, index) => {
+                                          const mapped = {
+                                            id: racket.id,
+                                            product_name: racket.name,
+                                            image_url: racket.image,
+                                            price: Number(racket.price),
+                                          }
+                                          return (
+                                            <ChatProductCard
+                                              key={index}
+                                              data={mapped}
+                                            />
+                                          )
+                                        })}
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <p>No rackets found for this keyword.</p>
+                                  )}
+                                </div>
+                              )
+                          }
+                          break
+                        }
+                      }
+                    }
                   }
                 })}
               </div>
@@ -53,7 +120,7 @@ export default function Chat() {
           )}
         </div>
         <form
-          className="fixed bottom-9 w-full max-w-md p-3 flex bg-white"
+          className="fixed mx-auto bottom-9 w-full max-w-3xl p-3 flex bg-white"
           onSubmit={handleSubmit}
         >
           <Input

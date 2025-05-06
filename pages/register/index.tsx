@@ -61,6 +61,13 @@ const Register = () => {
         />
         <Input
           size="lg"
+          placeholder="Confirm Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Input
+          size="lg"
           placeholder="Address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}

@@ -19,7 +19,7 @@ enum Brand {
   PROACE
   FLEET
   FLYPOWER
-  RESON
+  REDSON
   TARO
   FELET
   VNB
@@ -28,6 +28,7 @@ enum Brand {
   GOSEN
   IXE
   KAMITO
+  VICLEO
 }
 
 // Models

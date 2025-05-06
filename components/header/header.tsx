@@ -76,7 +76,7 @@ const Header = () => {
                   isIconOnly
                   variant="solid"
                   color="primary"
-                  className="font-semibold"
+                  className="font-semibold w-full"
                 >
                   Login
                 </Button>
@@ -88,7 +88,7 @@ const Header = () => {
                   isIconOnly
                   variant="solid"
                   color="primary"
-                  className="font-semibold"
+                  className="font-semibold w-full"
                 ></Button>
               </Link>
             )}

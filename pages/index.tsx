@@ -33,7 +33,8 @@ const IndexPage = () => {
           <Image
             alt="Banner"
             className="w-full h-full object-cover"
-            src="https://static.vecteezy.com/system/resources/previews/035/277/450/non_2x/badminton-sport-banner-background-in-red-and-white-with-halftone-and-diagonal-stripes-vector.jpg"
+            src="/Banner.jpg"
+            fetchPriority="high"
           />
           <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
             Shop by categories

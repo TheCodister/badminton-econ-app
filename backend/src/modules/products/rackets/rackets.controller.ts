@@ -15,6 +15,11 @@ import { RacketsService } from './rackets.service'
 export class RacketsController {
   constructor(private readonly racketsService: RacketsService) {}
 
+  @Post('bulk')
+  async createRacketsInBulk(@Body() data: any[]) {
+    return this.racketsService.bulkCreateRackets(data)
+  }
+
   @Post()
   @ApiOperation({ summary: 'Create a new racket product' })
   @ApiBody({
