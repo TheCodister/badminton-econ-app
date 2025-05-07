@@ -9,7 +9,9 @@ import Markdown from 'react-markdown'
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat()
+    useChat({
+      maxSteps: 5,
+    })
 
   const { data: session } = useSession()
   if (!session) return <div>Unauthorized</div>
@@ -32,11 +34,11 @@ export default function Chat() {
                     : 'text-black text-right'
                 }`}
               >
-                {m.parts.map((part, i) => {
+                {m.parts.map((part) => {
                   switch (part.type) {
                     case 'text':
                       return (
-                        <div key={`${m.id}-${i}`}>
+                        <div key={`${m.id}`}>
                           <Markdown>{part.text}</Markdown>
                         </div>
                       )
@@ -56,7 +58,7 @@ export default function Chat() {
                               return (
                                 <div key={callId}>
                                   Searching for rackets with keyword "
-                                  {part.toolInvocation.args.keyword}"...
+                                  {part.toolInvocation.args.product_name}"...
                                 </div>
                               )
                             case 'result':

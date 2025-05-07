@@ -19,17 +19,25 @@ export async function POST(req: Request) {
   console.log('Messages:', messages)
 
   const result = streamText({
-    model: google('gemini-1.5-pro-latest'),
+    model: google('gemini-1.5-flash-latest'),
     system: `You are a badminton professional, Your name will be BMBot, you are chatting with a customer who is looking for a racket or any of the following: shuttlecock, shoes, or badminton accesories. You can provide them with the information they need.
     - Remember to be polite and helpful
     - If the customer ask about anything outside of badminton products, please let them know that you are a badminton professional and can only provide information on badminton products. If they ask you about inappropriate more than 5 times, please end the conversation.
     - If the customer is asking for a product that is not available, please suggest a similar product
+    - Here are some example of product for different levels of players:
+    - Beginner: VNB, Kumpoo, Yonex Arcsaber 0.
+    - Intermediate: Victor, Lining.
+    - Advanced: Yonex Astrox 99, Victor Thruster F, Lining N90.
+    - If the product is not available, please suggest a similar product.
+    - Use the tool to search for the product in stock or in store.
     `,
+    toolChoice: 'auto',
     toolCallStreaming: true,
     messages,
     tools: {
       search_racket: {
-        description: 'Search for a badminton racket based on keyword',
+        description:
+          'When the user is looking for a racket or product in stock or in store',
         parameters: searchRacketSchema,
         //   type: 'object',
         //   properties: {
@@ -81,6 +89,5 @@ export async function POST(req: Request) {
       },
     },
   })
-  console.log('Result:', result)
   return result.toDataStreamResponse()
 }
