@@ -1,4 +1,3 @@
-import { BACKEND_URL } from '@/constants/base_url'
 import { google } from '@ai-sdk/google'
 import { streamText } from 'ai'
 import axios from 'axios'
@@ -53,12 +52,15 @@ export async function POST(req: Request) {
           console.log('Tool called with:', product_name)
 
           try {
-            const res = await axios.get(`${BACKEND_URL}/products`, {
-              params: {
-                search: product_name,
-                limit: 5,
+            const res = await axios.get(
+              `${process.env.NEXT_PUBLIC_BACKEND_URL}/products`,
+              {
+                params: {
+                  search: product_name,
+                  limit: 5,
+                },
               },
-            })
+            )
 
             const data = res.data
             console.log('Data:', data)

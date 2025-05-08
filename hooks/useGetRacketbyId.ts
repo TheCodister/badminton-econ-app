@@ -1,4 +1,4 @@
-import { BACKEND_URL } from '@/constants/base_url'
+import { BACKEND_URL } from '@/constants/backend_url'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 

@@ -1,4 +1,4 @@
-import { BACKEND_URL } from '@/constants/base_url'
+import { BACKEND_URL } from '@/constants/backend_url'
 import { signIn } from 'next-auth/react'
 
 async function handleLogin(email: string, password: string) {
@@ -30,8 +30,6 @@ async function handleLogin(email: string, password: string) {
     if (!signInResponse || !signInResponse.ok) {
       throw new Error(signInResponse?.error || 'Login failed')
     }
-
-    console.log('Login successful:', signInResponse)
 
     alert('Login successful!')
   } catch (error: any) {

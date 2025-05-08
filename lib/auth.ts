@@ -1,4 +1,4 @@
-import { BACKEND_URL } from '@/constants/base_url'
+import { BACKEND_URL } from '@/constants/backend_url'
 import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GitHubProvider from 'next-auth/providers/github'
