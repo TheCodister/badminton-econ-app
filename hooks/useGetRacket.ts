@@ -6,6 +6,8 @@ import axios from 'axios'
 const useGetRacket = (filters: any) => {
   const queryString = new URLSearchParams(filters).toString()
 
+  console.log(BACKEND_URL)
+
   return useQuery({
     queryKey: ['racket', filters],
     queryFn: async () => {
