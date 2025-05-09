@@ -7,11 +7,8 @@ import { Image } from '@heroui/image'
 import { Skeleton } from '@heroui/skeleton'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 
 const IndexPage = () => {
-  const [filters, setFilters] = useState({})
-
   // Fetch products for each brand with a limit of 16
   const {
     data: vnbData,
