@@ -6,13 +6,14 @@ import axios from 'axios'
 const useGetRacket = (filters: any) => {
   const queryString = new URLSearchParams(filters).toString()
 
-  console.log(BACKEND_URL)
-
   return useQuery({
     queryKey: ['racket', filters],
     queryFn: async () => {
       const { data } = await axios.get(`${BACKEND_URL}/rackets?${queryString}`)
-      return data
+      return {
+        data: data.data, // Paginated data
+        total: data.total, // Total count of matching records
+      }
     },
     staleTime: 1000 * 60 * 5, // 5 minutes caching
   })

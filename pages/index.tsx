@@ -12,10 +12,35 @@ import { useState } from 'react'
 const IndexPage = () => {
   const [filters, setFilters] = useState({})
 
-  const { data, error, isLoading } = useGetRacket(filters)
-  const { data: session } = useSession()
+  // Fetch products for each brand with a limit of 16
+  const {
+    data: vnbData,
+    error: vnbError,
+    isLoading: vnbLoading,
+  } = useGetRacket({
+    brand: 'VNB',
+    limit: 16,
+  })
+  const {
+    data: liningData,
+    error: liningError,
+    isLoading: liningLoading,
+  } = useGetRacket({
+    brand: 'Lining',
+    limit: 16,
+  })
+  const {
+    data: gosenData,
+    error: gosenError,
+    isLoading: gosenLoading,
+  } = useGetRacket({
+    brand: 'Gosen',
+    limit: 16,
+  })
 
+  const { data: session } = useSession()
   const route = useRouter()
+
   const handleChatNavigate = () => {
     if (session) {
       route.push('/chat')
@@ -24,7 +49,8 @@ const IndexPage = () => {
     }
   }
 
-  if (error) return <div>Error fetching user data</div>
+  if (vnbError || liningError || gosenError)
+    return <div>Error fetching products</div>
 
   return (
     <main>
@@ -41,12 +67,7 @@ const IndexPage = () => {
           </h2>
         </div>
 
-        {/* <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
-          {CATEGORY.map((category) => (
-            <CategoryCard key={category.id} category={category} />
-          ))}
-        </div> */}
-        {isLoading ? (
+        {vnbLoading || liningLoading || gosenLoading ? (
           <CategorySkeleton />
         ) : (
           <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
@@ -70,7 +91,7 @@ const IndexPage = () => {
           </h4>
         </section>
 
-        {isLoading ? (
+        {vnbLoading || liningLoading || gosenLoading ? (
           <div className="flex flex-col gap-5">
             <Skeleton className="w-full h-[300px] rounded-lg" />
             <Skeleton className="w-full h-[300px] rounded-lg" />
@@ -78,9 +99,9 @@ const IndexPage = () => {
           </div>
         ) : (
           <div className="flex flex-col gap-5 items-center">
-            <FeaturedProduct title="Mega Sale" products={data} />
-            <FeaturedProduct title="Best Seller Racket" products={data} />
-            <FeaturedProduct title="Best Seller Shoes" products={data} />
+            <FeaturedProduct title="VNB" products={vnbData?.data || []} />
+            <FeaturedProduct title="Lining" products={liningData?.data || []} />
+            <FeaturedProduct title="Gosen" products={gosenData?.data || []} />
           </div>
         )}
       </div>

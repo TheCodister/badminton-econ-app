@@ -106,17 +106,42 @@ export class RacketsService {
       where.stiffness = { in: stiffness }
     }
 
+    const orderBy: Prisma.RacketOrderByWithRelationInput[] = []
+    if (filters.price) {
+      orderBy.push({
+        product: {
+          price: filters.price.toLowerCase() === 'asc' ? 'asc' : 'desc',
+        },
+      })
+    }
+
+    const take = filters.limit ? parseInt(filters.limit, 10) : undefined
+    const page = filters.page ? parseInt(filters.page, 10) : 1
+    const skip = take ? (page - 1) * take : undefined // Calculate the number of records to skip
+
+    // Fetch the total count of matching records (ignoring limit and skip)
+    const totalCount = await this.prisma.racket.count({
+      where,
+    })
+
+    // Fetch the paginated data
     const racks = await this.prisma.racket.findMany({
       where,
+      orderBy,
+      take,
+      skip, // Add skip for pagination
       include: { product: true },
     })
 
-    return racks.map((r) => ({
-      ...r,
-      product: {
-        ...r.product,
-        price: parseFloat((+r.product.price / 24000).toFixed(2)),
-      },
-    }))
+    return {
+      total: totalCount, // Total number of matching records
+      data: racks.map((r) => ({
+        ...r,
+        product: {
+          ...r.product,
+          price: parseFloat((+r.product.price / 24000).toFixed(2)),
+        },
+      })),
+    }
   }
 }

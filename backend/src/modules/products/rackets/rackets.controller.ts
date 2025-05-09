@@ -83,6 +83,21 @@ export class RacketsController {
   @ApiQuery({ name: 'weight', required: false })
   @ApiQuery({ name: 'balance', required: false })
   @ApiQuery({ name: 'stiffness', required: false })
+  @ApiQuery({
+    name: 'price',
+    required: false,
+    description: 'Sort by price (asc or desc)',
+  })
+  @ApiQuery({
+    name: 'limit',
+    required: false,
+    description: 'Limit the number of results',
+  })
+  @ApiQuery({
+    name: 'page',
+    required: false,
+    description: 'Page number for pagination',
+  })
   @ApiResponse({ status: 200, description: 'List of rackets' })
   findAll(@Query() filters: Record<string, string>) {
     return this.racketsService.findAll(filters)

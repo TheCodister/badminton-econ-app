@@ -39,7 +39,28 @@ const Sidebar = () => {
     <div className="w-[15%] xl:flex lg:flex md:hidden sm:hidden min-[20px]:hidden border-r-2 flex-col items-center px-4">
       <FilterSection
         title="Brand"
-        options={['Lining', 'Yonex', 'Victor', 'Mizuno', 'Apacs']}
+        options={[
+          'Lining',
+          'Yonex',
+          'Victor',
+          'Mizuno',
+          'Apacs',
+          'Gosen',
+          'VNB',
+          'Felet',
+          'Kumpoo',
+          'Vicleo',
+          'Prokennex',
+          'Proace',
+          'VS',
+          'Redson',
+          'Taro',
+          'Kamito',
+          'Kawasaki',
+          'IXE',
+          'Fleet',
+          'Flypower',
+        ]}
         selectedOptions={(router.query.brand as string)?.split(',') || []}
         onChange={(option, isChecked) =>
           handleFilterChange('brand', option, isChecked)
