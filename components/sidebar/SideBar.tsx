@@ -29,10 +29,18 @@ const Sidebar = () => {
       delete newQuery[category]
     }
 
-    router.push({
-      pathname: router.pathname,
-      query: newQuery,
-    })
+    // Reset the page to 1 whenever a filter is changed
+    newQuery.page = '1'
+
+    // Use router.replace instead of router.push to ensure the URL updates without adding to history
+    router.replace(
+      {
+        pathname: router.pathname,
+        query: newQuery,
+      },
+      undefined,
+      { shallow: true }, // Avoid full page reload
+    )
   }
 
   return (
