@@ -1,3 +1,4 @@
+import { BACKEND_URL } from '@/constants/backend_url'
 import { google } from '@ai-sdk/google'
 import { streamText } from 'ai'
 import axios from 'axios'
@@ -9,7 +10,9 @@ export const maxDuration = 30
 const searchRacketSchema = z.object({
   product_name: z
     .string()
-    .describe('The name or keyword of the racket the user is looking for'),
+    .describe(
+      'The name or keyword of the racket the user is looking for or the product that you recommend for them.',
+    ),
 })
 
 export async function POST(req: Request) {
@@ -18,7 +21,7 @@ export async function POST(req: Request) {
   console.log('Messages:', messages)
 
   const result = streamText({
-    model: google('gemini-1.5-flash-latest'),
+    model: google('gemini-2.0-flash'),
     system: `You are a badminton professional, Your name will be BMBot, you are chatting with a customer who is looking for a racket or any of the following: shuttlecock, shoes, or badminton accesories. You can provide them with the information they need.
     - Remember to be polite and helpful
     - If the customer ask about anything outside of badminton products, please let them know that you are a badminton professional and can only provide information on badminton products. If they ask you about inappropriate more than 5 times, please end the conversation.
@@ -26,9 +29,8 @@ export async function POST(req: Request) {
     - Here are some example of product for different levels of players:
     - Beginner: VNB, Kumpoo, Yonex Arcsaber 0.
     - Intermediate: Victor, Lining.
-    - Advanced: Yonex Astrox 99, Victor Thruster F, Lining N90.
-    - If the product is not available, please suggest a similar product.
-    - Use the tool to search for the product in stock or in store.
+    - Advanced: Yonex Astrox 99, Victor Thruster Ryuga II, Lining Halbertec 9000.
+    - Use the tool to search for the product in stock or in store and when recommend product for the player, remember to pass the name of the product to the tools.
     `,
     toolChoice: 'auto',
     toolCallStreaming: true,
@@ -52,15 +54,12 @@ export async function POST(req: Request) {
           console.log('Tool called with:', product_name)
 
           try {
-            const res = await axios.get(
-              `${process.env.NEXT_PUBLIC_BACKEND_URL}/products`,
-              {
-                params: {
-                  search: product_name,
-                  limit: 5,
-                },
+            const res = await axios.get(`${BACKEND_URL}/products`, {
+              params: {
+                search: product_name,
+                limit: 5,
               },
-            )
+            })
 
             const data = res.data
             console.log('Data:', data)

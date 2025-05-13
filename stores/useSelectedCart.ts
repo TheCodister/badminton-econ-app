@@ -11,12 +11,15 @@ interface SelectedCartStore {
   selectedItems: SelectedItem[]
   toggleItem: (product: ProductItem, quantity: number) => void
   clearItems: () => void
+  setLastVisitedRoute: (route: string) => void
+  lastVisitedRoute: string | null
 }
 
 export const useSelectedCart = create(
   persist<SelectedCartStore>(
     (set, get) => ({
       selectedItems: [],
+      lastVisitedRoute: null,
       toggleItem: (product, quantity) => {
         const { selectedItems } = get()
         const exists = selectedItems.find((i) => i.product.id === product.id)
@@ -32,6 +35,7 @@ export const useSelectedCart = create(
         }
       },
       clearItems: () => set({ selectedItems: [] }),
+      setLastVisitedRoute: (route) => set({ lastVisitedRoute: route }),
     }),
     {
       name: 'selected-cart', // localStorage key

@@ -122,7 +122,7 @@ export default function Chat() {
           )}
         </div>
         <form
-          className="fixed mx-auto bottom-9 w-full max-w-3xl p-3 flex bg-white"
+          className="fixed bottom-9 left-1/2 transform -translate-x-1/2 w-full max-w-3xl p-3 flex bg-white rounded-lg shadow-md z-50"
           onSubmit={handleSubmit}
         >
           <Input

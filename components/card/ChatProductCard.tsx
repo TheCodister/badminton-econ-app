@@ -32,7 +32,7 @@ const ChatProductCard = memo(({ data }: ProductCardProps) => {
         <h6 className="text-primary">{data.product_name}</h6>
       </CardBody>
       <CardFooter className="flex justify-center items-stretch flex-col gap-3">
-        <Link href={`/${data.id}`} className="w-full pt-0">
+        <Link isExternal href={`/${data.id}`} className="w-full pt-0">
           <Button
             className="w-full"
             color="primary"

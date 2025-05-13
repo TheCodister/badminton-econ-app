@@ -1,9 +1,10 @@
 import CartCard from '@/components/CartProductCard'
 import { useGetCart } from '@/hooks/useGetCart'
+import { useSelectedCart } from '@/stores/useSelectedCart'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
-import { Link } from '@heroui/link'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 interface CartItem {
   item_id: string
@@ -15,6 +16,8 @@ interface CartItem {
 export default function ShoppingCart() {
   const { data: session } = useSession()
   const { data: cart, error } = useGetCart(session?.user?.id || '')
+  const { selectedItems } = useSelectedCart()
+  const router = useRouter()
 
   if (error) return <p>Failed to load cart</p>
 
@@ -23,6 +26,15 @@ export default function ShoppingCart() {
       (acc, item) => acc + item.product.price * item.quantity,
       0,
     )
+  }
+
+  const handleCheckout = () => {
+    if (selectedItems.length === 0) {
+      alert('Please select at least one product before proceeding to checkout')
+      return
+    }
+
+    router.push('/checkout')
   }
 
   return (
@@ -61,11 +73,9 @@ export default function ShoppingCart() {
                 : '$0.00'}
             </h6>
           </div>
-          <Link href="/checkout" className="w-full">
-            <Button className="w-full" color="primary">
-              Checkout
-            </Button>
-          </Link>
+          <Button className="w-full" color="primary" onClick={handleCheckout}>
+            Checkout
+          </Button>
         </div>
       </div>
     </div>

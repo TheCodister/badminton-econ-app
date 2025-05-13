@@ -7,7 +7,7 @@ export class ProductService {
   constructor(private prisma: PrismaService) {}
 
   async findAll(search?: string) {
-    return this.prisma.product.findMany({
+    const products = await this.prisma.product.findMany({
       where: search
         ? {
             product_name: {
@@ -23,5 +23,11 @@ export class ProductService {
         price: true,
       },
     })
+
+    // Convert prices from VND to USD
+    return products.map((product) => ({
+      ...product,
+      price: parseFloat((+product.price / 24000).toFixed(2)), // Convert VND to USD
+    }))
   }
 }
