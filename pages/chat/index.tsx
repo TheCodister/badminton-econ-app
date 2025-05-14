@@ -46,6 +46,77 @@ export default function Chat() {
                       const callId = part.toolInvocation.toolCallId
 
                       switch (part.toolInvocation.toolName) {
+                        case 'search_racket_by_attributes': {
+                          switch (part.toolInvocation.state) {
+                            case 'partial-call':
+                              return (
+                                <pre key={callId}>
+                                  {JSON.stringify(part.toolInvocation, null, 2)}
+                                </pre>
+                              )
+                            case 'call':
+                              return (
+                                <div key={callId}>
+                                  Searching for rackets with attributes "
+                                  {part.toolInvocation.args.attributes}"...
+                                </div>
+                              )
+                            case 'result':
+                              const result = part.toolInvocation.result as {
+                                attributes: string // Changed from product_name to attributes
+                                found: boolean
+                                rackets: {
+                                  id: string
+                                  name: string
+                                  price: number
+                                  image: string
+                                  weight: string // Added these additional properties
+                                  balance: string
+                                  stiffness: string
+                                }[]
+                              }
+
+                              return (
+                                <div key={callId} className="space-y-4 w-full">
+                                  <h3 className="font-bold text-lg">
+                                    Results for attributes "{result.attributes}
+                                    ":
+                                  </h3>
+
+                                  {result.found ? (
+                                    <div className="w-full overflow-x-auto">
+                                      <div className="flex flex-row gap-4 w-max">
+                                        {result.rackets.map((racket, index) => {
+                                          const mapped = {
+                                            id: racket.id,
+                                            product_name: racket.name,
+                                            image_url: racket.image,
+                                            price: Number(racket.price),
+                                            // You could add these to pass to the card if needed
+                                            weight: racket.weight,
+                                            balance: racket.balance,
+                                            stiffness: racket.stiffness,
+                                          }
+                                          return (
+                                            <ChatProductCard
+                                              key={index}
+                                              data={mapped}
+                                            />
+                                          )
+                                        })}
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <p>
+                                      No rackets found matching these
+                                      attributes.
+                                    </p>
+                                  )}
+                                </div>
+                              )
+                          }
+                          break
+                        }
                         case 'search_racket': {
                           switch (part.toolInvocation.state) {
                             case 'partial-call':

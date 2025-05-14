@@ -12,7 +12,10 @@ export class ProductController {
   @ApiOperation({ summary: 'Search or list all products' })
   @ApiQuery({ name: 'search', required: false, description: 'Search keyword' })
   @ApiResponse({ status: 200, description: 'List of products' })
-  async findAll(@Query('search') search?: string) {
-    return this.productService.findAll(search)
+  async findAll(
+    @Query('search') search?: string,
+    @Query('limit') limit?: number,
+  ) {
+    return this.productService.findAll(search, limit)
   }
 }

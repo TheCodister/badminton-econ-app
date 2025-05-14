@@ -6,7 +6,7 @@ import { PrismaService } from 'prisma/prisma.service'
 export class ProductService {
   constructor(private prisma: PrismaService) {}
 
-  async findAll(search?: string) {
+  async findAll(search?: string, limit?: number) {
     const products = await this.prisma.product.findMany({
       where: search
         ? {
@@ -22,6 +22,7 @@ export class ProductService {
         image_url: true,
         price: true,
       },
+      take: limit ? parseInt(String(limit), 10) : undefined, // Apply limit if provided
     })
 
     // Convert prices from VND to USD
