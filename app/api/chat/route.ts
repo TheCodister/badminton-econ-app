@@ -26,8 +26,6 @@ const searchRacketByAttributesSchema = z.object({
 export async function POST(req: Request) {
   const { messages } = await req.json()
 
-  console.log('Messages:', messages)
-
   const result = streamText({
     model: google('gemini-2.0-flash-lite'),
     system: `You are a badminton professional, Your name will be BMBot, you are chatting with a customer who is looking for a racket or any of the following: shuttlecock, shoes, or badminton accesories. You can provide them with the information they need.
@@ -59,7 +57,7 @@ export async function POST(req: Request) {
         //   required: ['product_name'],
         // },
         execute: async ({ product_name }: { product_name: string }) => {
-          console.log('Tool called with:', product_name)
+          // console.log('Tool called with:', product_name)
 
           try {
             const res = await axios.get(`${BACKEND_URL}/products`, {
@@ -70,11 +68,11 @@ export async function POST(req: Request) {
             })
 
             const data = res.data
-            console.log('Data:', data)
+            // console.log('Data:', data)
 
             const rackets = data
 
-            console.log('Filtered rackets:', rackets)
+            // console.log('Filtered rackets:', rackets)
 
             if (rackets.length === 0) {
               return `I couldn't find any rackets matching "${product_name}". Please try another name or brand.`
@@ -101,7 +99,7 @@ export async function POST(req: Request) {
           'When the user asks for a racket with specific attributes like weight, balance, or stiffness. Use this when users want to find rackets based on characteristics rather than specific product names.',
         parameters: searchRacketByAttributesSchema,
         execute: async ({ attributes }: { attributes: string }) => {
-          console.log('Tool called with attributes:', attributes)
+          // console.log('Tool called with attributes:', attributes)
 
           try {
             // Parse the attributes string into query parameters

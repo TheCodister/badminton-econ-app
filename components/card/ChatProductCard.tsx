@@ -16,7 +16,6 @@ interface ProductCardProps {
 }
 
 const ChatProductCard = memo(({ data }: ProductCardProps) => {
-  console.log('ChatProductCard', data)
   return (
     <Card className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer">
       <CardHeader></CardHeader>

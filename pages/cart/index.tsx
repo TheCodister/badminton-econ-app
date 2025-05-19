@@ -15,7 +15,7 @@ interface CartItem {
 
 export default function ShoppingCart() {
   const { data: session } = useSession()
-  const { data: cart, error } = useGetCart(session?.user?.id || '')
+  const { data: cart, error } = useGetCart()
   const { checkoutItems, getCheckoutTotal } = useCheckout()
   const router = useRouter()
 
