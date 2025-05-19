@@ -19,7 +19,7 @@ const searchRacketByAttributesSchema = z.object({
   attributes: z
     .string()
     .describe(
-      'The attributes of the racket the user is looking for, formatted as a comma-separated list of "Key: Value" pairs. Valid keys include: Weight (values: 5U, 4U, 3U), Balance (values: HeadHeavy, HeadLight, EvenBalance), and Stiffness (values: Medium, Stiff, Flexible). For example: "Weight: 4U, Balance: HeadHeavy, Stiffness: Medium"',
+      'The attributes of the racket the user is looking for, formatted as a comma-separated list of "Key: Value" pairs. Valid keys include: Weight (values: 5U, 4U, 3U), Balance (values: HeadHeavy, HeadLight, EvenBalance), Brand (any badminton brand that user ask, if we do not have the racket then say we do not have that brand), and Stiffness (values: Medium, Stiff, Flexible). For example: "Weight: 4U, Balance: HeadHeavy, Brand: Lining, Stiffness: Medium"',
     ),
 })
 
