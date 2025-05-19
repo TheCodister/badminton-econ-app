@@ -4,6 +4,7 @@ import { useSelectedCart } from '@/stores/useSelectedCart'
 import '@/styles/globals.css'
 import { HeroUIProvider } from '@heroui/system'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
@@ -59,6 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <CheckoutProvider>
               <DefaultLayout>
                 <Component {...pageProps} />
+                <SpeedInsights />
               </DefaultLayout>
             </CheckoutProvider>
           </SessionProvider>
