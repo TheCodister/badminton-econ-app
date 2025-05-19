@@ -30,7 +30,7 @@ const Header = () => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { data: session } = useSession()
-  const { data: cart } = useGetCart(session?.user?.id || '')
+  const { data: cart } = useGetCart(session?.user.id || '')
 
   const navItems = useMemo(
     () => [

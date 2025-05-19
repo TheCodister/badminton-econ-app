@@ -1,5 +1,7 @@
+// hooks/useRemoveCart.ts
 import { BACKEND_URL } from '@/constants/backend_url'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import axios from 'axios'
 
 export const useRemoveCart = () => {
   const queryClient = useQueryClient()
@@ -12,19 +14,22 @@ export const useRemoveCart = () => {
       userId: string
       productId: string
     }) => {
-      const response = await fetch(
+      const response = await axios.delete(
         `${BACKEND_URL}/shoppingcart/${userId}/${productId}`,
         {
-          method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
         },
       )
 
-      if (!response.ok) throw new Error('Failed to remove item from cart')
-      return response.json()
+      return response.data
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] }) // Refresh cart data
+      queryClient.invalidateQueries({ queryKey: ['cart'] }) // Invalidate all cart queries
+      queryClient.refetchQueries({ queryKey: ['cart'] }) // Refresh cart data
+      console.log('Item removed from cart successfully')
+    },
+    onError: (error) => {
+      console.error('Failed to remove item from cart:', error)
     },
   })
 }

@@ -8,6 +8,8 @@ import { Image } from '@heroui/image'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react'
 
+export const dynamic = 'force-dynamic'
+
 const CartCard = ({
   product,
   quantity,
@@ -16,7 +18,7 @@ const CartCard = ({
   quantity: number
 }) => {
   const { data: session } = useSession()
-  const removeCartMutation = useRemoveCart()
+  const { mutate: removeCartMutation } = useRemoveCart()
   const [itemQuantity, setItemQuantity] = useState(quantity)
   const { mutate: updateQuantity } = useUpdateCartQuantity()
 
@@ -79,17 +81,24 @@ const CartCard = ({
       removeCheckoutItem(product.id)
     }
 
-    removeCartMutation.mutate(
+    removeCartMutation(
       { userId: session.user.id, productId: product.id },
       {
-        onSuccess: () => alert('Removed from cart successfully!'),
+        onSuccess: () => {
+          alert('Removed from cart successfully!')
+          // Refresh the page after successful removal
+          // window.location.reload()
+        },
         onError: () => alert('Failed to remove item from cart'),
       },
     )
   }
 
   return (
-    <div className="flex items-center justify-center container w-fit border-2 p-4 rounded-lg">
+    <div
+      id={`cart-item-${product.id}`}
+      className="flex items-center justify-center container w-fit border-2 p-4 rounded-lg"
+    >
       <div className="flex items-center justify-center">
         <Checkbox
           size="lg"
@@ -134,7 +143,7 @@ const CartCard = ({
           </section>
         </div>
       </div>
-      <Button color="danger" onPress={() => handleRemoveFromCart()}>
+      <Button color="danger" onPress={handleRemoveFromCart}>
         Remove
       </Button>
     </div>
