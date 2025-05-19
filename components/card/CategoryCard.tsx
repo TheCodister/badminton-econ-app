@@ -1,6 +1,6 @@
-import { Button } from "@heroui/button"
-import { Card, CardBody, CardFooter } from "@heroui/card"
-import { Image } from "@heroui/image"
+import { Button } from '@heroui/button'
+import { Card, CardBody, CardFooter } from '@heroui/card'
+import { Image } from '@heroui/image'
 import { useRouter } from 'next/router'
 import { memo, useEffect } from 'react'
 
@@ -32,7 +32,7 @@ const CategoryCard = memo(({ category }: { category: Category }) => {
         <p>{description}</p>
       </CardBody>
       <CardFooter>
-        <Button onClick={handleClick} color="primary">
+        <Button onPress={handleClick} color="primary">
           View {name}
         </Button>
       </CardFooter>

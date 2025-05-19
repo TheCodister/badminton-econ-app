@@ -20,8 +20,13 @@ export const useUpdateCartQuantity = () => {
         `${BACKEND_URL}/shoppingcart/${customerId}/${productId}/${quantity}`,
       )
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] }) // Refresh cart data
+    onSuccess: (data, variables) => {
+      // Invalidate all cart queries
+      queryClient.invalidateQueries({ queryKey: ['cart'] })
+      // Also invalidate the specific user's cart
+      queryClient.invalidateQueries({
+        queryKey: ['cart', variables.customerId],
+      })
     },
   })
 }

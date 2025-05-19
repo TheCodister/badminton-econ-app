@@ -1,6 +1,6 @@
 import CartCard from '@/components/CartProductCard'
+import { useCheckout } from '@/context/context'
 import { useGetCart } from '@/hooks/useGetCart'
-import { useSelectedCart } from '@/stores/useSelectedCart'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
 import { useSession } from 'next-auth/react'
@@ -16,20 +16,13 @@ interface CartItem {
 export default function ShoppingCart() {
   const { data: session } = useSession()
   const { data: cart, error } = useGetCart(session?.user?.id || '')
-  const { selectedItems } = useSelectedCart()
+  const { checkoutItems, getCheckoutTotal } = useCheckout()
   const router = useRouter()
 
   if (error) return <p>Failed to load cart</p>
 
-  const calcSumPrice = (cartItems: CartItem[]) => {
-    return cartItems.reduce(
-      (acc, item) => acc + item.product.price * item.quantity,
-      0,
-    )
-  }
-
   const handleCheckout = () => {
-    if (selectedItems.length === 0) {
+    if (checkoutItems.length === 0) {
       alert('Please select at least one product before proceeding to checkout')
       return
     }
@@ -68,12 +61,12 @@ export default function ShoppingCart() {
           <div className="flex justify-between">
             <h6>Total:</h6>
             <h6 className="font-bold">
-              {cart?.cart_items.length > 0
-                ? `$${calcSumPrice(cart.cart_items).toFixed(2)}`
+              {checkoutItems.length > 0
+                ? `$${getCheckoutTotal().toFixed(2)}`
                 : '$0.00'}
             </h6>
           </div>
-          <Button className="w-full" color="primary" onClick={handleCheckout}>
+          <Button className="w-full" color="primary" onPress={handleCheckout}>
             Checkout
           </Button>
         </div>

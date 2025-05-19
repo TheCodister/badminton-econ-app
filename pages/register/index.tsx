@@ -1,5 +1,5 @@
 import GoogleIcon from '@/icons/GoogleIcon'
-import { handleRegister } from '@/lib/flaskauth'
+import { handleRegister } from '@/lib/nestauth'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Link } from '@heroui/link'

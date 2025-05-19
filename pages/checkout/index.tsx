@@ -1,19 +1,22 @@
 import OrderCard from '@/components/card/OrderItemCard'
-import { useSelectedCart } from '@/stores/useSelectedCart'
+import { useCheckout } from '@/context/context'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Select, SelectItem } from '@heroui/select'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
 const CheckOutPage = () => {
   const { data: session } = useSession()
-  const { selectedItems } = useSelectedCart()
+  const { checkoutItems, getCheckoutTotal } = useCheckout()
+  const router = useRouter()
 
-  const calcOrderPrice = () => {
-    return selectedItems.reduce(
-      (acc, item) => acc + item.product.price * item.quantity,
-      0,
-    )
-  }
+  useEffect(() => {
+    if (checkoutItems.length === 0) {
+      router.replace('/cart')
+    }
+  }, [checkoutItems, router])
 
   const paymentMethods = [
     { value: 'credit-card', label: 'Credit Card' },
@@ -21,23 +24,24 @@ const CheckOutPage = () => {
     { value: 'bank-transfer', label: 'Bank Transfer' },
     { value: 'cash-on-delivery', label: 'Cash on Delivery' },
   ]
+
+  if (checkoutItems.length === 0) {
+    return null // Don't render anything while redirecting
+  }
+
   return (
     <div className="p-3">
       <h1>Checkout</h1>
       <div className="flex flex-col justify-between gap-4 w-full 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col">
         <div className="flex flex-col gap-4">
           <h3>Your Item</h3>
-          {selectedItems.length > 0 ? (
-            selectedItems.map((item) => (
-              <OrderCard
-                key={item.product.id}
-                product={item.product}
-                quantity={item.quantity}
-              />
-            ))
-          ) : (
-            <p>Your cart is empty</p>
-          )}
+          {checkoutItems.map((item) => (
+            <OrderCard
+              key={item.product.id}
+              product={item.product}
+              quantity={item.quantity}
+            />
+          ))}
           <h3>Shipping Information</h3>
           <div className="space-y-10">
             <Input
@@ -96,11 +100,7 @@ const CheckOutPage = () => {
           </div>
           <div className="flex justify-between">
             <h6>Total:</h6>
-            <h6 className="font-bold">
-              {selectedItems.length > 0
-                ? `$${calcOrderPrice().toFixed(2)}`
-                : '$0.00'}
-            </h6>
+            <h6 className="font-bold">${getCheckoutTotal().toFixed(2)}</h6>
           </div>
         </div>
       </div>

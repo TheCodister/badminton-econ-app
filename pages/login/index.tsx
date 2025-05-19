@@ -1,5 +1,5 @@
 import GoogleIcon from '@/icons/GoogleIcon'
-import { handleLogin } from '@/lib/flaskauth'
+import { handleLogin } from '@/lib/nestauth'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Link } from '@heroui/link'
@@ -21,9 +21,9 @@ export default function LoginPage() {
     router.push('/register')
   }
 
-  if (session) {
-    router.push('/')
-  }
+  // if (session) {
+  //   router.push('/')
+  // }
 
   return (
     <div className="flex flex-col gap-5 p-5 items-center justify-center border-solid border-2 rounded-xl">
