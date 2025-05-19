@@ -13,7 +13,7 @@ export const useGetCart = (customerId: string) => {
       if (!response.ok) throw new Error('Failed to fetch cart')
       return response.json()
     },
-    refetchInterval: 10000, // Refetch every 10 seconds
+    refetchInterval: 5000,
     refetchOnWindowFocus: true,
     staleTime: 0, // Consider data always stale
   })
