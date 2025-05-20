@@ -140,7 +140,6 @@ const Header = () => {
               variant="solid"
               color="primary"
               className="font-semibold"
-              isIconOnly
               onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
             >
               Login
@@ -151,7 +150,6 @@ const Header = () => {
               variant="solid"
               color="primary"
               className="font-semibold"
-              isIconOnly
               onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
             >
               Profile
