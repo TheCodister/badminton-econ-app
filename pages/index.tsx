@@ -55,8 +55,8 @@ const IndexPage = () => {
         <div className="flex flex-col justify-center items-center gap-5 px-4 h-full w-8/12">
           <Image
             alt="Banner"
-            className="w-full h-full object-cover"
-            src="/Banner.jpg"
+            className="w-full h-full object-cover scale-110"
+            src="/Banner.png"
             fetchPriority="high"
           />
           <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
