@@ -3,8 +3,11 @@ import Sidebar from '@/components/sidebar/SideBar'
 import { PRICEOPTION } from '@/constants/priceoptions'
 import useGetRacket from '@/hooks/useGetRacket'
 import { Racket } from '@/types/schema/schema'
+import { Button } from '@heroui/button'
 import { Divider } from '@heroui/divider'
+import { Drawer, DrawerBody, DrawerContent, DrawerHeader } from '@heroui/drawer'
 import { Pagination } from '@heroui/pagination'
+import { useDisclosure } from '@heroui/react'
 import { Select, SelectItem } from '@heroui/select'
 import { Skeleton } from '@heroui/skeleton'
 import Head from 'next/head'
@@ -24,6 +27,8 @@ const IndexPage = () => {
   ) // State for price filter
 
   const { data, error, isLoading } = useGetRacket(filters)
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
   const dataItems = data?.data
 
@@ -61,9 +66,29 @@ const IndexPage = () => {
       <Head>
         <title>Racket</title>
       </Head>
+      <Button
+        onPress={onOpen}
+        className="fixed z-50 bottom-4 right-4 xl:hidden lg:hidden md:hidden sm:block bg-primary text-white p-3 rounded-full shadow-lg"
+      >
+        Filter
+      </Button>
+      <Drawer isOpen={isOpen} onOpenChange={onOpenChange}>
+        <DrawerContent>
+          {(onClose) => (
+            <>
+              <DrawerHeader>
+                <h2 className="text-lg font-semibold">Filter</h2>
+              </DrawerHeader>
+              <DrawerBody>
+                <Sidebar />
+              </DrawerBody>
+            </>
+          )}
+        </DrawerContent>
+      </Drawer>
       <div className="flex flex-col gap-4">
         <Select
-          className="max-w-xs self-end"
+          className="max-w-xs xl:self-end lg:self-end md:self-end sm:self-center self-center"
           label="Sort by"
           size="sm"
           value={priceFilter} // Bind the selected value
@@ -80,7 +105,9 @@ const IndexPage = () => {
           ))}
         </Select>
         <div className="flex">
-          <Sidebar />
+          <div className="hidden xl:block lg:block md:block sm:hidden">
+            <Sidebar />
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 px-4">
             {dataItems.length > 0 ? (
               dataItems.map((racket: Racket) => (

@@ -44,7 +44,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="w-[15%] xl:flex lg:flex md:hidden sm:hidden min-[20px]:hidden border-r-2 flex-col items-center px-4">
+    <div className="flex-col items-center px-4">
       <FilterSection
         title="Brand"
         options={[

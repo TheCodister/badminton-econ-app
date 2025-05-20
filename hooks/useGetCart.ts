@@ -3,7 +3,6 @@ import { BACKEND_URL } from '@/constants/backend_url'
 import { useQuery } from '@tanstack/react-query'
 
 export const useGetCart = (customerId: string) => {
-  console.log('Fetching cart for customerId:', customerId)
   return useQuery({
     queryKey: ['cart'],
     queryFn: async () => {

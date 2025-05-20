@@ -5,7 +5,7 @@ import {
   WeightConverter,
 } from '@/utils/Converter'
 import { Button } from '@heroui/button'
-import { Card, CardBody, CardFooter, CardHeader } from '@heroui/card'
+import { Card, CardBody, CardFooter } from '@heroui/card'
 import {
   Dropdown,
   DropdownItem,
@@ -13,8 +13,8 @@ import {
   DropdownTrigger,
 } from '@heroui/dropdown'
 import { Image } from '@heroui/image'
-import { Link } from '@heroui/link'
 import { Progress } from '@heroui/progress'
+import { useRouter } from 'next/router'
 import { memo } from 'react'
 
 type ProductData = Racket
@@ -27,10 +27,13 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
   const isRacket = (data: ProductData): data is Racket => {
     return 'balance' in data
   }
+  const router = useRouter()
+  const handleViewDetails = () => {
+    router.push(`/${data.id}`)
+  }
 
   return (
-    <Card className="w-[250px] h-full flex flex-col items-center justify-center cursor-pointer">
-      <CardHeader></CardHeader>
+    <Card className="xl:w-[250px] lg:w-[250px] md:w-[250px] sm:w-auto w-auto h-full flex flex-col items-center justify-center cursor-pointer">
       <CardBody className="gap-2 pb-0 h-min">
         <div className="w-full h-[300px] flex justify-center items-center overflow-hidden">
           <Image
@@ -88,16 +91,15 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
             </DropdownMenu>
           )}
         </Dropdown>
-        <Link href={`/${data.id}`} className="w-full pt-0">
-          <Button
-            className="w-full"
-            color="primary"
-            variant="bordered"
-            radius="full"
-          >
-            View details
-          </Button>
-        </Link>
+        <Button
+          className="w-full"
+          color="primary"
+          variant="bordered"
+          radius="full"
+          onPress={handleViewDetails}
+        >
+          View details
+        </Button>
       </CardFooter>
     </Card>
   )

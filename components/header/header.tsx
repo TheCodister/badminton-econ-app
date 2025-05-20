@@ -7,12 +7,9 @@ import HomeIcon from '@/icons/HomeIcon'
 import PersonIcon from '@/icons/PersonIcon'
 import RacketIcon from '@/icons/RacketIcon'
 import RunIcon from '@/icons/RunIcon'
-import SearchIcon from '@/icons/SearchIcon'
 import ShuttleIcon from '@/icons/ShuttleIcon'
 import { Badge } from '@heroui/badge'
 import { Button } from '@heroui/button'
-import { Input } from '@heroui/input'
-import { Link } from '@heroui/link'
 import {
   Navbar,
   NavbarBrand,
@@ -25,6 +22,7 @@ import {
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
+import MobileProductSearchBar from '../MobileSearchBar'
 import ProductSearchBar from '../SearchBar'
 const Header = () => {
   const router = useRouter()
@@ -45,6 +43,10 @@ const Header = () => {
     ],
     [session],
   )
+
+  const handleNavigation = (href: string) => {
+    router.push(href)
+  }
 
   return (
     <Navbar
@@ -70,93 +72,36 @@ const Header = () => {
           </NavbarBrand>
           <NavbarItem className="xl:hidden lg:hidden sm:block">
             {!session ? (
-              <Link href={ROUTES.LOGIN}>
-                <Button
-                  startContent={<PersonIcon />}
-                  isIconOnly
-                  variant="solid"
-                  color="primary"
-                  className="font-semibold w-full"
-                >
-                  Login
-                </Button>
-              </Link>
-            ) : (
-              <Link href={ROUTES.PROFILE}>
-                <Button
-                  startContent={<PersonIcon />}
-                  isIconOnly
-                  variant="solid"
-                  color="primary"
-                  className="font-semibold w-full"
-                ></Button>
-              </Link>
-            )}
-          </NavbarItem>
-          <NavbarItem className="xl:hidden lg:hidden sm:block">
-            <Link href={ROUTES.CART}>
-              <Button variant="solid" color="primary" isIconOnly>
-                <Badge
-                  content={
-                    cart?.cart_items.length > 0 ? cart?.cart_items.length : ''
-                  }
-                  size="sm"
-                  color="danger"
-                >
-                  <CartIcon stroke="white" fill="white" />
-                </Badge>
-              </Button>
-            </Link>
-          </NavbarItem>
-        </div>
-      </NavbarContent>
-      <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
-        {navItems.map((item) => (
-          <NavbarItem key={item.href}>
-            <Link color="foreground" href={item.href}>
-              <Button
-                startContent={<item.icon />}
-                variant={router.pathname === item.href ? 'flat' : 'solid'}
-                color={router.pathname === item.href ? 'default' : 'primary'}
-                className="text-white font-semibold"
-              >
-                {item.label}
-              </Button>
-            </Link>
-          </NavbarItem>
-        ))}
-
-        <NavbarItem>
-          <ProductSearchBar />
-        </NavbarItem>
-        <NavbarItem className="w-20">
-          {!session ? (
-            <Link href={ROUTES.LOGIN}>
               <Button
                 startContent={<PersonIcon />}
+                isIconOnly
                 variant="solid"
                 color="primary"
-                className="font-semibold"
+                className="font-semibold w-full"
+                onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
               >
                 Login
               </Button>
-            </Link>
-          ) : (
-            <Link href={ROUTES.PROFILE}>
+            ) : (
               <Button
                 startContent={<PersonIcon />}
+                isIconOnly
                 variant="solid"
                 color="primary"
-                className="font-semibold"
+                className="font-semibold w-full"
+                onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
               >
                 Profile
               </Button>
-            </Link>
-          )}
-        </NavbarItem>
-        <NavbarItem className="w-5">
-          <Link href={ROUTES.CART}>
-            <Button variant="solid" color="primary">
+            )}
+          </NavbarItem>
+          <NavbarItem className="xl:hidden lg:hidden sm:block">
+            <Button
+              variant="solid"
+              color="primary"
+              isIconOnly
+              onPress={() => handleNavigation(ROUTES.CART)}
+            >
               <Badge
                 content={
                   cart?.cart_items.length > 0 ? cart?.cart_items.length : ''
@@ -167,29 +112,86 @@ const Header = () => {
                 <CartIcon stroke="white" fill="white" />
               </Badge>
             </Button>
-          </Link>
+          </NavbarItem>
+        </div>
+      </NavbarContent>
+      <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
+        {navItems.map((item) => (
+          <NavbarItem key={item.href}>
+            <Button
+              startContent={<item.icon />}
+              variant={router.pathname === item.href ? 'flat' : 'solid'}
+              color={router.pathname === item.href ? 'default' : 'primary'}
+              className="text-white font-semibold"
+              onPress={() => handleNavigation(item.href)} // Use router.push here
+            >
+              {item.label}
+            </Button>
+          </NavbarItem>
+        ))}
+
+        <NavbarItem>
+          <ProductSearchBar />
+        </NavbarItem>
+        <NavbarItem className="w-20">
+          {!session ? (
+            <Button
+              startContent={<PersonIcon />}
+              variant="solid"
+              color="primary"
+              className="font-semibold"
+              isIconOnly
+              onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
+            >
+              Login
+            </Button>
+          ) : (
+            <Button
+              startContent={<PersonIcon />}
+              variant="solid"
+              color="primary"
+              className="font-semibold"
+              isIconOnly
+              onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
+            >
+              Profile
+            </Button>
+          )}
+        </NavbarItem>
+        <NavbarItem className="w-5">
+          <Button
+            variant="solid"
+            color="primary"
+            isIconOnly
+            onPress={() => handleNavigation(ROUTES.CART)}
+          >
+            <Badge
+              content={
+                cart?.cart_items.length > 0 ? cart?.cart_items.length : ''
+              }
+              size="sm"
+              color="danger"
+            >
+              <CartIcon stroke="white" fill="white" />
+            </Badge>
+          </Button>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="mt-4">
         <NavbarMenuItem className="mb-4">
-          <Input
-            className="w-full"
-            startContent={<SearchIcon width={20} height={20} color="black" />}
-            placeholder="Search"
-          />
+          <MobileProductSearchBar />
         </NavbarMenuItem>
         {navItems.map((item) => (
           <NavbarMenuItem key={item.href}>
-            <Link className="w-full" color="foreground" href={item.href}>
-              <Button
-                className="text-white font-semibold w-full"
-                startContent={item.icon && <item.icon />}
-                variant={router.pathname === item.href ? 'shadow' : 'solid'} // Active page styling
-                color={router.pathname === item.href ? 'default' : 'primary'}
-              >
-                {item.label}
-              </Button>
-            </Link>
+            <Button
+              className="text-white font-semibold w-full"
+              startContent={item.icon && <item.icon />}
+              variant={router.pathname === item.href ? 'shadow' : 'solid'}
+              color={router.pathname === item.href ? 'default' : 'primary'}
+              onPress={() => handleNavigation(item.href)} // Use router.push here
+            >
+              {item.label}
+            </Button>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

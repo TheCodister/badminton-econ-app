@@ -97,50 +97,57 @@ const CartCard = ({
   return (
     <div
       id={`cart-item-${product.id}`}
-      className="flex items-center justify-center container w-fit border-2 p-4 rounded-lg"
+      className="flex flex-col xl:flex-row lg:flex-row md:flex-row items-center justify-center container w-full border-2 p-4 rounded-lg h-max"
     >
-      <div className="flex items-center justify-center">
-        <Checkbox
-          size="lg"
-          isSelected={isChecked}
-          onChange={handleCheckboxChange}
-        />
-      </div>
-      <div className="flex items-center gap-4 min-w-fit xl:w-[700px] md:w-[500px] sm:w-96">
-        <div>
-          <Image
-            src={product.image_url || '/fallback-image.png'}
-            alt={product.product_name || 'Product'}
-            width={120}
-            height={120}
+      <div className="flex items-center justify-center min-w-fit">
+        <div className="ml-2">
+          <Checkbox
+            size="lg"
+            isSelected={isChecked}
+            onChange={handleCheckboxChange}
           />
         </div>
-        <div>
-          <h5>{product.product_name || 'Unknown Product'}</h5>
-          <p>Price: ${product.price || 'N/A'}</p>
-          <section className="flex items-center gap-1 border-2 rounded-md w-fit">
-            <Button
-              variant="light"
-              onPress={() => increaseQuantity()}
-              isIconOnly
-              size="sm"
-              className="text-lg"
+        <div className="flex items-center gap-0 xl:gap-4 lg:gap-4 md:gap-2 min-w-fit xl:w-[700px] md:w-[500px] sm:w-96 container">
+          <div>
+            <Image
+              src={product.image_url || '/fallback-image.png'}
+              alt={product.product_name || 'Product'}
+              width={120}
+              height={120}
+            />
+          </div>
+          <div className="overflow-hidden">
+            <h5
+              className="text-ellipsis overflow-hidden whitespace-nowrap"
+              title={product.product_name || 'Unknown Product'} // Add a tooltip to show the full name on hover
             >
-              +
-            </Button>
-            <h6 className="bg-slate-300 w-10 text-center rounded-md">
-              {itemQuantity}
-            </h6>
-            <Button
-              variant="light"
-              onPress={() => decreaseQuantity()}
-              isIconOnly
-              size="sm"
-              className="text-lg"
-            >
-              -
-            </Button>
-          </section>
+              {product.product_name || 'Unknown Product'}
+            </h5>
+            <p>Price: ${product.price || 'N/A'}</p>
+            <section className="flex items-center gap-1 border-2 rounded-md w-fit">
+              <Button
+                variant="light"
+                onPress={() => increaseQuantity()}
+                isIconOnly
+                size="sm"
+                className="text-lg"
+              >
+                +
+              </Button>
+              <h6 className="bg-slate-300 w-10 text-center rounded-md">
+                {itemQuantity}
+              </h6>
+              <Button
+                variant="light"
+                onPress={() => decreaseQuantity()}
+                isIconOnly
+                size="sm"
+                className="text-lg"
+              >
+                -
+              </Button>
+            </section>
+          </div>
         </div>
       </div>
       <Button color="danger" onPress={handleRemoveFromCart}>
