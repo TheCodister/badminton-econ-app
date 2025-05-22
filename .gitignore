@@ -40,3 +40,9 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/bin/
+/Libs/
+/.settings/
+/.classpath
+.svn/
+.cache/
