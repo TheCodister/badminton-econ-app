@@ -64,7 +64,6 @@ export class AuthService {
 
   // Login and generate JWT token
   async login(mail: string, password: string) {
-    console.log('Login attempt:', mail, password)
     const user = await this.prisma.user.findUnique({
       where: { mail },
     })
