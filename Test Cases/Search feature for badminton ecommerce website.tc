@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search feature for badminton ecommerce website</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d97f6775-42cc-42cf-914a-81b30e528200</testCaseGuid>
+</TestCaseEntity>
