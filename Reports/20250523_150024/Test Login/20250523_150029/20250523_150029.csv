@@ -1,0 +1,11 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Test Login,Chrome 136.0.7103.114,,,23-05-2025 15:00:35,23-05-2025 15:00:44,9.365s,PASSED
+,,,,,,,
+Test Cases/Test-login-lms,Chrome 136.0.7103.114,,,23-05-2025 15:00:35,23-05-2025 15:00:44,9.023s,PASSED
+"openBrowser("""")",Chrome 136.0.7103.114,,,23-05-2025 15:00:35,23-05-2025 15:00:37,1.555s,PASSED
+"navigateToUrl(""https://lms.hcmut.edu.vn/login/index.php"")",Chrome 136.0.7103.114,,,23-05-2025 15:00:37,23-05-2025 15:00:41,3.889s,PASSED
+"click(findTestObject(""Object Repository/Page_Log in to the site  BK-LMS/a_Ti khon HCMUT (HCMUT account)""))",Chrome 136.0.7103.114,,,23-05-2025 15:00:41,23-05-2025 15:00:42,0.962s,PASSED
+"setText(findTestObject(""Object Repository/Page_HCMUT  Central Authentication Service/input_U_username""), ""quang.nguyen26012907"")",Chrome 136.0.7103.114,,,23-05-2025 15:00:42,23-05-2025 15:00:42,0.742s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Page_HCMUT  Central Authentication Service/input_P_password""), ""K5koAvXt0fROu3CEq4l1EA=="")",Chrome 136.0.7103.114,,,23-05-2025 15:00:42,23-05-2025 15:00:43,0.293s,PASSED
+"click(findTestObject(""Object Repository/Page_HCMUT  Central Authentication Service/input_W_submit""))",Chrome 136.0.7103.114,,,23-05-2025 15:00:43,23-05-2025 15:00:44,1.275s,PASSED
+closeBrowser(),Chrome 136.0.7103.114,,,23-05-2025 15:00:44,23-05-2025 15:00:44,0.109s,PASSED

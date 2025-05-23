@@ -1,0 +1,31 @@
+2025-05-23 15:00:35.095 INFO  c.k.katalon.core.main.TestSuiteExecutor  - START Test Suites/Test Login
+2025-05-23 15:00:35.175 INFO  c.k.katalon.core.main.TestSuiteExecutor  - userFullName = Nguyễn Ngọc Quang
+2025-05-23 15:00:35.177 INFO  c.k.katalon.core.main.TestSuiteExecutor  - projectName = badminton-econ-app
+2025-05-23 15:00:35.178 INFO  c.k.katalon.core.main.TestSuiteExecutor  - hostName = DESKTOP-RLESB49$ - DESKTOP-RLESB49
+2025-05-23 15:00:35.179 INFO  c.k.katalon.core.main.TestSuiteExecutor  - os = Windows 10 64bit
+2025-05-23 15:00:35.179 INFO  c.k.katalon.core.main.TestSuiteExecutor  - hostAddress = 192.168.1.8
+2025-05-23 15:00:35.180 INFO  c.k.katalon.core.main.TestSuiteExecutor  - katalonVersion = 10.2.0.0
+2025-05-23 15:00:35.483 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-05-23 15:00:35.483 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/Test-login-lms
+2025-05-23 15:00:35.676 DEBUG testcase.Test-login-lms                  - 1: openBrowser("")
+2025-05-23 15:00:35.839 INFO  c.k.k.core.webui.driver.DriverFactory    - Starting 'Chrome' driver
+2025-05-23 15:00:35.877 INFO  c.k.k.core.webui.driver.DriverFactory    - Action delay is set to 0 milliseconds
+May 23, 2025 3:00:36 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+May 23, 2025 3:00:36 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.28.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-05-23 15:00:37.199 INFO  c.k.k.core.webui.driver.DriverFactory    - sessionId = 0cefe7a89ed3bf7cdcaa6ea072622f87
+2025-05-23 15:00:37.200 INFO  c.k.k.core.webui.driver.DriverFactory    - browser = Chrome 136.0.7103.114
+2025-05-23 15:00:37.200 INFO  c.k.k.core.webui.driver.DriverFactory    - platform = Windows 10
+2025-05-23 15:00:37.201 INFO  c.k.k.core.webui.driver.DriverFactory    - seleniumVersion = 4.28.1
+2025-05-23 15:00:37.208 INFO  c.k.k.core.webui.driver.DriverFactory    - proxyInformation = ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList="", isApplyToDesiredCapabilities=true }
+2025-05-23 15:00:37.232 DEBUG testcase.Test-login-lms                  - 2: navigateToUrl("https://lms.hcmut.edu.vn/login/index.php")
+2025-05-23 15:00:41.120 DEBUG testcase.Test-login-lms                  - 3: click(findTestObject("Object Repository/Page_Log in to the site  BK-LMS/a_Ti khon HCMUT (HCMUT account)"))
+2025-05-23 15:00:42.083 DEBUG testcase.Test-login-lms                  - 4: setText(findTestObject("Object Repository/Page_HCMUT  Central Authentication Service/input_U_username"), "quang.nguyen26012907")
+2025-05-23 15:00:42.825 DEBUG testcase.Test-login-lms                  - 5: setEncryptedText(findTestObject("Object Repository/Page_HCMUT  Central Authentication Service/input_P_password"), "K5koAvXt0fROu3CEq4l1EA==")
+2025-05-23 15:00:43.119 DEBUG testcase.Test-login-lms                  - 6: click(findTestObject("Object Repository/Page_HCMUT  Central Authentication Service/input_W_submit"))
+2025-05-23 15:00:44.395 DEBUG testcase.Test-login-lms                  - 7: closeBrowser()
+2025-05-23 15:00:44.506 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/Test-login-lms
+2025-05-23 15:00:44.525 INFO  c.k.katalon.core.main.TestSuiteExecutor  - --------------------
+2025-05-23 15:00:44.525 INFO  c.k.katalon.core.main.TestSuiteExecutor  - END Test Suites/Test Login
+2025-05-23 15:00:44.525 INFO  c.k.katalon.core.main.TestSuiteExecutor  - ====================

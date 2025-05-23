@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Test Login" time="9.346" tests="1" failures="0" errors="0">
+   <testsuite name="Test Login" tests="1" failures="0" errors="0" time="9.346" skipped="0" timestamp="23-05-2025T15:00:35" hostname="DESKTOP-RLESB49$ - DESKTOP-RLESB49" id="Test Suites/Test Login">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="C:\\Users\\ADMIN\\git\\badminton-econ-app\\Reports\\20250523_150024\\Test Login\\20250523_150029"/>
+         <property name="logFiles" value="C:\\Users\\ADMIN\\git\\badminton-econ-app\\Reports\\20250523_150024\\Test Login\\20250523_150029\\console0.log, C:\\Users\\ADMIN\\git\\badminton-econ-app\\Reports\\20250523_150024\\Test Login\\20250523_150029\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="DESKTOP-RLESB49$ - DESKTOP-RLESB49"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="10.2.0.0"/>
+         <property name="browser" value="Chrome 136.0.7103.114"/>
+         <property name="userFullName" value="Nguyễn Ngọc Quang"/>
+         <property name="hostAddress" value="192.168.1.8"/>
+         <property name="sessionId" value="0cefe7a89ed3bf7cdcaa6ea072622f87"/>
+         <property name="projectName" value="badminton-econ-app"/>
+         <property name="seleniumVersion" value="4.28.1"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/Test-login-lms" time="9.023" classname="Test Cases/Test-login-lms" status="PASSED">
+         <system-out><![CDATA[23-05-2025T15:00:35 - [TEST_CASE][PASSED] - Test Cases/Test-login-lms: Test Cases/Test-login-lms
+
+23-05-2025T15:00:35 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+23-05-2025T15:00:35 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+23-05-2025T15:00:35 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+23-05-2025T15:00:37 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+23-05-2025T15:00:37 - [TEST_STEP][PASSED] - navigateToUrl("https://lms.hcmut.edu.vn/login/index.php"): Navigate to 'https://lms.hcmut.edu.vn/login/index.php' successfully
+
+23-05-2025T15:00:41 - [MESSAGE][PASSED] - Navigate to 'https://lms.hcmut.edu.vn/login/index.php' successfully
+
+23-05-2025T15:00:41 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Page_Log in to the site  BK-LMS/a_Ti khon HCMUT (HCMUT account)")): Object: 'Object Repository/Page_Log in to the site  BK-LMS/a_Ti khon HCMUT (HCMUT account)' is clicked on
+
+23-05-2025T15:00:42 - [MESSAGE][PASSED] - Object: 'Object Repository/Page_Log in to the site  BK-LMS/a_Ti khon HCMUT (HCMUT account)' is clicked on
+
+23-05-2025T15:00:42 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Page_HCMUT  Central Authentication Service/input_U_username"), "quang.nguyen26012907"): Text 'quang.nguyen26012907' is set on object 'Object Repository/Page_HCMUT  Central Authentication Service/input_U_username'
+
+23-05-2025T15:00:42 - [MESSAGE][PASSED] - Text 'quang.nguyen26012907' is set on object 'Object Repository/Page_HCMUT  Central Authentication Service/input_U_username'
+
+23-05-2025T15:00:42 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Page_HCMUT  Central Authentication Service/input_P_password"), "K5koAvXt0fROu3CEq4l1EA=="): Text ****** has been set on object 'Object Repository/Page_HCMUT  Central Authentication Service/input_P_password'
+
+23-05-2025T15:00:43 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Page_HCMUT  Central Authentication Service/input_P_password'
+
+23-05-2025T15:00:43 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Page_HCMUT  Central Authentication Service/input_W_submit")): Object: 'Object Repository/Page_HCMUT  Central Authentication Service/input_W_submit' is clicked on
+
+23-05-2025T15:00:44 - [MESSAGE][PASSED] - Object: 'Object Repository/Page_HCMUT  Central Authentication Service/input_W_submit' is clicked on
+
+23-05-2025T15:00:44 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+23-05-2025T15:00:44 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[23-05-2025T15:00:35 - [TEST_SUITE][PASSED] - Test Login: Test Cases/Test-login-lms]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>
