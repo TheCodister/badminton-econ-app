@@ -6,6 +6,7 @@ import {
 } from '@/utils/Converter'
 import { Button } from '@heroui/button'
 import { Card, CardBody, CardFooter } from '@heroui/card'
+import { Chip } from '@heroui/chip'
 import {
   Dropdown,
   DropdownItem,
@@ -33,23 +34,44 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
   }
 
   return (
-    <Card className="xl:w-[250px] lg:w-[250px] md:w-[250px] sm:w-auto w-auto h-full flex flex-col items-center justify-center cursor-pointer">
+    <Card
+      shadow="lg"
+      className="xl:w-[250px] lg:w-[250px] md:w-[250px] sm:w-auto w-auto h-full flex flex-col items-center justify-center cursor-pointer"
+    >
       <CardBody className="gap-2 pb-0 h-min">
+        <Chip size="sm" color="danger">
+          <p className="font-semibold ">Popular</p>
+        </Chip>
         <div className="w-full h-[300px] flex justify-center items-center overflow-hidden">
           <Image
             src={data.product.image_url}
             alt={data.product.product_name}
             className="w-full h-full object-cover"
+            onClick={handleViewDetails}
           />
         </div>
+        <Chip size="sm" variant="bordered" className="font-bold">
+          <p className="font-semibold">
+            {isRacket(data) ? 'Racket' : 'Accessory'}
+          </p>
+        </Chip>
+        <h5
+          className="text-primary text-ellipsis overflow-hidden whitespace-nowrap"
+          title={data.product.product_name} // Add a tooltip to show the full name on hover
+        >
+          {data.product.product_name}
+        </h5>
+        <div className="flex items-center gap-2">
+          <span className="text-yellow-500">★★★★★</span>
+          <span>(5.0)</span>
+        </div>
         <h4 className="text-danger font-medium mt-2">${data.product.price}</h4>
-        <h6 className="text-primary">{data.product.product_name}</h6>
       </CardBody>
       <CardFooter className="flex justify-center items-stretch flex-col gap-3">
         <Dropdown type="listbox">
           <DropdownTrigger>
-            <Button color="default" radius="full">
-              Specs
+            <Button color="primary" radius="lg">
+              <h6>Specs</h6>
             </Button>
           </DropdownTrigger>
           {isRacket(data) && (
@@ -91,15 +113,15 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
             </DropdownMenu>
           )}
         </Dropdown>
-        <Button
+        {/* <Button
           className="w-full"
           color="primary"
           variant="bordered"
           radius="full"
           onPress={handleViewDetails}
         >
-          View details
-        </Button>
+          <h6>View details</h6>
+        </Button> */}
       </CardFooter>
     </Card>
   )

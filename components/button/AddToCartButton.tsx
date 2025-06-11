@@ -1,4 +1,5 @@
 import { useAddToCart } from '@/hooks/useAddToCart' // Adjust path if needed
+import CartIcon from '@/icons/CartIcon'
 import { Button } from '@heroui/button'
 import { useSession } from 'next-auth/react'
 
@@ -24,13 +25,13 @@ const AddToCartButton = ({ racketId }: { racketId: string }) => {
     <Button
       size="lg"
       className="w-full"
-      color="default"
-      variant="bordered"
-      radius="full"
+      color="primary"
+      radius="lg"
       onPress={handleAddToCart}
+      startContent={<CartIcon />}
       disabled={addToCartMutation.status === 'pending'}
     >
-      Add to cart
+      <h6>Add to cart</h6>
     </Button>
   )
 }

@@ -2,6 +2,7 @@ import { CheckoutProvider } from '@/context/context'
 import DefaultLayout from '@/layouts/default'
 import { useSelectedCart } from '@/stores/useSelectedCart'
 import '@/styles/globals.css'
+import { ToastProvider } from '@heroui/react'
 import { HeroUIProvider } from '@heroui/system'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { SessionProvider } from 'next-auth/react'
@@ -58,6 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <SessionProvider session={pageProps.session}>
             <CheckoutProvider>
               <DefaultLayout>
+                <ToastProvider />
                 <Component {...pageProps} />
               </DefaultLayout>
             </CheckoutProvider>

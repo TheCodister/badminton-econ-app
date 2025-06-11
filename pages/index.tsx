@@ -60,7 +60,7 @@ const IndexPage = () => {
             fetchPriority="high"
           />
           <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
-            Shop by categories
+            Shop by Category
           </h2>
         </div>
 
