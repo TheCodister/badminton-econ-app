@@ -1,12 +1,5 @@
 import { ROUTES } from '@/constants/routes'
 import { useGetCart } from '@/hooks/useGetCart'
-import AccessoryIcon from '@/icons/AccessoryIcon'
-import CartIcon from '@/icons/CartIcon'
-import ChatIcon from '@/icons/ChatIcon'
-import HomeIcon from '@/icons/HomeIcon'
-import PersonIcon from '@/icons/PersonIcon'
-import RacketIcon from '@/icons/RacketIcon'
-import RunIcon from '@/icons/RunIcon'
 import ShuttleIcon from '@/icons/ShuttleIcon'
 import { Badge } from '@heroui/badge'
 import { Button } from '@heroui/button'
@@ -19,6 +12,16 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@heroui/navbar'
+import {
+  Bandage,
+  CircleUser,
+  Footprints,
+  House,
+  Key,
+  LogIn,
+  MessageCircleWarning,
+  ShoppingCart,
+} from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
@@ -32,13 +35,13 @@ const Header = () => {
 
   const navItems = useMemo(
     () => [
-      { label: 'Home', href: ROUTES.HOME, icon: HomeIcon },
-      { label: 'Racket', href: ROUTES.RACKET, icon: RacketIcon },
+      { label: 'Home', href: ROUTES.HOME, icon: House },
+      { label: 'Racket', href: ROUTES.RACKET, icon: Key },
       { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: ShuttleIcon },
-      { label: 'Shoes', href: ROUTES.SHOES, icon: RunIcon },
-      { label: 'Accessories', href: ROUTES.ACCESORIES, icon: AccessoryIcon },
+      { label: 'Shoes', href: ROUTES.SHOES, icon: Footprints },
+      { label: 'Accessories', href: ROUTES.ACCESORIES, icon: Bandage },
       ...(session
-        ? [{ label: 'Chat', href: ROUTES.CHAT, icon: ChatIcon }]
+        ? [{ label: 'Chat', href: ROUTES.CHAT, icon: MessageCircleWarning }]
         : []),
     ],
     [session],
@@ -73,26 +76,22 @@ const Header = () => {
           <NavbarItem className="xl:hidden lg:hidden sm:block">
             {!session ? (
               <Button
-                startContent={<PersonIcon />}
+                startContent={<LogIn />}
                 isIconOnly
                 variant="solid"
                 color="primary"
                 className="font-semibold w-full"
                 onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
-              >
-                Login
-              </Button>
+              ></Button>
             ) : (
               <Button
-                startContent={<PersonIcon />}
+                startContent={<CircleUser />}
                 isIconOnly
                 variant="solid"
                 color="primary"
                 className="font-semibold w-full"
                 onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
-              >
-                Profile
-              </Button>
+              ></Button>
             )}
           </NavbarItem>
           <NavbarItem className="xl:hidden lg:hidden sm:block">
@@ -109,12 +108,13 @@ const Header = () => {
                 size="sm"
                 color="danger"
               >
-                <CartIcon stroke="white" fill="white" />
+                <ShoppingCart />
               </Badge>
             </Button>
           </NavbarItem>
         </div>
       </NavbarContent>
+
       <NavbarContent className="gap-2 xl:flex lg:flex md:hidden min-[20px]:hidden sm:hidden">
         {navItems.map((item) => (
           <NavbarItem key={item.href}>
@@ -133,30 +133,26 @@ const Header = () => {
         <NavbarItem>
           <ProductSearchBar />
         </NavbarItem>
-        <NavbarItem className="w-20">
+        {/* <NavbarItem className="w-20">
           {!session ? (
             <Button
-              startContent={<PersonIcon />}
+              startContent={<LogIn />}
               variant="solid"
               color="primary"
               className="font-semibold"
               onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
-            >
-              Login
-            </Button>
+            ></Button>
           ) : (
             <Button
-              startContent={<PersonIcon />}
+              startContent={<CircleUser />}
               variant="solid"
               color="primary"
               className="font-semibold"
               onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
-            >
-              Profile
-            </Button>
+            ></Button>
           )}
-        </NavbarItem>
-        <NavbarItem className="w-5">
+        </NavbarItem> */}
+        <NavbarItem className="w-15">
           <Button
             variant="solid"
             color="primary"
@@ -170,9 +166,30 @@ const Header = () => {
               size="sm"
               color="danger"
             >
-              <CartIcon stroke="white" fill="white" />
+              <ShoppingCart />
             </Badge>
           </Button>
+        </NavbarItem>
+        <NavbarItem className="w-20">
+          {!session ? (
+            <Button
+              startContent={<LogIn />}
+              variant="solid"
+              isIconOnly
+              color="primary"
+              className="font-semibold"
+              onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
+            ></Button>
+          ) : (
+            <Button
+              startContent={<CircleUser />}
+              variant="solid"
+              color="primary"
+              isIconOnly
+              className="font-semibold"
+              onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
+            ></Button>
+          )}
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="mt-4">

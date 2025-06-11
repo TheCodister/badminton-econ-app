@@ -23,6 +23,7 @@ const ProductSearchBar = () => {
         className="w-full"
         startContent={<SearchIcon width={20} height={20} color="black" />}
         placeholder="Search"
+        radius="full"
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
