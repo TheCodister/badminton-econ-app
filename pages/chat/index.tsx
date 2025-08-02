@@ -5,13 +5,19 @@ import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Spinner } from '@heroui/spinner'
 import { useSession } from 'next-auth/react'
+import { useState } from 'react'
 import Markdown from 'react-markdown'
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat({
-      maxSteps: 5,
-    })
+  const { messages, sendMessage, status } = useChat()
+
+  const [input, setInput] = useState('')
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    sendMessage({ text: input })
+    setInput('')
+  }
 
   const { data: session } = useSession()
   if (!session) return <div>Unauthorized</div>
@@ -38,146 +44,151 @@ export default function Chat() {
                   switch (part.type) {
                     case 'text':
                       return (
-                        <div key={`${m.id}`}>
+                        <div key={m.id}>
                           <Markdown>{part.text}</Markdown>
                         </div>
                       )
-                    case 'tool-invocation': {
-                      const callId = part.toolInvocation.toolCallId
 
-                      switch (part.toolInvocation.toolName) {
-                        case 'search_racket_by_attributes': {
-                          switch (part.toolInvocation.state) {
-                            case 'partial-call':
-                              return (
-                                <pre key={callId}>
-                                  {JSON.stringify(part.toolInvocation, null, 2)}
-                                </pre>
-                              )
-                            case 'call':
-                              return (
-                                <div key={callId}>
-                                  Searching for rackets with attributes "
-                                  {part.toolInvocation.args.attributes}"...
-                                </div>
-                              )
-                            case 'result':
-                              const result = part.toolInvocation.result as {
-                                attributes: string // Changed from product_name to attributes
-                                found: boolean
-                                rackets: {
-                                  id: string
-                                  name: string
-                                  price: number
-                                  image: string
-                                  weight: string // Added these additional properties
-                                  balance: string
-                                  stiffness: string
-                                }[]
+                    case 'tool-search_racket_by_attributes': {
+                      const callId = part.toolCallId
+
+                      switch (part.state) {
+                        case 'input-streaming':
+                          return (
+                            <pre key={callId}>
+                              {JSON.stringify(part, null, 2)}
+                            </pre>
+                          )
+                        case 'input-available':
+                          return (
+                            <div key={callId}>
+                              Searching for rackets with attributes "
+                              {
+                                (part.input as { attributes: string })
+                                  .attributes
                               }
-
-                              return (
-                                <div key={callId} className="space-y-4 w-full">
-                                  <h3 className="font-bold text-lg">
-                                    Results for attributes "{result.attributes}
-                                    ":
-                                  </h3>
-
-                                  {result.found ? (
-                                    <div className="w-full overflow-x-auto">
-                                      <div className="flex flex-row gap-4 w-max">
-                                        {result.rackets.map((racket, index) => {
-                                          const mapped = {
-                                            id: racket.id,
-                                            product_name: racket.name,
-                                            image_url: racket.image,
-                                            price: Number(racket.price),
-                                            // You could add these to pass to the card if needed
-                                            weight: racket.weight,
-                                            balance: racket.balance,
-                                            stiffness: racket.stiffness,
-                                          }
-                                          return (
-                                            <ChatProductCard
-                                              key={index}
-                                              data={mapped}
-                                            />
-                                          )
-                                        })}
-                                      </div>
-                                    </div>
-                                  ) : (
-                                    <p>
-                                      No rackets found matching these
-                                      attributes.
-                                    </p>
-                                  )}
-                                </div>
-                              )
+                              "...
+                            </div>
+                          )
+                        case 'output-available': {
+                          const result = part.output as {
+                            attributes: string
+                            found: boolean
+                            rackets: {
+                              id: string
+                              name: string
+                              price: number
+                              image: string
+                              weight: string
+                              balance: string
+                              stiffness: string
+                            }[]
                           }
-                          break
-                        }
-                        case 'search_racket': {
-                          switch (part.toolInvocation.state) {
-                            case 'partial-call':
-                              return (
-                                <pre key={callId}>
-                                  {JSON.stringify(part.toolInvocation, null, 2)}
-                                </pre>
-                              )
-                            case 'call':
-                              return (
-                                <div key={callId}>
-                                  Searching for rackets with keyword "
-                                  {part.toolInvocation.args.product_name}"...
-                                </div>
-                              )
-                            case 'result':
-                              const result = part.toolInvocation.result as {
-                                product_name: string
-                                found: boolean
-                                rackets: {
-                                  id: string
-                                  name: string
-                                  price: number
-                                  image: string
-                                }[]
-                              }
 
-                              return (
-                                <div key={callId} className="space-y-4 w-full">
-                                  <h3 className="font-bold text-lg">
-                                    Results for "{result.product_name}":
-                                  </h3>
+                          return (
+                            <div key={callId} className="space-y-4 w-full">
+                              <h3 className="font-bold text-lg">
+                                Results for attributes "{result.attributes}":
+                              </h3>
 
-                                  {result.found ? (
-                                    <div className="w-full overflow-x-auto">
-                                      <div className="flex flex-row gap-4 w-max">
-                                        {result.rackets.map((racket, index) => {
-                                          const mapped = {
-                                            id: racket.id,
-                                            product_name: racket.name,
-                                            image_url: racket.image,
-                                            price: Number(racket.price),
-                                          }
-                                          return (
-                                            <ChatProductCard
-                                              key={index}
-                                              data={mapped}
-                                            />
-                                          )
-                                        })}
-                                      </div>
-                                    </div>
-                                  ) : (
-                                    <p>No rackets found for this keyword.</p>
-                                  )}
+                              {result.found ? (
+                                <div className="w-full overflow-x-auto">
+                                  <div className="flex flex-row gap-4 w-max">
+                                    {result.rackets.map((racket, index) => {
+                                      const mapped = {
+                                        id: racket.id,
+                                        product_name: racket.name,
+                                        image_url: racket.image,
+                                        price: Number(racket.price),
+                                        weight: racket.weight,
+                                        balance: racket.balance,
+                                        stiffness: racket.stiffness,
+                                      }
+                                      return (
+                                        <ChatProductCard
+                                          key={index}
+                                          data={mapped}
+                                        />
+                                      )
+                                    })}
+                                  </div>
                                 </div>
-                              )
-                          }
-                          break
+                              ) : (
+                                <p>
+                                  No rackets found matching these attributes.
+                                </p>
+                              )}
+                            </div>
+                          )
                         }
                       }
+                    }
+
+                    case 'tool-search_racket': {
+                      const callId = part.toolCallId
+
+                      switch (part.state) {
+                        case 'input-streaming':
+                          return (
+                            <pre key={callId}>
+                              {JSON.stringify(part, null, 2)}
+                            </pre>
+                          )
+                        case 'input-available':
+                          return (
+                            <div key={callId}>
+                              Searching for rackets with keyword "
+                              {
+                                (part.input as { product_name: string })
+                                  .product_name
+                              }
+                              "...
+                            </div>
+                          )
+                        case 'output-available':
+                          const result = part.output as {
+                            product_name: string
+                            found: boolean
+                            rackets: {
+                              id: string
+                              name: string
+                              price: number
+                              image: string
+                            }[]
+                          }
+
+                          return (
+                            <div key={callId} className="space-y-4 w-full">
+                              <h3 className="font-bold text-lg">
+                                Results for "{result.product_name}":
+                              </h3>
+
+                              {result.found ? (
+                                <div className="w-full overflow-x-auto">
+                                  <div className="flex flex-row gap-4 w-max">
+                                    {result.rackets.map((racket, index) => {
+                                      const mapped = {
+                                        id: racket.id,
+                                        product_name: racket.name,
+                                        image_url: racket.image,
+                                        price: Number(racket.price),
+                                      }
+                                      return (
+                                        <ChatProductCard
+                                          key={index}
+                                          data={mapped}
+                                        />
+                                      )
+                                    })}
+                                  </div>
+                                </div>
+                              ) : (
+                                <p>No rackets found for this keyword.</p>
+                              )}
+                            </div>
+                          )
+                      }
+                      break
                     }
                   }
                 })}
@@ -185,9 +196,9 @@ export default function Chat() {
             </div>
           ))}
 
-          {isLoading && (
+          {status === 'submitted' && (
             <div className="flex items-center justify-start my-2">
-              <span>AI: </span>
+              <span>AI is responding, please wait</span>
               <Spinner className="ml-2" size="sm" />
             </div>
           )}
@@ -202,7 +213,7 @@ export default function Chat() {
             className="mr-2"
             placeholder="Say something..."
             value={input}
-            onChange={handleInputChange}
+            onChange={(e) => setInput(e.target.value)}
           />
           <Button color="primary" type="submit">
             Send

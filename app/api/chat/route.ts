@@ -1,6 +1,6 @@
 import { BACKEND_URL } from '@/constants/backend_url'
 import { google } from '@ai-sdk/google'
-import { streamText } from 'ai'
+import { convertToModelMessages, streamText } from 'ai'
 import axios from 'axios'
 import { z } from 'zod'
 
@@ -39,13 +39,12 @@ export async function POST(req: Request) {
     - Use the tool to search for the product in stock or in store and when recommend product for the player, remember to pass the name of the product or the brand of the product to the tools.
     `,
     toolChoice: 'auto',
-    toolCallStreaming: true,
-    messages,
+    messages: convertToModelMessages(messages),
     tools: {
       search_racket: {
         description:
           'When the user is looking for a racket or product in stock or in store',
-        parameters: searchRacketSchema,
+        inputSchema: searchRacketSchema,
         //   type: 'object',
         //   properties: {
         //     product_name: {
@@ -97,7 +96,7 @@ export async function POST(req: Request) {
       search_racket_by_attributes: {
         description:
           'When the user asks for a racket with specific attributes like weight, balance, or stiffness. Use this when users want to find rackets based on characteristics rather than specific product names.',
-        parameters: searchRacketByAttributesSchema,
+        inputSchema: searchRacketByAttributesSchema,
         execute: async ({ attributes }: { attributes: string }) => {
           // console.log('Tool called with attributes:', attributes)
 
@@ -163,5 +162,5 @@ export async function POST(req: Request) {
       },
     },
   })
-  return result.toDataStreamResponse()
+  return result.toUIMessageStreamResponse()
 }
