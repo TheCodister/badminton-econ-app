@@ -7,7 +7,7 @@ import {
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger'
-import { Prisma } from '@prisma/client'
+import { Prisma } from '../../../../node_modules/@prisma/client'
 import { RacketsService } from './rackets.service'
 
 @ApiTags('Rackets')
