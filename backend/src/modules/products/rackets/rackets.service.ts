@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common'
-import { PrismaService } from 'prisma/prisma.service'
 import {
   Balance,
   Brand,
   Prisma,
   Stiffness,
 } from '../../../../node_modules/@prisma/client' // ✅ Import Brand Enum
+import { PrismaService } from '../../../../prisma/prisma.service'
 
 @Injectable()
 export class RacketsService {
