@@ -1,7 +1,7 @@
 import { CacheModule } from '@nestjs/cache-manager'
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { PrismaModule } from 'prisma/prisma.module'
+import { PrismaModule } from '../prisma/prisma.module'
 import { AuthModule } from './modules/auth/auth.module'
 import { ShoppingCartModule } from './modules/cart/cart.module'
 import { ProductModule } from './modules/products/product.module'
