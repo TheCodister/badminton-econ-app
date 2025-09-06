@@ -1,5 +1,5 @@
 {
-  "packageManager": "npm@9.13.0",
+  "packageManager": "pnpm@9.13.0",
   "name": "next-pages-template",
   "version": "0.1.0",
   "private": true,
