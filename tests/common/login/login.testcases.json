@@ -1,7 +1,7 @@
 [
   {
-    "email": "Benny@gmail.com",
-    "password": "securepassword",
+    "email": "quang.nnguyen@katalon.com",
+    "password": "BenCuber@2601",
     "expectedAlert": "Login successful!"
   },
   {

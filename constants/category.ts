@@ -12,7 +12,7 @@ export const CATEGORY = [
     id: 2,
     name: 'Shoes',
     image:
-      'https://img.lazcdn.com/g/p/ddc8c5339fdd538ef1fb521df3f8aefb.jpg_720x720q80.jpg',
+      'https://cdn.shopvnb.com/uploads/gallery/giay-cau-long-yonex-comfort-z3-trang-ma-kr_1726003177.webp',
     description:
       'Shoes are the most important part of the game. Choose the best shoes for you.',
     route: '/shoes',
