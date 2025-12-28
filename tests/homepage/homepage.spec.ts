@@ -43,7 +43,7 @@ test.describe('Badminton App Tests', () => {
     await searchResultLink.click()
 
     // Wait for navigation to complete
-    await page.waitForLoadState('networkidle')
+    await page.waitForTimeout(10000)
 
     // Verify the product title on the product page
     const productPageTitle = page.locator(
