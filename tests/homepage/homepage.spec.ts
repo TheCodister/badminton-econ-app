@@ -27,7 +27,7 @@ test.describe('Badminton App Tests', () => {
     await page.goto('/')
 
     // Wait for page to load
-    await page.waitForLoadState('networkidle')
+    await page.waitForTimeout(10000)
 
     // Locate the search input and type "VNB"
     const searchInput = page.getByPlaceholder('Search')

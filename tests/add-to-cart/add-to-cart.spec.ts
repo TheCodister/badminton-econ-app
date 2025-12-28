@@ -14,7 +14,7 @@ test('Add product to cart', async ({ page }) => {
   await page.goto('http://localhost:3000')
 
   // Wait for page to load
-  await page.waitForLoadState('networkidle')
+  await page.waitForTimeout(10000)
 
   // Navigate to login page
   await page.goto('http://localhost:3000/login')
@@ -40,13 +40,13 @@ test('Add product to cart', async ({ page }) => {
   await page.goto('http://localhost:3000')
 
   // Wait for page to load
-  await page.waitForLoadState('networkidle')
+  await page.waitForTimeout(10000)
 
   // Click on the Racket tab in the top bar
   await page.getByRole('button', { name: 'Racket', exact: true }).click()
 
   // Wait for navigation to complete
-  await page.waitForLoadState('networkidle')
+  await page.waitForTimeout(10000)
 
   // Click on any product (first product on the page)
   // Wait for products to be visible
@@ -66,7 +66,7 @@ test('Add product to cart', async ({ page }) => {
   await productImages.first().click()
 
   // Wait for product page to load
-  await page.waitForLoadState('networkidle')
+  await page.waitForTimeout(10000)
 
   // Click the "Add to Cart" button
   // Listen for the alert dialog before clicking
