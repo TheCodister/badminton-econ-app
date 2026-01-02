@@ -12,6 +12,7 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@heroui/navbar'
+import { Avatar } from '@heroui/react'
 import {
   Bandage,
   CircleUser,
@@ -22,7 +23,7 @@ import {
   MessageCircleWarning,
   ShoppingCart,
 } from 'lucide-react'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
 import MobileProductSearchBar from '../MobileSearchBar'
@@ -74,27 +75,6 @@ const Header = () => {
             <h1>BMB</h1>
           </NavbarBrand>
           <NavbarItem className="xl:hidden lg:hidden sm:block">
-            {!session ? (
-              <Button
-                startContent={<LogIn />}
-                isIconOnly
-                variant="solid"
-                color="primary"
-                className="font-semibold w-full"
-                onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
-              ></Button>
-            ) : (
-              <Button
-                startContent={<CircleUser />}
-                isIconOnly
-                variant="solid"
-                color="primary"
-                className="font-semibold w-full"
-                onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
-              ></Button>
-            )}
-          </NavbarItem>
-          <NavbarItem className="xl:hidden lg:hidden sm:block">
             <Button
               variant="solid"
               color="primary"
@@ -111,6 +91,38 @@ const Header = () => {
                 <ShoppingCart />
               </Badge>
             </Button>
+          </NavbarItem>
+          <NavbarItem className="xl:hidden lg:hidden sm:block">
+            {!session ? (
+              <Button
+                startContent={<CircleUser />}
+                variant="solid"
+                color="primary"
+                className="font-semibold w-full"
+                onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
+              >
+                Login
+              </Button>
+            ) : (
+              <section className="flex gap-2 items-center">
+                <Avatar
+                  name={session.user.name || 'User'}
+                  alt="User Avatar"
+                  color="secondary"
+                  size="sm"
+                  className="cursor-pointer font-bold border-2"
+                  onClick={() => handleNavigation(ROUTES.PROFILE)}
+                />
+                <Button
+                  startContent={<LogIn />}
+                  variant="solid"
+                  color="primary"
+                  isIconOnly
+                  className="font-semibold"
+                  onPress={() => signOut({ callbackUrl: '/' })}
+                ></Button>
+              </section>
+            )}
           </NavbarItem>
         </div>
       </NavbarContent>
@@ -173,22 +185,33 @@ const Header = () => {
         <NavbarItem className="w-20">
           {!session ? (
             <Button
-              startContent={<LogIn />}
-              variant="solid"
-              isIconOnly
-              color="primary"
-              className="font-semibold"
-              onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
-            ></Button>
-          ) : (
-            <Button
               startContent={<CircleUser />}
               variant="solid"
               color="primary"
-              isIconOnly
               className="font-semibold"
-              onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
-            ></Button>
+              onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
+            >
+              Login
+            </Button>
+          ) : (
+            <section className="flex gap-2 items-center">
+              <Avatar
+                name={session.user.name || 'User'}
+                alt="User Avatar"
+                color="secondary"
+                size="sm"
+                className="cursor-pointer font-bold border-2"
+                onClick={() => handleNavigation(ROUTES.PROFILE)}
+              />
+              <Button
+                startContent={<LogIn />}
+                variant="solid"
+                color="primary"
+                isIconOnly
+                className="font-semibold"
+                onPress={() => signOut({ callbackUrl: '/' })}
+              ></Button>
+            </section>
           )}
         </NavbarItem>
       </NavbarContent>
