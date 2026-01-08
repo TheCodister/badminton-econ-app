@@ -40,7 +40,7 @@ export default function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <Input
-            className="xl:w-[30vw] lg:w-auto md:w-auto sm:w-auto"
+            className="xl:w-[30vw] lg:w-auto md:w-auto sm:w-auto katalon-excluded"
             size="lg"
             placeholder="Password"
             type="password"
