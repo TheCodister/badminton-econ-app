@@ -21,9 +21,11 @@ const ProductSearchBar = () => {
     <div className="relative w-[10vw]">
       <Input
         className="w-full"
-        startContent={<SearchIcon width={20} height={20} color="black" />}
+        endContent={<SearchIcon width={18} height={18} color="black" />}
         placeholder="Search"
         radius="full"
+        color="default"
+        variant="faded"
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}

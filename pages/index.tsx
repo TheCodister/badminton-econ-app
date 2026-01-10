@@ -77,7 +77,7 @@ const IndexPage = () => {
         <section className="flex flex-col items-center gap-10">
           <h2>TRY OUR BMB AI!</h2>
           <section
-            className="bg-secondary w-[150px] h-[150px] rounded-full flex items-center justify-center cursor-pointer"
+            className="bg-black w-[150px] h-[150px] rounded-full flex items-center justify-center cursor-pointer"
             onClick={() => handleChatNavigate()}
           >
             <ChatIcon color="white" width="70" height="70" />

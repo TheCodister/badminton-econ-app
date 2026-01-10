@@ -20,7 +20,7 @@ import {
   House,
   Key,
   LogIn,
-  MessageCircleWarning,
+  MessageCircle,
   ShoppingCart,
 } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
@@ -42,7 +42,7 @@ const Header = () => {
       { label: 'Shoes', href: ROUTES.SHOES, icon: Footprints },
       { label: 'Accessories', href: ROUTES.ACCESORIES, icon: Bandage },
       ...(session
-        ? [{ label: 'Chat', href: ROUTES.CHAT, icon: MessageCircleWarning }]
+        ? [{ label: 'Chat', href: ROUTES.CHAT, icon: MessageCircle }]
         : []),
     ],
     [session],
@@ -54,7 +54,8 @@ const Header = () => {
 
   return (
     <Navbar
-      className="w-screen p-2 bg-primary text-white"
+      className="w-screen p-2 text-primary bg-primary/10 backdrop-blur-md"
+      isBordered
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="flex flex-col w-full">
@@ -76,7 +77,7 @@ const Header = () => {
           </NavbarBrand>
           <NavbarItem className="xl:hidden lg:hidden sm:block">
             <Button
-              variant="solid"
+              variant="light"
               color="primary"
               isIconOnly
               onPress={() => handleNavigation(ROUTES.CART)}
@@ -96,9 +97,9 @@ const Header = () => {
             {!session ? (
               <Button
                 startContent={<CircleUser />}
-                variant="solid"
+                variant="light"
                 color="primary"
-                className="font-semibold w-full"
+                className="font-semibold w-full text-black"
                 onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
               >
                 Login
@@ -108,14 +109,14 @@ const Header = () => {
                 <Avatar
                   name={session.user.name || 'User'}
                   alt="User Avatar"
-                  color="secondary"
+                  color="primary"
                   size="sm"
                   className="cursor-pointer font-bold border-2"
                   onClick={() => handleNavigation(ROUTES.PROFILE)}
                 />
                 <Button
                   startContent={<LogIn />}
-                  variant="solid"
+                  variant="light"
                   color="primary"
                   isIconOnly
                   className="font-semibold"
@@ -132,9 +133,9 @@ const Header = () => {
           <NavbarItem key={item.href}>
             <Button
               startContent={<item.icon />}
-              variant={router.pathname === item.href ? 'flat' : 'solid'}
+              variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
-              className="text-white font-semibold"
+              className="text-black font-semibold"
               onPress={() => handleNavigation(item.href)} // Use router.push here
             >
               {item.label}
@@ -145,28 +146,10 @@ const Header = () => {
         <NavbarItem>
           <ProductSearchBar />
         </NavbarItem>
-        {/* <NavbarItem className="w-20">
-          {!session ? (
-            <Button
-              startContent={<LogIn />}
-              variant="solid"
-              color="primary"
-              className="font-semibold"
-              onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
-            ></Button>
-          ) : (
-            <Button
-              startContent={<CircleUser />}
-              variant="solid"
-              color="primary"
-              className="font-semibold"
-              onPress={() => handleNavigation(ROUTES.PROFILE)} // Navigate programmatically
-            ></Button>
-          )}
-        </NavbarItem> */}
+
         <NavbarItem className="w-15">
           <Button
-            variant="solid"
+            variant="light"
             color="primary"
             isIconOnly
             onPress={() => handleNavigation(ROUTES.CART)}
@@ -186,7 +169,7 @@ const Header = () => {
           {!session ? (
             <Button
               startContent={<CircleUser />}
-              variant="solid"
+              variant="light"
               color="primary"
               className="font-semibold"
               onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
@@ -198,14 +181,14 @@ const Header = () => {
               <Avatar
                 name={session.user.name || 'User'}
                 alt="User Avatar"
-                color="secondary"
+                color="primary"
                 size="sm"
                 className="cursor-pointer font-bold border-2"
                 onClick={() => handleNavigation(ROUTES.PROFILE)}
               />
               <Button
                 startContent={<LogIn />}
-                variant="solid"
+                variant="light"
                 color="primary"
                 isIconOnly
                 className="font-semibold"
@@ -222,9 +205,9 @@ const Header = () => {
         {navItems.map((item) => (
           <NavbarMenuItem key={item.href}>
             <Button
-              className="text-white font-semibold w-full"
+              className="text-black font-semibold w-full"
               startContent={item.icon && <item.icon />}
-              variant={router.pathname === item.href ? 'shadow' : 'solid'}
+              variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
               onPress={() => handleNavigation(item.href)} // Use router.push here
             >
