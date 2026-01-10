@@ -59,9 +59,14 @@ const IndexPage = () => {
             src="/Banner.png"
             fetchPriority="high"
           />
-          <h2 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
-            Shop by Category
-          </h2>
+          <div className="text-center">
+            <h1 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
+              Shop by Category
+            </h1>
+            <p className="text-default-500">
+              Find everything you need for the perfect game
+            </p>
+          </div>
         </div>
 
         {vnbLoading || liningLoading || gosenLoading ? (

@@ -13,9 +13,7 @@ export default function Document() {
         ></script>
       </Head>
       <body
-        className={clsx(
-          'min-h-screen bg-background font-sans antialiased light text-black',
-        )}
+        className={clsx('min-h-screen bg-background font-sans antialiased')}
       >
         <Main />
         <NextScript />

@@ -1,6 +1,8 @@
 import { heroui } from '@heroui/theme'
 
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     './layouts/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,6 +12,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-montserrat)', ...fontFamily.sans],
+      },
       colors: {
         white: '#FFFFFF',
         black: '#000000',
@@ -37,7 +42,7 @@ module.exports = {
         light: {
           colors: {
             background: '#f6f1eb', // or DEFAULT
-            foreground: '#636363', // or 50 to 900 DEFAULT
+            foreground: '#000000', // or 50 to 900 DEFAULT
             primary: {
               //... 50 to 900
               background: '#f6f1eb',

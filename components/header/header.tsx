@@ -64,7 +64,10 @@ const Header = () => {
             className="xl:hidden lg:hidden sm:block"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           />
-          <NavbarBrand className="self-center">
+          <NavbarBrand
+            className="space-x-2 cursor-pointer"
+            onClick={() => handleNavigation(ROUTES.HOME)}
+          >
             {/* <Image
             src={LogoURL}
             alt="Logo"
@@ -73,7 +76,14 @@ const Header = () => {
             height={200}
             className="rounded-full"
           /> */}
-            <h1>BMB</h1>
+            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-lg">
+                B
+              </span>
+            </div>
+            <span className="font-semibold text-xl text-black hidden sm:inline">
+              BMB
+            </span>
           </NavbarBrand>
           <NavbarItem className="xl:hidden lg:hidden sm:block">
             <Button
@@ -89,7 +99,7 @@ const Header = () => {
                 size="sm"
                 color="danger"
               >
-                <ShoppingCart />
+                <ShoppingCart width={15} height={15} />
               </Badge>
             </Button>
           </NavbarItem>
@@ -132,7 +142,7 @@ const Header = () => {
         {navItems.map((item) => (
           <NavbarItem key={item.href}>
             <Button
-              startContent={<item.icon />}
+              startContent={<item.icon width={20} height={20} />}
               variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
               className="text-black font-semibold"
@@ -158,10 +168,10 @@ const Header = () => {
               content={
                 cart?.cart_items.length > 0 ? cart?.cart_items.length : ''
               }
-              size="sm"
-              color="danger"
+              size="md"
+              color="primary"
             >
-              <ShoppingCart />
+              <ShoppingCart width={20} height={20} />
             </Badge>
           </Button>
         </NavbarItem>
@@ -206,7 +216,7 @@ const Header = () => {
           <NavbarMenuItem key={item.href}>
             <Button
               className="text-black font-semibold w-full"
-              startContent={item.icon && <item.icon />}
+              startContent={item.icon && <item.icon width={20} height={20} />}
               variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
               onPress={() => handleNavigation(item.href)} // Use router.push here

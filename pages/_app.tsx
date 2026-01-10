@@ -15,24 +15,22 @@ import { useEffect } from 'react'
 // Import Montserrat font
 const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-montserrat', // Define a CSS variable for easier usage
-  display: 'swap', // Use swap for better UX during font loading
+  variable: '--font-montserrat',
+  display: 'swap',
 })
+// Create QueryClient outside component
+const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  const queryClient = new QueryClient()
 
   const { clearItems, setLastVisitedRoute, lastVisitedRoute } =
     useSelectedCart()
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      // Store current route before navigating
       setLastVisitedRoute(router.pathname)
 
-      // Clear selected items if navigating away from checkout
-      // and NOT coming from the cart page
       if (
         !url.includes('/checkout') &&
         !url.includes('/cart') &&
@@ -51,16 +49,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <HeroUIProvider
-        navigate={router.push}
-        className={`${montserrat.variable} font-sans`}
-      >
+      <HeroUIProvider navigate={router.push}>
         <NextThemesProvider>
           <SessionProvider session={pageProps.session}>
             <CheckoutProvider>
               <DefaultLayout>
                 <ToastProvider />
-                <Component {...pageProps} />
+                <Component {...pageProps} className={montserrat.className} />
               </DefaultLayout>
             </CheckoutProvider>
           </SessionProvider>
