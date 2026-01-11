@@ -29,10 +29,10 @@ const CategoryCard = memo(({ category }: { category: Category }) => {
       <CardBody className="flex items-center justify-center gap-2">
         <Image width={200} height={250} src={image} alt={`${name} Image`} />
         <h4 className="self-start">{name}</h4>
-        <p>{description}</p>
+        <p className="text-default-500">{description}</p>
       </CardBody>
       <CardFooter>
-        <Button onPress={handleClick} color="primary">
+        <Button onPress={handleClick} color="primary" className="font-semibold">
           View {name}
         </Button>
       </CardFooter>

@@ -55,17 +55,17 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
             {isRacket(data) ? 'Racket' : 'Accessory'}
           </p>
         </Chip>
-        <h5
-          className="text-primary text-ellipsis overflow-hidden whitespace-nowrap"
+        <h6
+          className="text-ellipsis overflow-hidden whitespace-nowrap"
           title={data.product.product_name} // Add a tooltip to show the full name on hover
         >
           {data.product.product_name}
-        </h5>
+        </h6>
         <div className="flex items-center gap-2">
           <span className="text-yellow-500">★★★★★</span>
           <span>(5.0)</span>
         </div>
-        <h4 className="text-danger font-medium mt-2">${data.product.price}</h4>
+        <h4 className="text-primary font-medium mt-2">${data.product.price}</h4>
       </CardBody>
       <CardFooter className="flex justify-center items-stretch flex-col gap-3">
         <Dropdown type="listbox">

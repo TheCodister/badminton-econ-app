@@ -1,9 +1,9 @@
 import CategoryCard from '@/components/card/CategoryCard'
 import FeaturedProduct from '@/components/FeatureProductDisplay'
+import Hero from '@/components/hero/hero'
 import { CATEGORY } from '@/constants/category'
 import useGetRacket from '@/hooks/useGetRacket'
 import ChatIcon from '@/icons/ChatIcon'
-import { Image } from '@heroui/image'
 import { Skeleton } from '@heroui/skeleton'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
@@ -51,35 +51,44 @@ const IndexPage = () => {
 
   return (
     <main>
-      <div className="flex flex-col justify-center gap-5 px-3 items-center">
+      <div className="flex flex-col justify-center gap-5 px-3 items-center space-y-10">
         <div className="flex flex-col justify-center items-center gap-5 px-4 h-full w-8/12">
-          <Image
+          {/* <Image
             alt="Banner"
             className="w-full h-full object-cover scale-110"
             src="/Banner.png"
             fetchPriority="high"
-          />
-          <div className="text-center">
+          /> */}
+          <Hero />
+          {/* <div className="text-center">
             <h1 className="xl:inline-block lg:inline-block md:inline-block sm:hidden hidden">
               Shop by Category
             </h1>
-            <p className="text-default-500">
+            <p className="text-default-500 text-base">
               Find everything you need for the perfect game
             </p>
-          </div>
+          </div> */}
         </div>
 
         {vnbLoading || liningLoading || gosenLoading ? (
           <CategorySkeleton />
         ) : (
-          <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
-            {CATEGORY.map((category) => (
-              <CategoryCard key={category.id} category={category} />
-            ))}
+          <div className="space-y-12">
+            <div className="text-left xl:inline-block lg:inline-block md:inline-block sm:hidden hidden space-y-3">
+              <h1 className="text-5xl font-bold">Shop by Category</h1>
+              <p className="text-default-500 text-base">
+                Find everything you need for the perfect game
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center h-full">
+              {CATEGORY.map((category) => (
+                <CategoryCard key={category.id} category={category} />
+              ))}
+            </div>
           </div>
         )}
 
-        <section className="flex flex-col items-center gap-10">
+        {/* <section className="flex flex-col items-center gap-10">
           <h2>TRY OUR BMB AI!</h2>
           <section
             className="bg-black w-[150px] h-[150px] rounded-full flex items-center justify-center cursor-pointer"
@@ -91,7 +100,7 @@ const IndexPage = () => {
             Chat with our AI and find out what equipment is most suitable for
             you!
           </h4>
-        </section>
+        </section> */}
 
         {vnbLoading || liningLoading || gosenLoading ? (
           <div className="flex flex-col gap-5">
@@ -101,9 +110,21 @@ const IndexPage = () => {
           </div>
         ) : (
           <div className="flex flex-col gap-5 items-center">
-            <FeaturedProduct title="VNB" products={vnbData?.data || []} />
-            <FeaturedProduct title="Lining" products={liningData?.data || []} />
-            <FeaturedProduct title="Gosen" products={gosenData?.data || []} />
+            <FeaturedProduct
+              title="VNB"
+              products={vnbData?.data || []}
+              description="VNB's premium rackets"
+            />
+            <FeaturedProduct
+              title="Lining"
+              products={liningData?.data || []}
+              description="Lining's top-quality rackets"
+            />
+            <FeaturedProduct
+              title="Gosen"
+              products={gosenData?.data || []}
+              description="Gosen's innovative rackets"
+            />
           </div>
         )}
       </div>

@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <Navbar
-      className="w-screen p-2 text-primary bg-primary/10 backdrop-blur-md"
+      className="w-screen p-2 text-primary bg-white/20 backdrop-blur-md"
       isBordered
       onMenuOpenChange={setIsMenuOpen}
     >

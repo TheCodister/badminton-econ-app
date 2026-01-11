@@ -9,8 +9,8 @@ export default function DefaultLayout({
   return (
     <div className="relative flex flex-col min-h-screen">
       <Header />
-      <main className="flex justify-center py-10 h-full flex-grow overflow-auto">
-        <section className="flex flex-col items-start">
+      <main className="flex justify-center w-svw py-10 h-full overflow-auto">
+        <section className="flex flex-col">
           <ErrorBoundary>{children}</ErrorBoundary>
         </section>
       </main>

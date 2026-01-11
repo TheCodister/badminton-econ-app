@@ -1,7 +1,7 @@
 export const CATEGORY = [
   {
     id: 1,
-    name: 'Racket',
+    name: 'Rackets',
     image:
       'https://www.achivr.in/cdn/shop/files/WhatsAppImage2024-03-11at15.07.58_4613f1fd.jpg?v=1710150111&width=1080',
     description:
@@ -19,7 +19,7 @@ export const CATEGORY = [
   },
   {
     id: 3,
-    name: 'Shuttlecock',
+    name: 'Shuttlecocks',
     image: 'https://images-na.ssl-images-amazon.com/images/I/71QJ3QWqSvL.jpg',
     description:
       'Shuttlecocks are the most important part of the game. Choose the best shuttlecock for you.',

@@ -7,9 +7,14 @@ import { useEffect, useState } from 'react'
 interface FeaturedProductProps {
   title: string
   products: Racket[]
+  description: string
 }
 
-const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
+const FeaturedProduct = ({
+  title,
+  products,
+  description,
+}: FeaturedProductProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerPage, setItemsPerPage] = useState(4) // Default value for 2xl or xl screens
 
@@ -56,9 +61,10 @@ const FeaturedProduct = ({ title, products }: FeaturedProductProps) => {
   }
 
   return (
-    <div className="bg-gray-300 rounded-xl pb-5 flex flex-col gap-5">
-      <section className="bg-primary w-fit ml-16 text-white px-5 py-3 rounded-b-xl">
-        <h4>{title}</h4>
+    <div className="pb-5 flex flex-col gap-5">
+      <section className="w-fit ml-16 px-5 py-3 rounded-b-xl space-y-3">
+        <h1 className="text-5xl font-bold">Featured {title}</h1>
+        <p className="text-base text-default-500">{description}</p>
       </section>
       <div className="flex items-center gap-5 px-4 h-full">
         <NavButton onClick={handlePrevious} disabled={currentIndex === 0} />
