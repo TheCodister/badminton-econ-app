@@ -64,7 +64,7 @@ const FeaturedProduct = ({
     <div className="pb-5 flex flex-col gap-5">
       <section className="w-fit ml-16 px-5 py-3 rounded-b-xl space-y-3">
         <h1 className="text-4xl md:text-5xl font-bold">Featured {title}</h1>
-        <p className="text-base text-default-500">{description}</p>
+        <h6 className="text-default-500">{description}</h6>
       </section>
       <div className="flex items-center gap-5 px-4 h-full">
         <NavButton onClick={handlePrevious} disabled={currentIndex === 0} />

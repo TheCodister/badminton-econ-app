@@ -78,9 +78,9 @@ const IndexPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold">
                 Shop by Category
               </h1>
-              <p className="text-default-500 text-base">
+              <h6 className="text-default-500">
                 Find everything you need for the perfect game
-              </p>
+              </h6>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center h-full">
               {CATEGORY.map((category) => (
