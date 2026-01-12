@@ -15,6 +15,18 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-montserrat)', ...fontFamily.sans],
       },
+      fontSize: {
+        h1: '2.5rem',
+        h2: '2rem',
+        h3: '1.75rem',
+        h4: '1.5rem',
+        h5: '1.25rem',
+        h6: '1rem',
+        p: '0.8rem',
+      },
+      fontWeight: {
+        heading: '500',
+      },
       colors: {
         white: '#FFFFFF',
         black: '#000000',
@@ -33,10 +45,43 @@ module.exports = {
         // .. rest of the colors
       },
     },
-    extend: {},
   },
   darkMode: 'class',
   plugins: [
+    function ({ addBase, theme }) {
+      addBase({
+        h1: {
+          fontSize: theme('fontSize.h1'),
+          fontWeight: theme('fontWeight.heading'),
+        },
+        h2: {
+          fontSize: theme('fontSize.h2'),
+          fontWeight: theme('fontWeight.heading'),
+        },
+        h3: {
+          fontSize: theme('fontSize.h3'),
+          fontWeight: theme('fontWeight.heading'),
+        },
+        h4: {
+          fontSize: theme('fontSize.h4'),
+          fontWeight: theme('fontWeight.heading'),
+        },
+        h5: {
+          fontSize: theme('fontSize.h5'),
+          fontWeight: theme('fontWeight.heading'),
+        },
+        h6: {
+          fontSize: theme('fontSize.h6'),
+          fontWeight: theme('fontWeight.heading'),
+        },
+        p: {
+          fontSize: theme('fontSize.p'),
+        },
+        body: {
+          fontFamily: theme('fontFamily.sans'),
+        },
+      })
+    },
     heroui({
       themes: {
         light: {

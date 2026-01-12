@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
-import { Montserrat } from 'next/font/google'
+import { Geist, Geist_Mono, Montserrat } from 'next/font/google'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
@@ -18,6 +18,8 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   display: 'swap',
 })
+const _geist = Geist({ subsets: ['latin'] })
+const _geistMono = Geist_Mono({ subsets: ['latin'] })
 // Create QueryClient outside component
 const queryClient = new QueryClient()
 
@@ -55,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <CheckoutProvider>
               <DefaultLayout>
                 <ToastProvider />
-                <Component {...pageProps} className={montserrat.className} />
+                <Component {...pageProps} className={_geist.className} />
               </DefaultLayout>
             </CheckoutProvider>
           </SessionProvider>

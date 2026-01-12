@@ -9,7 +9,7 @@ const Hero = () => {
         <p className="font-semibold text-base text-primary">
           BADMINTON EXCELLENCE
         </p>
-        <h1 className="text-5xl md:text-6xl leading-tight font-bold">
+        <h1 className="text-5xl md:text-6xl font-bold">
           Play Your Perfect Game
         </h1>
         <h6 className="text-default-500">

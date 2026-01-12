@@ -75,7 +75,9 @@ const IndexPage = () => {
         ) : (
           <div className="space-y-12">
             <div className="text-left xl:inline-block lg:inline-block md:inline-block sm:hidden hidden space-y-3">
-              <h1 className="text-5xl font-bold">Shop by Category</h1>
+              <h1 className="text-4xl md:text-5xl font-bold">
+                Shop by Category
+              </h1>
               <p className="text-default-500 text-base">
                 Find everything you need for the perfect game
               </p>
