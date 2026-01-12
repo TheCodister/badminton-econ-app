@@ -76,7 +76,7 @@ const Header = () => {
             height={200}
             className="rounded-full"
           /> */}
-            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">
                 B
               </span>
@@ -142,7 +142,7 @@ const Header = () => {
         {navItems.map((item) => (
           <NavbarItem key={item.href}>
             <Button
-              startContent={<item.icon width={20} height={20} />}
+              // startContent={<item.icon width={20} height={20} />}
               variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
               className="text-black font-semibold"
@@ -216,7 +216,7 @@ const Header = () => {
           <NavbarMenuItem key={item.href}>
             <Button
               className="text-black font-semibold w-full"
-              startContent={item.icon && <item.icon width={20} height={20} />}
+              // startContent={item.icon && <item.icon width={20} height={20} />}
               variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
               onPress={() => handleNavigation(item.href)} // Use router.push here
