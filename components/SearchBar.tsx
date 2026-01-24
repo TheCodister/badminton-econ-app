@@ -12,6 +12,7 @@ const ProductSearchBar = () => {
     product_name: string
     image_url: string
     price: number
+    product_type: string
   }
 
   const { data: products }: { data: Product[] | undefined } =
@@ -41,7 +42,7 @@ const ProductSearchBar = () => {
               <Link
                 className="space-x-2"
                 color="foreground"
-                href={`/${product.id}`}
+                href={`/${product.product_type}/${product.id}`}
               >
                 <Image
                   src={product.image_url}

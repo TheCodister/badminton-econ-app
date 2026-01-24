@@ -1,8 +1,8 @@
-import ProductCard from '@/components/card/ProductCard'
+import ShuttlecocksCard from '@/components/card/ShuttlecocksCard'
 import Sidebar from '@/components/sidebar/SideBar'
 import { PRICEOPTION } from '@/constants/priceoptions'
-import useGetRacket from '@/hooks/useGetRacket'
-import { Racket } from '@/types/schema/schema'
+import useGetShuttlecocks from '@/hooks/useGetShuttlecocks'
+import { Shuttlecock } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
 import { Divider } from '@heroui/divider'
 import { Drawer, DrawerBody, DrawerContent, DrawerHeader } from '@heroui/drawer'
@@ -18,7 +18,6 @@ const IndexPage = () => {
   const router = useRouter()
   const currentPageFromUrl = parseInt(router.query.page as string, 10) || 1 // Get current page from URL
   const [currentPage, setCurrentPage] = useState(currentPageFromUrl) // Initialize state from URL
-  const totalItems = 70 // Total number of items (this should be fetched from the server)
   const limit = 20 // Number of items per page
 
   const filters = { ...router.query, limit, page: currentPage } // Add limit and page to filters
@@ -26,7 +25,7 @@ const IndexPage = () => {
     router.query.price as string,
   ) // State for price filter
 
-  const { data, error, isLoading } = useGetRacket(filters)
+  const { data, error, isLoading } = useGetShuttlecocks(filters)
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
@@ -42,7 +41,7 @@ const IndexPage = () => {
       undefined,
       { shallow: true }, // Avoid full page reload
     )
-    window.scrollTo({ top: 0, behavior: 'smooth' }) // Scrol
+    window.scrollTo({ top: 0, behavior: 'smooth' }) // Scroll to top
   }
 
   const handlePriceChange = (value: string) => {
@@ -58,13 +57,13 @@ const IndexPage = () => {
     )
   }
 
-  if (error) return <div>Error fetching rackets</div>
-  if (isLoading) return <RacketPageSkeleton />
+  if (error) return <div>Error fetching shuttlecocks</div>
+  if (isLoading) return <ShuttlecockPageSkeleton />
 
   return (
     <main>
       <Head>
-        <title>Rackets</title>
+        <title>Shuttlecocks - Badminton</title>
       </Head>
       <Button
         onPress={onOpen}
@@ -88,9 +87,9 @@ const IndexPage = () => {
       </Drawer>
       <div className="flex flex-col gap-4">
         <div>
-          <h1 className="font-bold">Badminton Rackets</h1>
+          <h1 className="font-bold">Badminton Shuttlecocks</h1>
           <h6 className="text-default-500">
-            Browse our collection of professional badminton equipment
+            Browse our collection of professional badminton shuttlecocks
           </h6>
         </div>
         <Select
@@ -117,13 +116,13 @@ const IndexPage = () => {
             <Sidebar />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 px-4">
-            {dataItems.length > 0 ? (
-              dataItems.map((racket: Racket) => (
-                <ProductCard key={racket.id} data={racket} />
+            {dataItems && dataItems.length > 0 ? (
+              dataItems.map((shuttlecock: Shuttlecock) => (
+                <ShuttlecocksCard key={shuttlecock.id} data={shuttlecock} />
               ))
             ) : (
               <div className="text-center text-lg font-medium text-red-500 w-full">
-                No rackets found
+                No shuttlecocks found
               </div>
             )}
           </div>
@@ -131,7 +130,7 @@ const IndexPage = () => {
       </div>
       <div className="flex self-center justify-center mt-4">
         <Pagination
-          total={Math.ceil(data?.total / limit)}
+          total={Math.ceil((data?.total || 0) / limit)}
           initialPage={1}
           page={currentPage}
           onChange={handlePageChange} // Handle page change
@@ -142,7 +141,7 @@ const IndexPage = () => {
   )
 }
 
-export function RacketPageSkeleton() {
+export function ShuttlecockPageSkeleton() {
   return (
     <main>
       <div className="flex flex-col gap-4">

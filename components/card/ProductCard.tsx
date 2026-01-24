@@ -30,7 +30,7 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
   }
   const router = useRouter()
   const handleViewDetails = () => {
-    router.push(`/${data.id}`)
+    router.push(`/racket/${data.id}`)
   }
 
   return (
