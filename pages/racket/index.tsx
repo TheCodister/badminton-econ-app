@@ -64,7 +64,7 @@ const IndexPage = () => {
   return (
     <main>
       <Head>
-        <title>Racket</title>
+        <title>Rackets</title>
       </Head>
       <Button
         onPress={onOpen}
@@ -87,10 +87,18 @@ const IndexPage = () => {
         </DrawerContent>
       </Drawer>
       <div className="flex flex-col gap-4">
+        <div>
+          <h1 className="font-bold">Badminton Rackets</h1>
+          <h6 className="text-default-500">
+            Browse our collection of professional badminton equipment
+          </h6>
+        </div>
         <Select
           className="max-w-xs xl:self-end lg:self-end md:self-end sm:self-center self-center"
           label="Sort by"
+          labelPlacement="outside-left"
           size="sm"
+          placeholder="Most Popular"
           value={priceFilter} // Bind the selected value
           onChange={(e) => handlePriceChange(e.target.value)} // Handle price filter change
         >
@@ -108,7 +116,7 @@ const IndexPage = () => {
           <div className="hidden xl:block lg:block md:block sm:hidden">
             <Sidebar />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 px-4">
             {dataItems.length > 0 ? (
               dataItems.map((racket: Racket) => (
                 <ProductCard key={racket.id} data={racket} />

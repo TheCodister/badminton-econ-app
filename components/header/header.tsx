@@ -57,6 +57,7 @@ const Header = () => {
       className="w-screen p-2 text-primary bg-white/20 backdrop-blur-md"
       isBordered
       onMenuOpenChange={setIsMenuOpen}
+      disableAnimation
     >
       <NavbarContent className="flex flex-col w-full">
         <div className="flex w-full h-full gap-4 items-center">

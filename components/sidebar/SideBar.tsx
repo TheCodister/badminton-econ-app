@@ -1,4 +1,3 @@
-import { Divider } from '@heroui/divider'
 import { useRouter } from 'next/router'
 import FilterSection from '../filter/FilterSection'
 
@@ -44,7 +43,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="flex-col items-center px-4">
+    <div className="flex-col space-y-4">
       <FilterSection
         title="Brand"
         options={[
@@ -74,7 +73,6 @@ const Sidebar = () => {
           handleFilterChange('brand', option, isChecked)
         }
       />
-      <Divider />
       <FilterSection
         title="Balance"
         options={['Head Heavy', 'Even Balance', 'Head Light']}
@@ -83,7 +81,6 @@ const Sidebar = () => {
           handleFilterChange('balance', option, isChecked)
         }
       />
-      <Divider />
       <FilterSection
         title="Weight"
         options={['3U', '4U', '5U']}
@@ -92,7 +89,6 @@ const Sidebar = () => {
           handleFilterChange('weight', option, isChecked)
         }
       />
-      <Divider />
       <FilterSection
         title="Stiffness"
         options={['Flexible', 'Medium', 'Stiff']}

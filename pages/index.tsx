@@ -160,9 +160,9 @@ export function IndexPageSkeleton() {
         </section>
 
         {/* Featured Product Skeletons */}
-        <Skeleton className="w-full h-[300px] rounded-lg" />
-        <Skeleton className="w-full h-[300px] rounded-lg" />
-        <Skeleton className="w-full h-[300px] rounded-lg" />
+        <Skeleton className="w-full h-75 rounded-lg" />
+        <Skeleton className="w-full h-75 rounded-lg" />
+        <Skeleton className="w-full h-75 rounded-lg" />
       </div>
     </main>
   )
@@ -171,7 +171,7 @@ export function IndexPageSkeleton() {
 const CategorySkeleton = () => (
   <div className="hidden sm:flex lg:flex xl:flex flex-col sm:flex-row justify-center items-center gap-5 px-4 h-full">
     {CATEGORY.map((category) => (
-      <Skeleton key={category.id} className="w-[250px] h-[400px] rounded-lg" />
+      <Skeleton key={category.id} className="w-62.5 h-100 rounded-lg" />
     ))}
   </div>
 )
