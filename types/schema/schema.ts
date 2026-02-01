@@ -86,8 +86,30 @@ export const ShuttlecockSchema = z.object({
   }),
 })
 
+// Shoes Schema (matches backend structure)
+export const ShoesSchema = z.object({
+  id: z.string().uuid(),
+  color: z.any(), // JSON type
+  size: z.any(), // JSON type
+  available_size: z.any(), // JSON type
+  technology: z.any(), // JSON type
+  product: z.object({
+    id: z.string().uuid(),
+    image_url: z.string().url(),
+    product_name: z.string(),
+    brand: z.enum(['YONEX', 'LINING', 'VICTOR', 'MIZUNO', 'TARO', 'KAMITO', 'VNB']), // Add all possible brands here
+    price: z.string(), // Backend is returning price as string, not number
+    description: z.string(),
+    status: z.enum(['AVAILABLE', 'UNAVAILABLE', 'OUT_OF_STOCK']), // Match backend enum
+    sales: z.boolean(),
+    stock: z.number().nonnegative(),
+    available_location: z.any(), // JSON type
+  }),
+})
+
 // Types inferred from schema
 export type User = z.infer<typeof UserSchema>
 export type Racket = z.infer<typeof RacketSchema>
 export type Shuttlecock = z.infer<typeof ShuttlecockSchema>
+export type Shoes = z.infer<typeof ShoesSchema>
 export type ShoeShuttlecock = z.infer<typeof ShoeShuttlecockSchema>

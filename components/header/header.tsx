@@ -14,14 +14,13 @@ import {
 } from '@heroui/navbar'
 import { Avatar } from '@heroui/react'
 import {
-  Bandage,
   CircleUser,
   Footprints,
   House,
   Key,
   LogIn,
   MessageCircle,
-  ShoppingCart,
+  ShoppingCart
 } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
@@ -40,7 +39,6 @@ const Header = () => {
       { label: 'Racket', href: ROUTES.RACKET, icon: Key },
       { label: 'Shuttlecock', href: ROUTES.SHUTTLECOCK, icon: ShuttleIcon },
       { label: 'Shoes', href: ROUTES.SHOES, icon: Footprints },
-      { label: 'Accessories', href: ROUTES.ACCESORIES, icon: Bandage },
       ...(session
         ? [{ label: 'Chat', href: ROUTES.CHAT, icon: MessageCircle }]
         : []),
