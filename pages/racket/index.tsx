@@ -1,5 +1,5 @@
 import ProductCard from '@/components/card/ProductCard'
-import Sidebar from '@/components/sidebar/SideBar'
+import Sidebar from '@/components/sidebar/RacketSideBar'
 import { PRICEOPTION } from '@/constants/priceoptions'
 import useGetRacket from '@/hooks/useGetRacket'
 import { Racket } from '@/types/schema/schema'

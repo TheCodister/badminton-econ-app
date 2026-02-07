@@ -1,5 +1,6 @@
 import ShoesCard from '@/components/card/ShoesCard'
-import Sidebar from '@/components/sidebar/SideBar'
+import Sidebar from '@/components/sidebar/RacketSideBar'
+import ShoesSidebar from '@/components/sidebar/ShoesSideBar'
 import { PRICEOPTION } from '@/constants/priceoptions'
 import useGetShoes from '@/hooks/useGetShoes'
 import { Shoes } from '@/types/schema/schema'
@@ -113,7 +114,7 @@ const IndexPage = () => {
         </Select>
         <div className="flex">
           <div className="hidden xl:block lg:block md:block sm:hidden">
-            <Sidebar />
+            <ShoesSidebar />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 px-4">
             {dataItems && dataItems.length > 0 ? (
