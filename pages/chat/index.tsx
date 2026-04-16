@@ -23,8 +23,8 @@ export default function Chat() {
   if (!session) return <div>Unauthorized</div>
   else
     return (
-      <div className="mx-auto w-full max-w-3xl items-center relative">
-        <div className="overflow-y-auto mb-24 px-4">
+      <div className="flex flex-col w-full max-w-3xl mx-auto h-[calc(100vh-80px)] px-4">
+        <div className="flex-1 overflow-y-auto py-4 pr-1">
           {messages.map((m) => (
             <div
               key={m.id}
@@ -204,13 +204,13 @@ export default function Chat() {
           )}
         </div>
         <form
-          className="fixed bottom-9 left-1/2 transform -translate-x-1/2 w-full max-w-3xl p-3 flex bg-content1 rounded-lg shadow-md z-50"
+          className="shrink-0 py-3 flex gap-2 bg-background border-t border-divider"
           onSubmit={handleSubmit}
         >
           <Input
             fullWidth
             color="primary"
-            className="mr-2"
+            className="flex-1"
             placeholder="Say something..."
             value={input}
             onChange={(e) => setInput(e.target.value)}

@@ -37,7 +37,7 @@ const ProductDetail = () => {
     })
   }
   return (
-    <div className="p-6 bg-content1 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto">
+    <div className="p-6 bg-content1 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto min-h-[600px]">
       {error && (
         <div className="text-center text-lg font-medium text-red-500">
           Error fetching product data
@@ -195,7 +195,7 @@ const ProductDetail = () => {
 
 export function ProductDetailSkeleton() {
   return (
-    <div className="p-6 bg-content1 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto">
+    <div className="p-6 bg-content1 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto min-h-[600px]">
       <div className="flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col gap-9">
         {/* Image */}
         <div className="flex flex-col items-center shrink-0">
