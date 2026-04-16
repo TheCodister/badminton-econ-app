@@ -37,7 +37,7 @@ const ProductDetail = () => {
     })
   }
   return (
-    <div className="p-6 bg-gray-100 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto">
+    <div className="p-6 bg-content1 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto">
       {error && (
         <div className="text-center text-lg font-medium text-red-500">
           Error fetching product data
@@ -195,64 +195,83 @@ const ProductDetail = () => {
 
 export function ProductDetailSkeleton() {
   return (
-    <div className="flex gap-9">
-      {/* Image Skeleton */}
-      <div className="flex flex-col gap-5">
-        <Skeleton className="rounded-lg">
-          <div className="w-[300px] h-[400px] bg-default-300 object-cover"></div>
-        </Skeleton>
-        <Skeleton>
-          <div className="w-[300px] h-6 bg-default-300"></div>
-        </Skeleton>
-        <Skeleton>
-          <div className="w-[300px] h-6 bg-default-300"></div>
-        </Skeleton>
-        <Skeleton>
-          <div className="w-[300px] h-6 bg-default-300"></div>
-        </Skeleton>
-      </div>
-
-      <Divider orientation="vertical" className="h-auto" />
-
-      <div className="flex flex-col gap-2 w-full">
-        {/* Title Skeleton */}
-        <Skeleton className="rounded-lg w-full">
-          <div className="w-[250px] h-14 bg-default-300"></div>
-        </Skeleton>
-
-        <Divider />
-
-        {/* Metadata Skeleton */}
-        <div className="flex gap-5">
-          <Skeleton className="w-2/4 rounded-lg">
-            <div className="h-6 bg-default-300"></div>
-          </Skeleton>
-          <Skeleton className="w-2/4 rounded-lg">
-            <div className="h-6 bg-default-300"></div>
-          </Skeleton>
-          <Skeleton className="w-3/4 rounded-lg">
-            <div className="h-6 bg-default-300"></div>
-          </Skeleton>
+    <div className="p-6 bg-content1 rounded-lg xl:w-11/12 lg:w-11/12 md:w-full sm:w-full mx-auto">
+      <div className="flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col gap-9">
+        {/* Image */}
+        <div className="flex flex-col items-center shrink-0">
+          <Skeleton className="rounded-lg w-[350px] h-[420px]" />
         </div>
 
-        {/* Price Skeleton */}
-        <Skeleton className="w-2/4 rounded-lg">
-          <div className="h-12 bg-default-300"></div>
-        </Skeleton>
+        <Divider orientation="vertical" className="h-auto hidden xl:block lg:block" />
 
-        {/* Details Skeleton */}
-        <ul className="space-y-2">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Skeleton key={index} className="w-4/5 rounded-lg">
-              <div className="h-6 bg-default-300"></div>
-            </Skeleton>
+        {/* Info column */}
+        <div className="flex flex-col gap-3 flex-1">
+          {/* Product name — h1 */}
+          <Skeleton className="rounded-lg w-3/4 h-10" />
+
+          {/* Stock / Brand / Status row */}
+          <div className="flex gap-5 items-center">
+            <Skeleton className="rounded-lg w-24 h-5" />
+            <Skeleton className="rounded-lg w-24 h-5" />
+            <Skeleton className="rounded-full w-28 h-7" />
+          </div>
+
+          {/* Star rating */}
+          <Skeleton className="rounded-lg w-36 h-5" />
+
+          {/* Price — h2 */}
+          <Skeleton className="rounded-lg w-28 h-9" />
+
+          {/* Description — 2 lines */}
+          <Skeleton className="rounded-lg w-full h-4" />
+          <Skeleton className="rounded-lg w-4/5 h-4" />
+
+          {/* Playing Style label + chips */}
+          <Skeleton className="rounded-lg w-32 h-6" />
+          <div className="flex gap-2">
+            <Skeleton className="rounded-full w-36 h-7" />
+            <Skeleton className="rounded-full w-36 h-7" />
+            <Skeleton className="rounded-full w-20 h-7" />
+          </div>
+
+          {/* Suitable for label + chips */}
+          <Skeleton className="rounded-lg w-28 h-6" />
+          <div className="flex gap-2">
+            <Skeleton className="rounded-full w-20 h-7" />
+            <Skeleton className="rounded-full w-20 h-7" />
+            <Skeleton className="rounded-full w-20 h-7" />
+          </div>
+
+          {/* Action buttons: Add to Cart (flex-1) + 2 icon buttons */}
+          <div className="flex gap-3 mt-5 items-center">
+            <Skeleton className="rounded-xl flex-1 h-12" />
+            <Skeleton className="rounded-xl w-12 h-12 shrink-0" />
+            <Skeleton className="rounded-xl w-12 h-12 shrink-0" />
+          </div>
+        </div>
+      </div>
+
+      {/* Feature & Specs heading */}
+      <Skeleton className="rounded-lg w-48 h-9 mt-8 mb-2" />
+
+      {/* Specs grid */}
+      <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-8 mt-6">
+        {/* Progress bars */}
+        <div className="flex flex-col gap-5">
+          {(['w-24', 'w-28', 'w-20'] as const).map((labelW, i) => (
+            <div key={i} className="flex flex-col gap-2">
+              <Skeleton className={`rounded-lg ${labelW} h-4`} />
+              <Skeleton className="rounded-full w-full h-3" />
+            </div>
+          ))}
+        </div>
+
+        {/* Spec list */}
+        <ul className="space-y-3">
+          {(['w-2/5', 'w-3/5', 'w-2/5', 'w-4/5', 'w-3/5'] as const).map((w, i) => (
+            <Skeleton key={i} className={`rounded-lg ${w} h-5`} />
           ))}
         </ul>
-
-        {/* Description Skeleton */}
-        <Skeleton className="rounded-lg">
-          <div className="w-96 h-16 bg-default-300"></div>
-        </Skeleton>
       </div>
     </div>
   )

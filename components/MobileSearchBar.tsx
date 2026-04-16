@@ -30,11 +30,11 @@ const MobileProductSearchBar = () => {
       />
 
       {products && products.length > 0 && (
-        <ul className="absolute top-full mt-2 z-10 w-max bg-white shadow-lg rounded-md border">
+        <ul className="absolute top-full mt-2 z-10 w-max bg-content1 shadow-lg rounded-md border border-default-200">
           {products.map((product) => (
             <li
               key={product.id}
-              className="px-3 text-black py-2 hover:bg-gray-200 cursor-pointer text-sm flex gap-2"
+              className="px-3 text-foreground py-2 hover:bg-content2 cursor-pointer text-sm flex gap-2"
             >
               <Link
                 className="space-x-2"

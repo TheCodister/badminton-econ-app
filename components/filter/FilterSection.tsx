@@ -12,7 +12,7 @@ const FilterSection = ({
   onChange: (option: string, isChecked: boolean) => void
 }) => {
   return (
-    <section className="w-75 gap-4 flex flex-col items-start bg-white p-6 rounded-xl shadow-md">
+    <section className="w-75 gap-4 flex flex-col items-start bg-content1 p-6 rounded-xl shadow-md">
       <h4 className="font-bold">{title}</h4>
       <section className="flex flex-col gap-2 w-full">
         {options.map((option) => (

@@ -20,18 +20,27 @@ import {
   Key,
   LogIn,
   MessageCircle,
-  ShoppingCart
+  Moon,
+  ShoppingCart,
+  Sun,
 } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
+import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import MobileProductSearchBar from '../MobileSearchBar'
 import ProductSearchBar from '../SearchBar'
 const Header = () => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { data: session } = useSession()
+  const { theme, setTheme } = useTheme()
   const { data: cart } = useGetCart(session?.user.id || '')
+
+  useEffect(() => { setMounted(true) }, [])
+
+  const isDark = mounted && theme === 'dark'
 
   const navItems = useMemo(
     () => [
@@ -52,7 +61,7 @@ const Header = () => {
 
   return (
     <Navbar
-      className="w-screen p-2 text-primary bg-white/20 backdrop-blur-md"
+      className="w-screen p-2 text-primary bg-white/20 dark:bg-black/20 backdrop-blur-md"
       isBordered
       onMenuOpenChange={setIsMenuOpen}
       disableAnimation
@@ -80,7 +89,7 @@ const Header = () => {
                 B
               </span>
             </div>
-            <span className="font-semibold text-xl text-black hidden sm:inline">
+            <span className="font-semibold text-xl text-foreground hidden sm:inline">
               BMB
             </span>
           </NavbarBrand>
@@ -103,12 +112,22 @@ const Header = () => {
             </Button>
           </NavbarItem>
           <NavbarItem className="xl:hidden lg:hidden sm:block">
+            <Button
+              variant="light"
+              color="primary"
+              isIconOnly
+              onPress={() => setTheme(isDark ? 'light' : 'dark')}
+            >
+              {isDark ? <Sun width={15} height={15} /> : <Moon width={15} height={15} />}
+            </Button>
+          </NavbarItem>
+          <NavbarItem className="xl:hidden lg:hidden sm:block">
             {!session ? (
               <Button
                 startContent={<CircleUser />}
                 variant="light"
                 color="primary"
-                className="font-semibold w-full text-black"
+                className="font-semibold w-full"
                 onPress={() => handleNavigation(ROUTES.LOGIN)} // Navigate programmatically
               >
                 Login
@@ -144,7 +163,7 @@ const Header = () => {
               // startContent={<item.icon width={20} height={20} />}
               variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}
-              className="text-black font-semibold"
+              className="text-foreground font-semibold"
               onPress={() => handleNavigation(item.href)} // Use router.push here
             >
               {item.label}
@@ -156,6 +175,16 @@ const Header = () => {
           <ProductSearchBar />
         </NavbarItem>
 
+        <NavbarItem>
+          <Button
+            variant="light"
+            color="primary"
+            isIconOnly
+            onPress={() => setTheme(isDark ? 'light' : 'dark')}
+          >
+            {isDark ? <Sun width={20} height={20} /> : <Moon width={20} height={20} />}
+          </Button>
+        </NavbarItem>
         <NavbarItem className="w-15">
           <Button
             variant="light"
@@ -214,7 +243,7 @@ const Header = () => {
         {navItems.map((item) => (
           <NavbarMenuItem key={item.href}>
             <Button
-              className="text-black font-semibold w-full"
+              className="text-foreground font-semibold w-full"
               // startContent={item.icon && <item.icon width={20} height={20} />}
               variant={router.pathname === item.href ? 'flat' : 'light'}
               color={router.pathname === item.href ? 'default' : 'primary'}

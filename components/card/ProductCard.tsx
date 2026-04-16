@@ -78,7 +78,7 @@ const ProductCard = memo(({ data }: ProductCardProps) => {
             <DropdownMenu
               aria-label="Static Actions"
               autoFocus
-              className="text-black"
+              className="text-foreground"
             >
               <DropdownItem key="balance">
                 {data.balance && (

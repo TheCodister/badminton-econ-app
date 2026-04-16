@@ -104,7 +104,7 @@ const IndexPage = () => {
         >
           {PRICEOPTION.map((option) => (
             <SelectItem
-              className="text-black"
+              className="text-foreground"
               key={option.key}
               value={option.key}
             >

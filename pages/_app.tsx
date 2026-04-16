@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <HeroUIProvider navigate={router.push}>
-        <NextThemesProvider>
+        <NextThemesProvider attribute="class" defaultTheme="light">
           <SessionProvider session={pageProps.session}>
             <CheckoutProvider>
               <DefaultLayout>

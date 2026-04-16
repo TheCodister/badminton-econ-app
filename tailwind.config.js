@@ -104,15 +104,22 @@ module.exports = {
         },
         dark: {
           colors: {
-            background: '#000000', // or DEFAULT
-            foreground: '#ECEDEE', // or 50 to 900 DEFAULT
+            background: '#111a15', // deep forest green-black, mirrors the warm cream of light
+            foreground: '#e8e3da', // warm near-white, echoes light's cream background
             primary: {
               //... 50 to 900
               foreground: '#FFFFFF',
-              DEFAULT: '#006FEE',
+              DEFAULT: '#4fa882', // brighter forest green — same family as light's #3f8066
             },
+            secondary: {
+              DEFAULT: '#c4a07e', // muted sandy tan — same family as light's #ddc1a2
+              foreground: '#1a1a1a',
+            },
+            content1: '#1e3028', // card surface — clearly elevated above background
+            content2: '#263d30', // hover / nested surface
+            content3: '#2e4c3a',
+            content4: '#375743',
           },
-          // ... rest of the colors
         },
         mytheme: {
           // custom theme

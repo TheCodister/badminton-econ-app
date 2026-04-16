@@ -37,7 +37,7 @@ export default function Chat() {
                 className={`w-full p-2 rounded-xl text-start text-xl font-semibold ${
                   m.role === 'user'
                     ? 'text-white bg-secondary-500 text-left'
-                    : 'text-black text-right'
+                    : 'text-foreground text-right'
                 }`}
               >
                 {m.parts.map((part) => {
@@ -204,7 +204,7 @@ export default function Chat() {
           )}
         </div>
         <form
-          className="fixed bottom-9 left-1/2 transform -translate-x-1/2 w-full max-w-3xl p-3 flex bg-white rounded-lg shadow-md z-50"
+          className="fixed bottom-9 left-1/2 transform -translate-x-1/2 w-full max-w-3xl p-3 flex bg-content1 rounded-lg shadow-md z-50"
           onSubmit={handleSubmit}
         >
           <Input

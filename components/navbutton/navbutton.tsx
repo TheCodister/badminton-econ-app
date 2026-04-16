@@ -14,7 +14,7 @@ const NavButton = ({
   return (
     <div
       onClick={!disabled ? onClick : undefined} // Prevent click if disabled
-      className={`rounded-full bg-white aspect-square h-fit flex items-center justify-center cursor-pointer transition-transform ${
+      className={`rounded-full bg-content1 aspect-square h-fit flex items-center justify-center cursor-pointer transition-transform ${
         disabled ? 'cursor-not-allowed opacity-50' : ''
       } ${reverse ? 'rotate-180' : ''}`} // Rotate the whole button if `reverse` is true
     >
