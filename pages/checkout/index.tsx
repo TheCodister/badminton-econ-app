@@ -1,5 +1,5 @@
 import OrderCard from '@/components/card/OrderItemCard'
-import { useCheckout } from '@/context/context'
+import { useCheckout } from '@/context/CheckoutContext'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
 import { Select, SelectItem } from '@heroui/select'

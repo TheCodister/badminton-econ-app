@@ -2,9 +2,23 @@ import { BACKEND_URL } from '@/constants/backend_url'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
-// Custom hook to get shoes data
-const useGetShoes = (filters: any) => {
-  const queryString = new URLSearchParams(filters).toString()
+interface ShoesFilters {
+  brand?: string | string[]
+  size?: string | string[]
+  weight?: string | string[]
+  color?: string | string[]
+  price?: string | string[]
+  page?: number
+  limit?: number
+  [key: string]: string | string[] | number | undefined
+}
+
+const useGetShoes = (filters: ShoesFilters) => {
+  const queryString = new URLSearchParams(
+    Object.entries(filters)
+      .filter(([, v]) => v !== undefined)
+      .map(([k, v]) => [k, Array.isArray(v) ? v.join(',') : String(v)]),
+  ).toString()
 
   return useQuery({
     queryKey: ['shoes', filters],

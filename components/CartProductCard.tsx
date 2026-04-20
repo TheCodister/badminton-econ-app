@@ -1,10 +1,11 @@
-import { useCheckout } from '@/context/context'
+import { useCheckout } from '@/context/CheckoutContext'
 import { useRemoveCart } from '@/hooks/useRemoveCart'
 import { useUpdateCartQuantity } from '@/hooks/useUpdateCartQuantity'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
 import { Checkbox } from '@heroui/checkbox'
 import { Image } from '@heroui/image'
+import { addToast } from '@heroui/react'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react'
 
@@ -72,11 +73,10 @@ const CartCard = ({
 
   const handleRemoveFromCart = () => {
     if (!session?.user?.id) {
-      alert('You need to log in to remove items from your cart.')
+      addToast({ title: 'You need to log in to remove items from your cart.', color: 'warning' })
       return
     }
 
-    // Remove from checkout context if it's there
     if (isChecked) {
       removeCheckoutItem(product.id)
     }
@@ -84,12 +84,8 @@ const CartCard = ({
     removeCartMutation(
       { userId: session.user.id, productId: product.id },
       {
-        onSuccess: () => {
-          alert('Removed from cart successfully!')
-          // Refresh the page after successful removal
-          // window.location.reload()
-        },
-        onError: () => alert('Failed to remove item from cart'),
+        onSuccess: () => addToast({ title: 'Removed from cart successfully!', color: 'success' }),
+        onError: () => addToast({ title: 'Failed to remove item from cart', color: 'danger' }),
       },
     )
   }

@@ -1,5 +1,4 @@
 {
-  // "extends": ["./node_modules/@dwarvesf/react-eslint-config"],
   "globals": {
     "tw": true,
     "chrome": true
@@ -13,6 +12,7 @@
     "createDefaultProgram": true,
     "sourceType": "module"
   },
+  "plugins": ["react-hooks", "import", "unused-imports"],
   "rules": {},
   "overrides": [
     {
@@ -24,6 +24,20 @@
         "@typescript-eslint/no-unused-vars": [
           "error",
           { "argsIgnorePattern": "^_" }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "unused-imports/no-unused-imports": "error",
+        "import/order": [
+          "warn",
+          {
+            "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+            "pathGroups": [
+              { "pattern": "@/**", "group": "internal", "position": "before" }
+            ],
+            "alphabetize": { "order": "asc", "caseInsensitive": true },
+            "newlines-between": "never"
+          }
         ]
       }
     }

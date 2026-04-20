@@ -1,6 +1,7 @@
-import { useAddToCart } from '@/hooks/useAddToCart' // Adjust path if needed
+import { useAddToCart } from '@/hooks/useAddToCart'
 import CartIcon from '@/icons/CartIcon'
 import { Button } from '@heroui/button'
+import { addToast } from '@heroui/react'
 import { useSession } from 'next-auth/react'
 
 const AddToCartButton = ({ racketId }: { racketId: string }) => {
@@ -9,14 +10,14 @@ const AddToCartButton = ({ racketId }: { racketId: string }) => {
 
   const handleAddToCart = () => {
     if (!session?.user?.id) {
-      alert('You need to log in to add items to your cart.')
+      addToast({ title: 'You need to log in to add items to your cart.', color: 'warning' })
       return
     }
     addToCartMutation.mutate(
       { userId: session.user.id, productId: racketId },
       {
-        onSuccess: () => alert('Added to cart successfully!'),
-        onError: () => alert('Failed to add item to cart'),
+        onSuccess: () => addToast({ title: 'Added to cart successfully!', color: 'success' }),
+        onError: () => addToast({ title: 'Failed to add item to cart', color: 'danger' }),
       },
     )
   }

@@ -12,16 +12,16 @@ import { useState } from 'react'
 
 const ProductDetail = () => {
   const router = useRouter()
-  const { shoesid } = router.query
+  const { shoesId } = router.query
 
   if (!router.isReady) return <ProductDetailSkeleton /> // Ensure query params are available
 
-  const { data, error, isFetching } = useGetShoesbyId(shoesid as string)
+  const { data, error, isFetching } = useGetShoesbyId(shoesId as string)
 
   const [isCopied, setIsCopied] = useState(false)
 
   const handleShare = () => {
-    const link = `${window.location.origin}/shoes/${shoesid}`
+    const link = `${window.location.origin}/shoes/${shoesId}`
     addToast({
       title: 'Link copied to clipboard!',
       color: 'success',

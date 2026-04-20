@@ -1,4 +1,4 @@
-import { CheckoutProvider } from '@/context/context'
+import { CheckoutProvider } from '@/context/CheckoutContext'
 import DefaultLayout from '@/layouts/default'
 import { useSelectedCart } from '@/stores/useSelectedCart'
 import '@/styles/globals.css'

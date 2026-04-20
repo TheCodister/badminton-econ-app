@@ -1,8 +1,9 @@
 import CartCard from '@/components/CartProductCard'
-import { useCheckout } from '@/context/context'
+import { useCheckout } from '@/context/CheckoutContext'
 import { useGetCart } from '@/hooks/useGetCart'
 import { ProductItem } from '@/types/schema/schema'
 import { Button } from '@heroui/button'
+import { addToast } from '@heroui/react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
@@ -23,7 +24,7 @@ export default function ShoppingCart() {
 
   const handleCheckout = () => {
     if (checkoutItems.length === 0) {
-      alert('Please select at least one product before proceeding to checkout')
+      addToast({ title: 'Please select at least one product before proceeding to checkout', color: 'warning' })
       return
     }
 

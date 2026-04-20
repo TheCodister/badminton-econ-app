@@ -3,7 +3,7 @@ import {
   BalanceConverter,
   StiffnessConverter,
   WeightConverter,
-} from '@/utils/Converter'
+} from '@/utils/converter'
 import { Button } from '@heroui/button'
 import { Card, CardBody, CardFooter } from '@heroui/card'
 import { Chip } from '@heroui/chip'

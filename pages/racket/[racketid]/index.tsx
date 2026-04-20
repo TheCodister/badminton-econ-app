@@ -4,7 +4,7 @@ import {
   BalanceConverter,
   StiffnessConverter,
   WeightConverter,
-} from '@/utils/Converter'
+} from '@/utils/converter'
 import { Button } from '@heroui/button'
 import { Chip } from '@heroui/chip'
 import { Divider } from '@heroui/divider'
@@ -18,16 +18,16 @@ import { useState } from 'react'
 
 const ProductDetail = () => {
   const router = useRouter()
-  const { racketid } = router.query
+  const { racketId } = router.query
 
   if (!router.isReady) return <ProductDetailSkeleton /> // Ensure query params are available
 
-  const { data, error, isFetching } = useGetRacketbyId(racketid as string)
+  const { data, error, isFetching } = useGetRacketbyId(racketId as string)
 
   const [isCopied, setIsCopied] = useState(false)
 
   const handleShare = () => {
-    const link = `${window.location.origin}/racket/${racketid}`
+    const link = `${window.location.origin}/racket/${racketId}`
     addToast({
       title: 'Link copied to clipboard!',
       color: 'success',
